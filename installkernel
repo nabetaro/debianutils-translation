@@ -1,0 +1,60 @@
+#!/bin/sh
+# 
+# Copyright (C) 1995 - 1998, Ian A. Murdock <imurdock@debian.org>
+#
+# Install the kernel on a Debian Linux system.
+#
+# This script is called from /usr/src/linux/arch/i386/boot/install.sh.
+# If you install it as /sbin/installkernel, you can do a "make install"
+# from a generic kernel source tree, and the image will be installed to
+# the proper place for Debian GNU/Linux.
+
+set -e
+
+if [ $# -eq 3 ] || [ $# -eq 4 ] ; then
+  img="$2"
+  map="$3"
+  ver="$1"
+  if [ $# -eq 4 ] && [ -n "$4" ] ; then
+      dir="$4"
+  else
+      dir="/boot"
+  fi
+else
+  echo "Usage: installkernel <version> <zImage> <System.map> <directory>"
+  exit 1
+fi
+
+updatever () {
+  if [ -f "$dir/$1-$ver" ] ; then
+    mv "$dir/$1-$ver" "$dir/$1-$ver.old"
+  fi
+
+  cat "$2" > "$dir/$1-$ver"
+
+  if test -f "$dir/$1" ; then
+    if test -L "$dir/$1" &&
+       [ "$(readlink -f ${dir}/${1})" = "${dir}/${1}-${ver}" ]; then
+      ln -sf "$1-$ver.old" "$dir/$1.old"
+    else
+      mv "$dir/$1" "$dir/$1.old"
+    fi
+  fi
+
+  ln -sf "$1-$ver" "$dir/$1"
+}
+
+if [ "$img" = "vmlinux" ] ; then
+  updatever vmlinux "$img"
+else
+  updatever vmlinuz "$img"
+fi
+updatever System.map "$map"
+
+config=$(dirname "$map")
+config="${config}/.config"
+if [ -f "$config" ] ; then
+  updatever config "$config"
+fi
+
+mkboot -i ${dir}/${img}-${ver}

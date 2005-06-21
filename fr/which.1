@@ -1,0 +1,19 @@
+.\" -*- nroff -*-
+.TH WHICH 1 "02 jan 2003" "Debian"
+.SH NOM
+which \- localise une commande
+.SH SYNOPSIS
+.B which [\-a] nom de fichier ...
+.SH DESCRIPTION
+.B which
+retourne le chemin des fichiers qui seraient exécutés dans l'environnement
+courant. Ses arguments lui sont donnés sous la forme de commandes shell strictement 
+conformes POSIX. Pour ce faire, which cherche dans la variable PATH les fichiers exécutables 
+correspondants aux noms des arguments.
+.SH OPTIONS
+.TP
+.B \-a
+affiche tous les chemins correspondants à chaque argument
+.SH TRADUCTION
+Laëtitia Groslong <lgr@tartine.org>
+

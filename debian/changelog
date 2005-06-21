@@ -1,0 +1,896 @@
+debianutils (2.13.2) unstable; urgency=low
+
+  * Don't install which compatibility symlink on the Hurd.
+    closes: #299075.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 26 Mar 2005 17:46:04 -0500
+
+debianutils (2.13.1) unstable; urgency=medium
+
+  * configure.ac, run-parts.c, tempfile.c: guard inclusion of getopt.h
+  * savelog: patch from Alan Sundell to fix the fix in #295850.
+    closes: #297225.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 27 Feb 2005 22:37:59 -0500
+
+debianutils (2.13.0) unstable; urgency=medium
+
+  * savelog: fix savelog -p, broken in the fix for #295021.
+    closes: #295850.
+  * run-parts.c: fix inconsistent error message "quoting".
+    closes: #295621.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 18 Feb 2005 14:39:31 -0500
+
+debianutils (2.12.1) unstable; urgency=medium
+
+  * savelog: patch from Alan Sundell to fix rotation of files
+    containing spaces.  closes: #295163.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 17 Feb 2005 21:23:05 -0500
+
+debianutils (2.12.0) unstable; urgency=medium
+
+  * savelog: patch from Alan Sundell to fix rotation of files
+    starting with hyphens.  closes: #295021.
+  * run-parts.c: fix a couple of errors which were mistakenly
+    being sent to stdout instead of stderr, pointed out by
+    Thomas Hood in #294789.
+  * debian/rules: move which to /bin and leave a compatibility
+    symlink in /usr/bin.  The symlink will be dropped at a
+    later date.  closes: #295058.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 13 Feb 2005 10:01:09 -0500
+
+debianutils (2.11.2) unstable; urgency=low
+
+  * configure.ac, debian/rules: derive version numbers from
+    debian/changelog. 
+
+ -- Clint Adams <schizo@debian.org>  Thu, 23 Dec 2004 15:34:30 -0500
+
+debianutils (2.11.1) unstable; urgency=low
+
+  * tempfile.1: remove note about requiring debianutils >= 1.6.
+    closes: #286464.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 20 Dec 2004 16:58:50 -0500
+
+debianutils (2.11.0) unstable; urgency=medium
+
+  * run-parts.c, run-parts.8: also ignore .dpkg-{new,tmp} files
+    when --lsbsysinit option is given.  closes: #285031.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 10 Dec 2004 12:03:38 -0500
+
+debianutils (2.10.4) unstable; urgency=low
+
+  * debian/rules: Cross build support.
+    Do configure --host, on cross build.
+    closes: #283725.
+
+ -- NIIBE Yutaka <gniibe@fsij.org>  Wed,  1 Dec 2004 07:37:18 +0900
+
+debianutils (2.10.3) unstable; urgency=low
+
+  * mktemp.1: remove note about requiring debianutils >= 1.7.
+    closes: #198778.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 17 Oct 2004 23:54:01 -0400
+
+debianutils (2.10.2) unstable; urgency=low
+
+  * installkernel: patch from Matthew Wilcox to handle systems
+    with "vmlinux" instead of "vmlinuz".  closes: #272735.
+  * mkboot: check for PALO.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 22 Sep 2004 16:00:50 -0400
+
+debianutils (2.10.1) unstable; urgency=medium
+
+  * sensible-pager: fix spacing problem.  closes: #272449.  
+
+ -- Clint Adams <schizo@debian.org>  Mon, 20 Sep 2004 09:28:58 -0400
+
+debianutils (2.10) unstable; urgency=low
+
+  * sensible-editor, sensible-pager: rewrite in POSIX sh.
+  * sensible-editor: fall back to $EDITOR in between $VISUAL and nano.
+    closes: #238262.
+  * mkboot.8: document SILO behavior introduced in 2.9.
+  * mkboot, mkboot.8: add -d option to allow override of floppy device.
+    closes: #247270.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 17 Sep 2004 20:44:01 -0400
+
+debianutils (2.9) unstable; urgency=low
+
+  * mkboot: apply patch from Martin Habets to check for SILO.
+    closes: #271909.
+  * Add prebuild target to debian/rules for arch-buildpackage.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 17 Sep 2004 19:46:12 -0400
+
+debianutils (2.8.4) unstable; urgency=low
+
+  * which.1: document exit status meanings.  closes: #259035.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 12 Jul 2004 16:15:09 -0400
+
+debianutils (2.8.3) unstable; urgency=low
+
+  * Apply patch from Robert Millan to not ship installkernel and
+    mkboot on non-linux platforms.  closes: #254478.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 18 Jun 2004 21:18:51 -0400
+
+debianutils (2.8.2) unstable; urgency=low
+
+  * run-parts.8: clarify DESCRIPTION.  closes: #248149.
+
+ -- Clint Adams <schizo@debian.org>  Sun,  9 May 2004 12:50:12 -0400
+
+debianutils (2.8.1) unstable; urgency=medium
+
+  * installkernel: stop trying to use a variable that was never set.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 30 Mar 2004 22:53:42 -0500
+
+debianutils (2.8) unstable; urgency=medium
+
+  * run-parts.c: run scripts in different process groups.  closes: #226229.
+  * sensible-editor.1: fix "sendible" typo.  closes: #239520.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 24 Mar 2004 15:13:26 -0500
+
+debianutils (2.7.5) unstable; urgency=low
+
+  * mktemp.1: add tempfile(1) to SEE ALSO.  v. #227261.
+  * tempfile.1: add mktemp(1) to SEE ALSO.  v. #227261.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 22 Mar 2004 10:06:18 -0500
+
+debianutils (2.7.4-0.1) unstable; urgency=low
+
+  * NMU.
+  * run-parts.c: allows symbolic links and reports broken ones now.
+    Thanks to Gustavo Noronha Silva for the patch (closes: #238816).
+
+ -- Sebastian Muszynski <do2ksm@linkt.de>  Sat, 20 Mar 2004 11:30:03 +0100
+
+debianutils (2.7.4) unstable; urgency=low
+
+  * run-parts.c: skip all files that can't be statted unless
+    --exit-on-error is set.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 15 Mar 2004 23:28:57 -0500
+
+debianutils (2.7.3) unstable; urgency=medium
+
+  * run-parts.c: do not abort on broken symlinks without
+    --exit-on-error.  closes: #205646.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 15 Mar 2004 20:43:59 -0500
+
+debianutils (2.7.2) unstable; urgency=medium
+
+  * mkboot: fix for determining root partition, thanks to
+    Matthew Foulkes.  closes: #235436.
+  * mkboot.8: point out that mkboot requires rdev.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 29 Feb 2004 09:58:37 -0500
+
+debianutils (2.7.1) unstable; urgency=medium
+
+  * mkboot.8: correct spelling of "synopsis".
+  * mkboot.8: point out that the only sort of boot disk
+    currently handled is a floppy.  closes: #208879.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 27 Feb 2004 10:33:48 -0500
+
+debianutils (2.7) unstable; urgency=medium
+
+  * run-parts.c: change -v to mean --verbose instead of --version,
+    and -V to mean --version.  Print short forms in the usage.
+    closes: #232650.
+  * run-parts.8: document short options in OPTIONS section.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 24 Feb 2004 11:42:11 -0500
+
+debianutils (2.6.4) unstable; urgency=medium
+
+  * installkernel: add path to mkboot invocation (fix from
+    Alan Mimms).  closes: #201232.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 24 Feb 2004 11:26:36 -0500
+
+debianutils (2.6.3) unstable; urgency=medium
+
+  * mkboot: add elilo support (patch from Matthew Wilcox).
+    closes: #234557.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 24 Feb 2004 10:57:40 -0500
+
+debianutils (2.6.2) unstable; urgency=medium
+
+  * mkboot: remove spaces from variable assignment.  closes: #225079.
+
+ -- Clint Adams <schizo@debian.org>  Tue,  6 Jan 2004 20:48:29 -0500
+
+debianutils (2.6.1) unstable; urgency=low
+
+  * savelog.8: add --list, --reverse, --, to SYNOPSIS.  closes: #219981.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 12 Nov 2003 10:14:36 -0500
+
+debianutils (2.6) unstable; urgency=medium
+
+  * Replace the Replaces on manpages-fr, per Denis Barbier.
+    closes: #208272.
+  * Update mktemp and manpage from mktemp.org.
+    (This adds -V option to print version).
+  * mktemp.1: change examples and text to reflect behavior
+    of GNU libc (exactly the last 6 X's are used from template).
+    closes: #211467.
+  * mktemp.c: change default to have only 6 X's.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 20 Oct 2003 09:54:54 -0400
+
+debianutils (2.5.5) unstable; urgency=low
+
+  * Change Conflict on manpages-fr to (<= 0.9.3-1) and
+    remove Replaces, per Denis Barbier.  closes: #208272.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 12 Sep 2003 20:08:23 -0400
+
+debianutils (2.5.4) unstable; urgency=medium
+
+  * mkboot: Use readlink -f instead of readlink.  closes: #197461.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 24 Jun 2003 21:46:18 -0400
+
+debianutils (2.5.3) unstable; urgency=high
+
+  * mkboot: Check for existence of grub binary instead of package.
+    closes: #197243.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 24 Jun 2003 00:10:19 -0400
+
+debianutils (2.5.2) unstable; urgency=medium
+
+  * debian/postrm: fix cosmetic bug.  closes: #192084.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 15 May 2003 20:21:54 -0400
+
+debianutils (2.5.1) unstable; urgency=medium
+
+  * debian/postinst: fix cosmetic bug.  closes: #192084.
+  * Conflict with manpages-fr (<< 0.9.3-1).  closes: #193113.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 10 May 2003 10:54:03 -0400
+
+debianutils (2.5.0) unstable; urgency=medium
+
+  * fr/savelog.8: French manpage update from Julien Louis.
+  * install text/html mailcap entry for sensible-browser.  closes: #188764.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 23 Apr 2003 21:46:09 -0400
+
+debianutils (2.4.2) unstable; urgency=medium
+
+  * savelog.8: fix rotation semantics.  closes: #188390.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 12 Apr 2003 11:37:34 -0400
+
+debianutils (2.4.1) unstable; urgency=low
+
+  * mkboot: Patch from Martin Orr to fix lilocheck/grubcheck breakage.
+    closes: #184148.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 11 Mar 2003 00:46:01 -0500
+
+debianutils (2.4) unstable; urgency=low
+
+  * Drop readlink, which is now in coreutils.
+  * Pre-Depend on coreutils.
+  * Replaces (French which manpage) manpages-fr (<< 0.9.3-1),
+    since it is unclear from manpages-fr's changelog when which
+    was dropped.
+
+ -- Clint Adams <schizo@debian.org>  Sun,  2 Mar 2003 14:17:14 -0500
+
+debianutils (2.3.1) unstable; urgency=low
+
+  * run-parts.8: add --lsbsysinit to synopsis section, and move it higher in
+    the options section.  closes: #181526.
+  * run-parts.c: add --lsbsysinit to --help.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 18 Feb 2003 21:25:18 -0500
+
+debianutils (2.3) unstable; urgency=low
+
+  * run-parts.c, run-parts.8: Michael Weber's patch to add --exit-on-error.
+    closes: #84960.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 18 Feb 2003 19:54:48 -0500
+
+debianutils (2.2.6) unstable; urgency=low
+
+  * Revert alternatives management of which.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 17 Feb 2003 09:33:15 -0500
+
+debianutils (2.2.5) unstable; urgency=low
+
+  * mkboot: Andrew T. Young's patch to construct a more appropriate
+    lilo.conf for the boot floppy.  closes: #179827.
+  * mkboot: remove extraneous shift when -i is used. closes: #181105.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 15 Feb 2003 13:22:38 -0500
+
+debianutils (2.2.4) unstable; urgency=low
+
+  * Actually gzip French which.1.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 12 Feb 2003 13:39:52 -0500
+
+debianutils (2.2.3) unstable; urgency=low
+
+  * fr/which.1: French manpage for which by Laëtitia Groslong
+    <lgr@tartine.org>, submitted by Julien Louis.  closes: #180263. 
+
+ -- Clint Adams <schizo@debian.org>  Sat,  8 Feb 2003 17:09:44 -0500
+
+debianutils (2.2.2) unstable; urgency=low
+
+  * mkboot.8: change "/boot/vmlinuz" to "/vmlinuz".  closes: #180044.
+
+ -- Clint Adams <schizo@debian.org>  Fri,  7 Feb 2003 15:34:45 -0500
+
+debianutils (2.2.1) unstable; urgency=low
+
+  * run-parts.8: change DESCRIPTION to Thomas Hood's rewrite.
+    closes: #179456.
+
+ -- Clint Adams <schizo@debian.org>  Sun,  2 Feb 2003 10:17:43 -0500
+
+debianutils (2.2) unstable; urgency=low
+
+  * run-parts.c, run-parts.8: add --lsbsysinit option, and revert default
+    valid namespace to historical behavior.  closes: #178859, #176695.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 30 Jan 2003 12:29:21 -0500
+
+debianutils (2.1.8) unstable; urgency=low
+
+  * run-parts.8: clarify valid namespaces.  closes: #177302. 
+
+ -- Clint Adams <schizo@debian.org>  Thu, 30 Jan 2003 11:09:20 -0500
+
+debianutils (2.1.7) unstable; urgency=low
+
+  * Ship postinst and prerm again. 
+
+ -- Clint Adams <schizo@debian.org>  Thu, 30 Jan 2003 10:00:02 -0500
+
+debianutils (2.1.6) unstable; urgency=low
+
+  * Install which as which.debianutils and put under alternatives,
+    so that people can install GNU which for some reason.  closes: #177339.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 29 Jan 2003 22:12:06 -0500
+
+debianutils (2.1.5) unstable; urgency=low
+
+  * mkboot: patch to better handle LILO on software raid.  closes: #108513.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 29 Jan 2003 21:17:51 -0500
+
+debianutils (2.1.4) unstable; urgency=low
+
+  * mkboot: patch to handle devfs floppies not named /dev/fd0 from
+    Alban Browaeys.  closes: #177283.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 18 Jan 2003 08:17:43 -0500
+
+debianutils (2.1.3) unstable; urgency=low
+
+  * fr/savelog.8: updates to French manpage from Antoine Gémis and
+    Julien Louis.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 18 Jan 2003 00:01:57 -0500
+
+debianutils (2.1.2) unstable; urgency=low
+
+  * tempfile.1: add missing backslash.
+
+ -- Clint Adams <schizo@debian.org>  Sun,  5 Jan 2003 12:41:14 -0500
+
+debianutils (2.1.1) unstable; urgency=low
+
+  * savelog.8: document -C, -d, -r, -n, -q.
+
+ -- Clint Adams <schizo@debian.org>  Fri,  3 Jan 2003 10:03:27 -0500
+
+debianutils (2.1) unstable; urgency=low
+
+  * which, which.1: add -a option to display all matches.  closes: #174320.
+  * mkboot: switch to /bin/sh.
+
+ -- Clint Adams <schizo@debian.org>  Thu,  2 Jan 2003 18:09:40 -0500
+
+debianutils (2.0.6) unstable; urgency=low
+
+  * run-parts.8: typo fix from Guillem Jover.  closes: #173808. 
+
+ -- Clint Adams <schizo@debian.org>  Sat, 21 Dec 2002 15:53:52 -0500
+
+debianutils (2.0.5) unstable; urgency=low
+
+  * savelog: patch from Greg Norris to fix bzip2 extension and -q
+    parsing.  closes: #173727.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 20 Dec 2002 08:06:58 -0500
+
+debianutils (2.0.4) unstable; urgency=low
+
+  * Remove bashism from preinst.  closes: #171783. 
+
+ -- Clint Adams <schizo@debian.org>  Wed,  4 Dec 2002 19:18:32 -0500
+
+debianutils (2.0.3) unstable; urgency=low
+
+  * run-parts.c: patch from Ian Zimmerman which fixes problem
+    of losing program output in certain situations.  closes: #170739.
+  * sensible-browser: patch from Joey Hess to better handle browser exit
+    status.  closes: #171075.  patch from Kevin B. McCarty to pass the url
+    to x-terminal-emulator -e browser.  closes: #171316.
+
+ -- Clint Adams <schizo@debian.org>  Tue,  3 Dec 2002 18:43:24 -0500
+
+debianutils (2.0.2) unstable; urgency=low
+
+  * Install installkernel, which, savelog, sensible-browser,
+    sensible-editor, sensible-pager, mkboot, and associated manpages
+    via Makefile, rather than via debian/rules.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 20 Nov 2002 20:52:40 -0500
+
+debianutils (2.0.1) unstable; urgency=low
+
+  * Install readlink, run-parts, tempfile, mktemp, and
+    associated manpages via Makefile, rather than via debian/rules.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 20 Nov 2002 20:03:19 -0500
+
+debianutils (2.0) unstable; urgency=low
+ 
+  * Bump Standards-Version up to 3.5.8.
+  * Joey Hess: Added sensible-browser command.
+  * Joey Hess: Modifed sensible-* man page to document sensible-browser too.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 20 Nov 2002 18:24:01 -0500
+
+debianutils (1.23) unstable; urgency=low
+
+  * readlink.c, readlink.1: apply patch from Martin Michlmayr to
+    support multiple arguments to readlink.  closes: #66036.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 19 Nov 2002 06:20:24 -0500
+
+debianutils (1.22.6) unstable; urgency=low
+
+  * run-parts.8: stop manpage from contradicting actual behavior. 
+
+ -- Clint Adams <schizo@debian.org>  Tue, 19 Nov 2002 06:09:26 -0500
+
+debianutils (1.22.5) unstable; urgency=low
+
+  * run-parts.c, Makefile.am, configure.ac: use automake to build binaries. 
+
+ -- Clint Adams <schizo@debian.org>  Mon, 18 Nov 2002 14:52:10 -0500
+
+debianutils (1.22.4) unstable; urgency=low
+
+  * run-parts.c: use regexes based on LSB spec for /etc/cron.daily
+    naming &a, still excepting *.dpkg-{old,dist}.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 18 Nov 2002 14:13:49 -0500
+
+debianutils (1.22.3) unstable; urgency=low
+
+  * mkboot.8: fix hyphens.
+  * mkboot.8: add BUGS section to point out that mkboot is i386-only.
+    closes: #139377.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 15 Nov 2002 19:00:25 -0500
+
+debianutils (1.22.2) unstable; urgency=low
+
+  * savelog: error upon hardlink failure instead of clobbering file.
+    closes: #69685.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 15 Nov 2002 17:49:48 -0500
+
+debianutils (1.22.1) unstable; urgency=low
+
+  * run-parts.c, tempfile.c: clean multi-line string literals 
+    to stop gcc 3.0 from bitching.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 14 Nov 2002 16:31:15 -0500
+
+debianutils (1.22.0) unstable; urgency=low
+
+  * run-parts.c, run-parts.8: add --reverse option from Marc Haber.
+    closes: #85070.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 14 Nov 2002 13:42:20 -0500
+
+debianutils (1.21.2) unstable; urgency=medium
+
+  * savelog: fixes from Cristian Ionescu-Idbohrn.  closes: #168965.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 13 Nov 2002 16:26:13 -0500
+
+debianutils (1.21.1) unstable; urgency=medium
+
+  * savelog: add missing semicolons.  closes: #168894.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 13 Nov 2002 03:31:19 -0500
+
+debianutils (1.21.0) unstable; urgency=low
+
+  * savelog: add -q for 'quiet'.  closes: #144002.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 21:17:40 -0500
+
+debianutils (1.20.0) unstable; urgency=low
+
+  * savelog: add -n for 'do not rotate empty files'.  closes: #144810.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 18:21:37 -0500
+
+debianutils (1.19.0) unstable; urgency=low
+
+  * savelog: apply new optional features from Gert-Jan Hagenaars:
+    ability to roll logs into another directory, ability to roll
+    logfiles with dates instead of "plain" numbers, and forcing cleanup
+    when the cycle is changed.  closes: #132651.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 17:54:22 -0500
+
+debianutils (1.18.0) unstable; urgency=low
+
+  * savelog, savelog.8, savelog.fr.8: add -j option for bzip2.
+    closes: #44048.
+  * savelog.8, savelog.fr.8: fix hyphens.
+  * debian/copyright: reflect that the current which is in the public
+    domain.
+  * savelog: get rid of an XSIism.
+  * installkernel: use readlink instead of ls.  closes: #166479.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 16:36:54 -0500
+
+debianutils (1.17.0) unstable; urgency=low
+
+  * Install French savelog manpage to /usr/share/man/fr.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 12:21:08 -0500
+
+debianutils (1.16.9) unstable; urgency=low
+
+  * New maintainer. 
+  * Add French translation of savelog.8.  closes: #168162.
+  * run-paths.c, run-parts.8: add --list option from Jon Middleton.  closes:
+    #149438.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 11 Nov 2002 11:34:51 -0500
+
+debianutils (1.16.8) unstable; urgency=low
+
+  * NMU
+  * which: Apply Jeff Sheinberg's fixes. closes: #167496.
+  * installkernel: make a bit more POSIX-conformant.  closes: #166479.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 10 Nov 2002 15:02:37 -0500
+
+debianutils (1.16.7) unstable; urgency=low
+
+  * NMU
+  * Add .disabled to the list of ignored file names, and document both it
+    and the non-running of .notslocate in run-parts(8). (closes: #163223)
+  * Only copy /boot/boot.b if the file is actually there.  (closes: #164064)
+  * Give out correct error message when incorrect options are passed on
+    the command line.  (closes: #161975)
+  * Fix sillyness in documentation referring to "#!/bin/interpretername
+    convention".  (closes: #82802)
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Thu, 17 Oct 2002 05:37:13 +0200
+
+debianutils (1.16.6) unstable; urgency=low
+
+  * NMU
+  * which: Colin Watson's patch to fix which balking at full pathnames.
+    closes: #162967.
+  * which.1: further clarification.
+  * mktemp.1: mention a minimum of 6 trailing X's.  closes: #154916.
+  * tempfile.1: patch from Colin Phipps.  closes: #114610.
+
+ -- Clint Adams <schizo@debian.org>  Tue,  1 Oct 2002 11:31:28 -0400
+
+debianutils (1.16.5) unstable; urgency=low
+
+  * NMU
+  * sensible-editor: try nano and nano-tiny instead of ae.  closes: #153990.
+  * which: replace which with Colin Watson's POSIX-compliant version.
+    closes: #94507, #47985, #148178.
+  * which.1: clarify manpage
+  * Update to Standards-Version 3.5.7.
+  * Replace description with one penned by Colin Walters.  closes: #139952.
+  * Handle noopt and nostrip in DEB_BUILD_OPTIONS, and don't force CFLAGS
+    in Makefile.
+  * Eradicate bashisms in debian/rules.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 28 Sep 2002 16:07:10 -0400
+
+debianutils (1.16.4) unstable; urgency=low
+
+  * NMU.
+  * Fix run-parts to allow LSB-sanctioned cronjob filenames. (Closes: #118646)
+  * Remove /usr/doc transition business.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri, 27 Sep 2002 23:41:18 -0500
+
+debianutils (1.16.3) unstable; urgency=high
+
+  * Non-maintainer upload
+  * installkernel: Check for the INSTALL_PATH being a 0-length string
+    as well as unset.  Closes: #139226
+
+ -- Matthew Wilcox <willy@debian.org>  Thu, 13 Jun 2002 08:21:20 -0400
+
+debianutils (1.16.2) woody-proposed-updates unstable; urgency=high
+
+  * Non-maintainer upload
+  * Properly fix infinite busy-loop using patch from Bruce Perens.
+    Closes: Bug#145278
+
+ -- Wichert Akkerman <wakkerma@debian.org>  Sun,  5 May 2002 16:30:35 +0200
+
+debianutils (1.16.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Apply patch from Garth Mollett to fix race in the select handling:
+    on SMP machines the child process may have finished when we hit the select
+    and we could end up waiting forever. Closes: Bug#114864,#132539
+
+ -- Wichert Akkerman <wakkerma@debian.org>  Fri, 26 Apr 2002 14:47:45 +0200
+
+debianutils (1.16) unstable; urgency=low
+
+  * installkernel: honor INSTALL_PATH. closes: #50117, #129195, #134176
+  * installkernel: copy .config. closes: #116593
+  * mkboot: look for GRUB. closes: #98262, #116592
+  * mkboot: call the boot floppy kernel vmlinuz. closes: #130889
+  * mkboot: default kernel is /vmlinuz. closes: #125722
+  * mkboot: cd later so relative path works. closes: #134594
+  * debian/rules: test for id 0. closes: #104217
+  * run-parts: make --test less verbose. closes: #113293
+  * mktemp: update to current BSD. closes: #61718, #61026, #104226
+  * integrate NMU changes. closes: #106829, #131719
+
+ -- Guy Maor <maor@debian.org>  Mon, 18 Feb 2002 23:20:42 -0600
+
+debianutils (1.15.2) unstable; urgency=low
+
+  * NMU
+  * fix the typo introduced by the last NMU (closes: #131376, #106829) 
+    $filaname -> $filename
+
+ -- Junichi Uekawa <dancer@debian.org>  Fri,  1 Feb 2002 01:04:38 +0900
+
+debianutils (1.15.1) unstable; urgency=low
+
+  * NMU to fix serious-severity bug.
+  * savelog:
+    - Use touch, chown, etc, instead of cp, when used with -p. (closes: #106829)
+
+ -- Daniel Stone <DanielS@esd.nec.com.au>  Mon, 28 Jan 2002 07:09:23 +1100
+
+debianutils (1.15) unstable; urgency=low
+
+  * Maintainer back to me.
+  * mkboot: fix image= line when making lilo boot disk, closes: #69972, #55087.
+  * mkboot: add -r option to specify alternate root partition, closes: #69973.
+  * installkernel.8: add explanation of /sbin instead of /usr/sbin,
+    closes: #59915.
+  * run-parts: add --arg option to pass arguments: closes: #61736.
+  * readlink.1: elaborate on -f behavior, closes: #71630.
+
+ -- Guy Maor <maor@debian.org>  Fri, 19 Jan 2001 09:42:32 -0800
+
+debianutils (1.14) unstable; urgency=low
+
+  * New maintainer.
+  * debian/copyright: update and fix location of GPL.
+  * debian/prerm: don't use $0 remove /usr/doc/ link on upgrade too.
+  * debian/control (Standards-Version): bump to 3.2.1.
+
+ -- James Troup <james@nocrew.org>  Tue,  5 Dec 2000 22:29:21 +0000
+
+debianutils (1.13.3) frozen unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Release Manager: this fixes RC bug #59121.
+  * run-parts.c: Added patch by Ingo Saitz <Ingo.Saitz@stud.uni-hannover.de>
+  to correctly catch defunct children (this will fix #59121,#57464)
+
+ -- Steve Greenland <stevegr@debian.org>  Sun,  2 Apr 2000 13:53:21 -0500
+
+debianutils (1.13.2) unstable; urgency=low
+
+  * Non-maintainer release.
+  * debian/control: Replaces tetex-bin (<< 1.0.6-1.1).
+    (closes:Bug#51286)
+  * readlink.c: Add stupid PATH_MAX kluge until I have time to
+    fix it properly.
+
+ -- Joel Klecker <espy@debian.org>  Tue,  7 Dec 1999 09:52:08 -0800
+
+debianutils (1.13.1) unstable; urgency=low
+
+  * Non-maintainer release.
+  * Add readlink (from OpenBSD).
+  * debian/control:
+    - Replaces tetex-bin.
+    - Update Standards-Version to 3.1.0.
+  * debian/rules:
+    - Use /usr/share/man and /usr/share/doc
+      (add postinst and preinst for /usr/doc symlink).
+    - Call dpkg-gencontrol with -isp.
+
+ -- Joel Klecker <espy@debian.org>  Mon,  8 Nov 1999 11:42:08 -0800
+
+debianutils (1.13) unstable; urgency=low
+
+  * fix -n segfault, closes: #43942, #44547.
+
+ -- Guy Maor <maor@debian.org>  Sun, 12 Sep 1999 16:29:16 -0700
+
+debianutils (1.12) unstable; urgency=low
+
+  * mkboot: search for lilo signature in first 16 bytes, closes: #41636,
+    #33750
+  * mkboot: fix simple typo, closes: #33571
+  * mkboot: use TMPDIR, closes: #36273
+  * tempfile: default permission is 0600, closes: #42836
+  * tempfile: add --suffix option, closes: #32653.
+  * savelog.8: be clear about file deletion, closes: #41597.
+  * hurd patch, closes: #39126.
+  * fix core on --test invaliddir, closes: #37885.
+
+ -- Guy Maor <maor@debian.org>  Sun, 29 Aug 1999 17:29:34 -0700
+
+debianutils (1.11) unstable; urgency=low
+
+  * Fixed examples in mktemp.1, closes: #27428.
+  * installkernel - don't run psupdate as it's obsolete, closes: #29879.
+  * savelog - be POSIX, closes: #31780.
+  * make interactive on no arguments, closes: #40671, #43012.
+  * don't depend on perl-base, closes: #42543.
+
+ -- Guy Maor <maor@debian.org>  Fri, 29 Jan 1999 01:17:37 -0800
+
+debianutils (1.10) unstable; urgency=low
+
+  * Corrections to tempfile.1, fixes: #20785, #22347.
+  * Corrections to mktemp.1, fixes: #20814.
+  * Fix mkboot's lilo.conf when making boot disk, fixes: #22831.
+  * Turn set -x off (oops!), fixes: #23114.
+  * run-parts: fix error message, fixes: #24232.
+  * savelog: don't destroy .0 file timestamps, fixes: #21373.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sun, 16 Aug 1998 15:28:57 -0700
+
+debianutils (1.9) frozen unstable; urgency=high
+
+  * run-parts: close unused fd's to prevent hang. fixes: #20678.	
+  * run-parts: flush buffers after printing message. fixes: #20287.
+  * run-parts: fix error message. fixes: #19741.
+  * mktemp manpage corrections. fixes: #20224, #20225.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sun,  5 Apr 1998 14:46:17 -0700
+
+debianutils (1.8) unstable; urgency=low
+
+  * Strip binaries.
+  * Added sensible-pager.1
+
+ -- Guy Maor <maor@ece.utexas.edu>  Fri, 13 Mar 1998 02:43:11 -0800
+
+debianutils (1.7) unstable; urgency=low
+
+  * Fixed tempfile --help. fixes: #13874
+  * savelog, installkernel use /bin/sh. fixes: #15171, #15872
+  * Clarify run-parts.8. fixes: #16865
+  * Added --report ro runparts. fixes: #9965
+  * Improved installkernel, inspired by David ROCHER <rocher@easynet.fr>.
+    fixes: #14951
+  * Added mktemp. fixes: 15947.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sun, 15 Feb 1998 03:01:04 -0800
+
+debianutils (1.6) unstable; urgency=low
+
+  * Fixed which for filenames with dash (#11625).
+  * Fixed mkboot so always removes directory (#10048).
+  * Compiled with libc6 (#11671).
+  * New commands: tempfile, sensible-editor, sensible-pager (#12161).
+  * savelog: add -p option (#9211), ln and mv logfile to prevent race (#10999)
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sun, 24 Aug 1997 20:23:13 -0500
+
+debianutils (1.5) frozen unstable; urgency=low
+
+  * Improved which, added which.1 (#7435).
+  * Fixed includes in run-parts (#7660, #8231, #8748).
+  * Fixed savelog.8 (#9777).
+
+ -- Guy Maor <maor@ece.utexas.edu>  Thu, 15 May 1997 01:01:49 -0500
+
+debianutils (1.4) unstable; urgency=low
+
+  * installkernel: fixed bug #6395 - /boot/vmlinuz.old link is broken when
+    recompiling a kernel.
+  * mkboot: fixed bug #6227 - mkboot recovers better from errors
+
+ -- Guy Maor <maor@ece.utexas.edu>  Tue, 7 Jan 1997 12:03:51 -0600
+
+debianutils (1.3) unstable; urgency=low
+
+  * New source format.
+  * installkernel.8: fixed typo, bug #3511.
+  * which: fixed quoting problem, bug #4363
+
+ -- Guy Maor <maor@ece.utexas.edu>  Mon, 30 Sep 1996 16:26:25 -0500
+
+debianutils (1.2-3) unstable; urgency=low
+
+  * installkernel: Fixed silly bug.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sat, 08 Jun 1996 22:38:50 -0500
+
+debianutils (1.2-2) unstable; urgency=low
+
+  * installkernel.8: Improved it, fixes bug 2887
+  * debian.rules: Changed package name to debianutils (with a
+    Conflict,Replaces debian-utils)
+  * which: Fixed to print paths when arg is a shell builtin
+  * mkboot: Can specify kernel to use with argument.  Defaults to
+    /boot/vmlinuz.
+  * run-parts.c: Added --verbose option from Austin Donnelly
+    <and1000@cam.ac.uk>.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Wed, 05 Jun 1996 06:15:25 -0500
+
+debianutils (1.2-1) unstable; urgency=low
+
+  * Added priorty and replaces cron (<=3.0pl1-31)
+  * savelog{,.8}: Savelog moved in from cron.  I also wrote a man-page.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Thu, 25 Apr 1996 04:41:47 -0500
+
+debianutils (1.1-2) unstable; urgency=low
+
+ * run-parts.c (run_part): silly bug with return code reporting.
+
+ -- Guy Maor <maor@ece.utexas.edu>  Sat, 20 Apr 1996 05:15:08 -0500
+
+debianutils (1.1-1) unstable; urgency=low
+
+  * Initial release
+  * mkboot: Rewrote from scratch, fixes Bugs 918, 1520, 1521
+  * debian.control: Added 'Section: base'
+  * run-parts.c: Now skips over directories, fixes Bug 2244
+
+ -- Guy Maor <maor@ece.utexas.edu>  Thu, 18 Apr 1996 19:54:33 -0500
