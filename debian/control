@@ -3,6 +3,8 @@ Section: utils
 Priority: required
 Maintainer: Clint Adams <schizo@debian.org>
 Standards-Version: 3.7.2
+Vcs-Git: git://git.debian.org/git/private/schizo/debianutils.git
+Vcs-Browser: http://git.debian.org/?p=private/schizo/debianutils.git
 
 Package: debianutils
 Architecture: any

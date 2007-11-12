@@ -1,3 +1,10 @@
+debianutils (2.27.1) unstable; urgency=low
+
+  * Add Vcs-Git and Vcs-Browser fields to the control file now that
+    debianutils has been switched from bzr to git.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 12 Nov 2007 11:17:32 -0500
+
 debianutils (2.27) unstable; urgency=low
 
   * run-parts, run-parts.8: patch from Romain Francoise to add
