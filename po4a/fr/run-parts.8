@@ -10,7 +10,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH RUN\-PARTS 8 "30 Sep 2007" "Debian GNU/Linux" 
+.TH RUN\-PARTS 8 "29 Oct 2007" "Debian GNU/Linux" 
 .SH NOM
 run\-parts \- exécute les scripts ou les exécutables d'un répertoire
 .SH SYNOPSIS
@@ -73,6 +73,11 @@ permet de quitter dès qu'un script retourne une valeur non nulle.
 .TP 
 \fB\-\-lsbsysinit\fP
 utilise les noms LSB plutôt que le comportement ordinaire.
+.TP 
+\fB\-\-new\-session\fP
+run each script in a separate process session.  If you use this option,
+killing run\-parts will not kill the currently running script, it will run
+until completion.
 .TP 
 \fB\-\-regex=\fP\fIRE\fP
 validate filenames against custom extended regular expression \fIRE\fP.  See

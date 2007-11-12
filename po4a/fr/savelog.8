@@ -4,13 +4,12 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH SAVELOG 8 "12 avril 2003" "Debian GNU/Linux" 
+.TH SAVELOG 8 "21 October 2007" "Debian GNU/Linux" 
 .SH NOM
 savelog \- sauvegarde un fichier journal
 .SH SYNOPSIS
-\fBsavelog\fP [\fB\-m\fP \fImode\fP] [\fB\-u\fP \fIutilisateur\fP] [\fB\-g\fP \fIgroupe\fP] [\fB\-t\fP]
-[\fB\-p\fP] [\fB\-c\fP \fIcycle\fP] [\fB\-l\fP] [\fB\-j\fP] [\fB\-C\fP] [\fB\-d\fP] [\fB\-l\fP] [\fB\-r\fP
-\fIrépertoire\fP] [\fB\-n\fP] [\fB\-q\fP] \fIfichier\fP ...
+\fBsavelog\fP [\-m mode] [\-u user] [\-g group] [\-t] [\-p] [\-c cycle] [\-l] [\-j]
+[\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
 .SH DESCRIPTION
 Le programme \fBsavelog\fP sauvegarde un fichier journal et, éventuellement,
 compresse les anciennes versions. Les anciennes versions de \fIfichier\fP sont
@@ -96,6 +95,9 @@ Force la suppression des sauvegardes.
 .TP 
 \fB\-d\fP
 Utilise la date (AAMMJJhhmmss) au lieu du numéro de version.
+.TP 
+\fB\-D dateformat\fP
+override date format, in the form of \fI[MMDDhhmm[[CC]YY][.ss]]\fP
 .TP 
 \fB\-r\fP \fIrépertoire\fP
 Sauvegarde les fichiers journaux dans le répertoire \fIrépertoire\fP au lieu de

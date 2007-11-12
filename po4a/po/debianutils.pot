@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-09-30 09:23-0400\n"
+"POT-Creation-Date: 2007-11-12 11:58-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 
 # type: SH
-#: ../installkernel.8:31 ../mkboot.8:33 ../savelog.8:137 ../tempfile.1:61
+#: ../installkernel.8:31 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
 #, no-wrap
 msgid "BUGS"
 msgstr ""
@@ -251,7 +251,7 @@ msgstr ""
 # type: TH
 #: ../run-parts.8:8
 #, no-wrap
-msgid "30 Sep 2007"
+msgid "29 Oct 2007"
 msgstr ""
 
 # type: Plain text
@@ -406,121 +406,135 @@ msgstr ""
 # type: TP
 #: ../run-parts.8:72
 #, no-wrap
-msgid "B<--regex=>I<RE>"
+msgid "B<--new-session>"
 msgstr ""
 
 # type: Plain text
 #: ../run-parts.8:77
+msgid ""
+"run each script in a separate process session.  If you use this option, "
+"killing run-parts will not kill the currently running script, it will run "
+"until completion."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:77
+#, no-wrap
+msgid "B<--regex=>I<RE>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:82
 msgid ""
 "validate filenames against custom extended regular expression I<RE>.  See "
 "the EXAMPLES section for an example."
 msgstr ""
 
 # type: TP
-#: ../run-parts.8:77
+#: ../run-parts.8:82
 #, no-wrap
 msgid "B<-u, --umask=>I<umask>"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:84
+#: ../run-parts.8:89
 msgid ""
 "sets the umask to I<umask> before running the scripts.  I<umask> should be "
 "specified in octal.  By default the umask is set to 022."
 msgstr ""
 
 # type: TP
-#: ../run-parts.8:84
+#: ../run-parts.8:89
 #, no-wrap
 msgid "B<-a, --arg=>I<argument>"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:91
+#: ../run-parts.8:96
 msgid ""
 "pass I<argument> to the scripts.  Use B<--arg> once for each argument you "
 "want passed."
 msgstr ""
 
 # type: TP
-#: ../run-parts.8:91
+#: ../run-parts.8:96
 #, no-wrap
 msgid "B<-->"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:97
+#: ../run-parts.8:102
 msgid ""
 "specifies that this is the end of the options.  Any filename after B<--> "
 "will be not be interpreted as an option even if it starts with a hyphen."
 msgstr ""
 
 # type: TP
-#: ../run-parts.8:97
+#: ../run-parts.8:102
 #, no-wrap
 msgid "B<-h, --help>"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:100
+#: ../run-parts.8:105
 msgid "display usage information and exit."
 msgstr ""
 
 # type: TP
-#: ../run-parts.8:100
+#: ../run-parts.8:105
 #, no-wrap
 msgid "B<-V, --version>"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:103
+#: ../run-parts.8:108
 msgid "display version and copyright and exit."
 msgstr ""
 
 # type: SH
-#: ../run-parts.8:104
+#: ../run-parts.8:109
 #, no-wrap
 msgid "EXAMPLES"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:107
+#: ../run-parts.8:112
 msgid "Print the names of all files in /etc that start with `p' and end with `d':"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:109
+#: ../run-parts.8:114
 msgid "run-parts --list --regex \\[aq]^p.*d$\\[aq] /etc"
 msgstr ""
 
 # type: SH
-#: ../run-parts.8:110
+#: ../run-parts.8:115
 #, no-wrap
 msgid "COPYRIGHT"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:113
+#: ../run-parts.8:118
 msgid "Copyright (C) 1994 Ian Jackson."
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:115
+#: ../run-parts.8:120
 msgid "Copyright (C) 1996 Jeff Noxon."
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:117
+#: ../run-parts.8:122
 msgid "Copyright (C) 1996, 1997, 1998 Guy Maor"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:119
+#: ../run-parts.8:124
 msgid "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams"
 msgstr ""
 
 # type: Plain text
-#: ../run-parts.8:124
+#: ../run-parts.8:129
 msgid ""
 "B<run-parts> is free software; see the GNU General Public License version 2 "
 "or later for copying conditions.  There is I<no> warranty."
@@ -535,7 +549,7 @@ msgstr ""
 # type: TH
 #: ../savelog.8:2
 #, no-wrap
-msgid "12 April 2003"
+msgid "21 October 2007"
 msgstr ""
 
 # type: Plain text
@@ -547,7 +561,7 @@ msgstr ""
 #: ../savelog.8:9
 msgid ""
 "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
-"[-C] [-d] [-l] [-r rolldir] [-n] [-q] file ..."
+"[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgstr ""
 
 # type: Plain text
@@ -768,38 +782,49 @@ msgstr ""
 # type: TP
 #: ../savelog.8:126
 #, no-wrap
+msgid "B<-D dateformat>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:130
+msgid "override date format, in the form of I<[MMDDhhmm[[CC]YY][.ss]]>"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:130
+#, no-wrap
 msgid "B<-r>"
 msgstr ""
 
 # type: Plain text
-#: ../savelog.8:131
+#: ../savelog.8:135
 msgid "use I<rolldir> instead of . to roll files"
 msgstr ""
 
 # type: TP
-#: ../savelog.8:131
+#: ../savelog.8:135
 #, no-wrap
 msgid "B<-n>"
 msgstr ""
 
 # type: Plain text
-#: ../savelog.8:134
+#: ../savelog.8:138
 msgid "do not rotate empty files"
 msgstr ""
 
 # type: TP
-#: ../savelog.8:134
+#: ../savelog.8:138
 #, no-wrap
 msgid "B<-q>"
 msgstr ""
 
 # type: Plain text
-#: ../savelog.8:137
+#: ../savelog.8:141
 msgid "be quiet"
 msgstr ""
 
 # type: Plain text
-#: ../savelog.8:142
+#: ../savelog.8:146
 msgid ""
 "If a process is still writing to I<file.0>, and savelog moves it to "
 "I<file.1> and compresses it, data could be lost."
