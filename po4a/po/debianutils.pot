@@ -1,0 +1,1115 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2007-09-30 09:23-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: TH
+#: ../add-shell.8:1
+#, no-wrap
+msgid "ADD-SHELL"
+msgstr ""
+
+# type: TH
+#: ../add-shell.8:1 ../remove-shell.8:1
+#, no-wrap
+msgid "7 Apr 2005"
+msgstr ""
+
+# type: SH
+#: ../add-shell.8:2 ../installkernel.8:2 ../mkboot.8:2 ../remove-shell.8:2 ../run-parts.8:9 ../savelog.8:3 ../sensible-editor.1:3 ../tempfile.1:3 ../which.1:3
+#, no-wrap
+msgid "NAME"
+msgstr ""
+
+# type: Plain text
+#: ../add-shell.8:4
+msgid "add-shell - add shells to the list of valid login shells"
+msgstr ""
+
+# type: SH
+#: ../add-shell.8:4 ../installkernel.8:4 ../mkboot.8:4 ../remove-shell.8:4 ../run-parts.8:11 ../savelog.8:5 ../sensible-editor.1:5 ../tempfile.1:5 ../which.1:5
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr ""
+
+# type: Plain text
+#: ../add-shell.8:8
+msgid "B<add-shell> I<shellname> [I<shellname>...]"
+msgstr ""
+
+# type: SH
+#: ../add-shell.8:8 ../installkernel.8:6 ../mkboot.8:6 ../remove-shell.8:8 ../run-parts.8:20 ../savelog.8:9 ../sensible-editor.1:12 ../tempfile.1:9 ../which.1:7
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr ""
+
+# type: Plain text
+#: ../add-shell.8:13
+msgid ""
+"B<add-shell> copy I</etc/shells> to I</etc/shells.tmp>, add the given shells "
+"to this file if they are not already present, and copy this temporary file "
+"back to I</etc/shells>."
+msgstr ""
+
+# type: Plain text
+#: ../add-shell.8:15
+msgid "The shells must be provided by their full pathnames."
+msgstr ""
+
+# type: SH
+#: ../add-shell.8:15 ../installkernel.8:37 ../mkboot.8:40 ../remove-shell.8:13 ../sensible-editor.1:17 ../tempfile.1:64
+#, no-wrap
+msgid "SEE ALSO"
+msgstr ""
+
+# type: Plain text
+#: ../add-shell.8:16 ../remove-shell.8:14
+msgid "B<shells>(5)"
+msgstr ""
+
+# type: TH
+#: ../installkernel.8:1
+#, no-wrap
+msgid "INSTALLKERNEL"
+msgstr ""
+
+# type: TH
+#: ../installkernel.8:1
+#, no-wrap
+msgid "7 Jan 2001"
+msgstr ""
+
+# type: TH
+#: ../installkernel.8:1
+#, no-wrap
+msgid "Debian Linux"
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:4
+msgid "installkernel - install a new kernel image"
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:6
+msgid "B<installkernel >I<version zImage System.map [directory]>"
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:13
+msgid ""
+"B<installkernel> installs a new kernel image onto the system from the Linux "
+"source tree.  It is called by the Linux kernel makefiles when B<make "
+"install> is invoked there."
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:26
+msgid ""
+"The new kernel is installed into I<{directory}/vmlinuz-{version}>, a link is "
+"made from I<{directory}/vmlinuz> to the new kernel, and the previously "
+"installed kernel is available as I<{directory}/vmlinuz.old>.  If you use "
+"LILO, I</etc/lilo.conf> should contain entries for the images "
+"I<{directory}/vmlinuz> and I<{directory}/vmlinuz.old>.  (I<{version}> is the "
+"new kernel's version.)"
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:31
+msgid ""
+"B<installkernel> calls B<mkboot -i> to make the system bootable after the "
+"kernel is installed."
+msgstr ""
+
+# type: SH
+#: ../installkernel.8:31 ../mkboot.8:33 ../savelog.8:137 ../tempfile.1:61
+#, no-wrap
+msgid "BUGS"
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:37
+msgid ""
+"installkernel resides in /sbin only because the Linux kernel makefiles call "
+"it from there.  It should really be in /usr/sbin.  It isn't needed to boot a "
+"system, and it calls B<mkboot>, which depends on the /usr partition being "
+"mounted."
+msgstr ""
+
+# type: Plain text
+#: ../installkernel.8:38
+msgid "mkboot(8), lilo(8), lilo.conf(5)"
+msgstr ""
+
+# type: TH
+#: ../mkboot.8:1
+#, no-wrap
+msgid "MKBOOT"
+msgstr ""
+
+# type: TH
+#: ../mkboot.8:1
+#, no-wrap
+msgid "18 September 2004"
+msgstr ""
+
+# type: TH
+#: ../mkboot.8:1 ../run-parts.8:8 ../savelog.8:2 ../sensible-editor.1:2 ../tempfile.1:2 ../which.1:2
+#, no-wrap
+msgid "Debian"
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:4
+msgid "mkboot - makes a bootdisk"
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:6
+msgid "B<mkboot [-r rootpartition] [-i] [-d device] [kernel]>"
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:10
+msgid "B<mkboot> makes a bootdisk."
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:19
+msgid ""
+"By default the bootdisk will use the kernel I</vmlinuz> and the current root "
+"partition.  Use the B<-r> option to specify a different partition, and "
+"provide the new kernel file directly to specify a different kernel.  Use the "
+"B<-d> option to specify a different device for the floppy drive."
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:33
+msgid ""
+"If invoked with the B<-i> option, it tries to make a Debian GNU/Linux system "
+"bootable after a new kernel was installed by B</sbin/installkernel>.  If "
+"ELILO is installed, it runs B</usr/sbin/elilo>.  If GRUB is installed, it "
+"does nothing.  If LILO is in use, it runs B</sbin/lilo>.  If SILO is "
+"installed, it does nothing.  Otherwise, B<mkboot> will make a new bootdisk."
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:39
+msgid ""
+"mkboot only works on i386 and ia64.  mkboot only works on floppy diskette "
+"drives.  If rdev is not present, mkboot will fail to determine the correct "
+"root partition.  Patches to correct these deficiencies are welcome."
+msgstr ""
+
+# type: Plain text
+#: ../mkboot.8:41
+msgid "installkernel(8), lilo(8), grub(8), silo(8)"
+msgstr ""
+
+# type: TH
+#: ../remove-shell.8:1
+#, no-wrap
+msgid "REMOVE-SHELL"
+msgstr ""
+
+# type: Plain text
+#: ../remove-shell.8:4
+msgid "remove-shell - remove shells from the list of valid login shells"
+msgstr ""
+
+# type: Plain text
+#: ../remove-shell.8:8
+msgid "B<remove-shell> I<shellname> [I<shellname>...]"
+msgstr ""
+
+# type: Plain text
+#: ../remove-shell.8:13
+msgid ""
+"B<remove-shell> operates on the temporary files I</etc/shells.tmp> and "
+"I</etc/shells.tmp2> to remove the given shells from the list of valid login "
+"shells, and copy the result back to I</etc/shells>."
+msgstr ""
+
+# type: TH
+#: ../run-parts.8:8
+#, no-wrap
+msgid "RUN-PARTS"
+msgstr ""
+
+# type: TH
+#: ../run-parts.8:8
+#, no-wrap
+msgid "30 Sep 2007"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:11
+msgid "run-parts - run scripts or programs in a directory"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:17
+msgid ""
+"B<run-parts> [--test] [--verbose] [--report] [--lsbsysinit] [--regex=RE] "
+"[--umask=umask] [--arg=argument] [--exit-on-error] [--help] [--version] "
+"[--list] [--reverse] [--] DIRECTORY"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:20
+msgid "B<run-parts> -V"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:27
+msgid ""
+"B<run-parts> runs all the executable files named within constraints "
+"described below, found in directory I<directory>.  Other files and "
+"directories are silently ignored."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:31
+msgid ""
+"If neither the --lsbsysinit option nor the --regex option is given then the "
+"names must consist entirely of upper and lower case letters, digits, "
+"underscores, and hyphens."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:38
+msgid ""
+"If the --lsbsysinit option is given, then the names must not end in "
+".dpkg-old or .dpkg-dist or .dpkg-new or .dpkg-tmp, and must belong to one or "
+"more of the following namespaces: the LANANA-assigned namespace "
+"(^[a-z0-9]+$); the LSB hierarchical and reserved namespaces "
+"(^_?([a-z0-9_.]+-)+[a-z0-9]+$); and the Debian cron script namespace "
+"(^[a-z0-9][a-z0-9-]*$)."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:41
+msgid ""
+"If the --regex option is given, the names must match the custom extended "
+"regular expression specified as that option's argument."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:45
+msgid ""
+"Files are run in the lexical sort order of their names unless the --reverse "
+"option is given, in which case they are run in the opposite order."
+msgstr ""
+
+# type: SH
+#: ../run-parts.8:46 ../savelog.8:92 ../tempfile.1:34 ../which.1:13
+#, no-wrap
+msgid "OPTIONS"
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:47
+#, no-wrap
+msgid "B<--test>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:51
+msgid ""
+"print the names of the scripts which would be run, but don't actually run "
+"them."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:51
+#, no-wrap
+msgid "B<--list>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:55
+msgid ""
+"print the names of the all matching files (not limited to executables), but "
+"don't actually run them. This option cannot be used with --test."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:55
+#, no-wrap
+msgid "B<-v, --verbose>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:58
+msgid "print the name of each script to stderr before running."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:58
+#, no-wrap
+msgid "B<--report>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:63
+msgid ""
+"similar to B<--verbose>, but only prints the name of scripts which produce "
+"output.  The script's name is printed to whichever of stdout or stderr the "
+"script first produces output on."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:63
+#, no-wrap
+msgid "B<--reverse>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:66
+msgid "reverse the scripts' execution order."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:66
+#, no-wrap
+msgid "B<--exit-on-error>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:69
+msgid "exit as soon as a script returns with a non-zero exit code."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:69
+#, no-wrap
+msgid "B<--lsbsysinit>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:72
+msgid "use LSB namespaces instead of classical behavior."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:72
+#, no-wrap
+msgid "B<--regex=>I<RE>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:77
+msgid ""
+"validate filenames against custom extended regular expression I<RE>.  See "
+"the EXAMPLES section for an example."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:77
+#, no-wrap
+msgid "B<-u, --umask=>I<umask>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:84
+msgid ""
+"sets the umask to I<umask> before running the scripts.  I<umask> should be "
+"specified in octal.  By default the umask is set to 022."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:84
+#, no-wrap
+msgid "B<-a, --arg=>I<argument>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:91
+msgid ""
+"pass I<argument> to the scripts.  Use B<--arg> once for each argument you "
+"want passed."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:91
+#, no-wrap
+msgid "B<-->"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:97
+msgid ""
+"specifies that this is the end of the options.  Any filename after B<--> "
+"will be not be interpreted as an option even if it starts with a hyphen."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:97
+#, no-wrap
+msgid "B<-h, --help>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:100
+msgid "display usage information and exit."
+msgstr ""
+
+# type: TP
+#: ../run-parts.8:100
+#, no-wrap
+msgid "B<-V, --version>"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:103
+msgid "display version and copyright and exit."
+msgstr ""
+
+# type: SH
+#: ../run-parts.8:104
+#, no-wrap
+msgid "EXAMPLES"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:107
+msgid "Print the names of all files in /etc that start with `p' and end with `d':"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:109
+msgid "run-parts --list --regex \\[aq]^p.*d$\\[aq] /etc"
+msgstr ""
+
+# type: SH
+#: ../run-parts.8:110
+#, no-wrap
+msgid "COPYRIGHT"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:113
+msgid "Copyright (C) 1994 Ian Jackson."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:115
+msgid "Copyright (C) 1996 Jeff Noxon."
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:117
+msgid "Copyright (C) 1996, 1997, 1998 Guy Maor"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:119
+msgid "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams"
+msgstr ""
+
+# type: Plain text
+#: ../run-parts.8:124
+msgid ""
+"B<run-parts> is free software; see the GNU General Public License version 2 "
+"or later for copying conditions.  There is I<no> warranty."
+msgstr ""
+
+# type: TH
+#: ../savelog.8:2
+#, no-wrap
+msgid "SAVELOG"
+msgstr ""
+
+# type: TH
+#: ../savelog.8:2
+#, no-wrap
+msgid "12 April 2003"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:5
+msgid "savelog - save a log file"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:9
+msgid ""
+"B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
+"[-C] [-d] [-l] [-r rolldir] [-n] [-q] file ..."
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:16
+msgid ""
+"The B<savelog> command saves and optionally compresses old copies of files.  "
+"Older versions of I<file> are named:"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:19
+msgid "I<file>.I<E<lt>numberE<gt>>I<E<lt>compress_suffixE<gt>>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:32
+msgid ""
+"where I<E<lt>numberE<gt>> is the version number, 0 being the newest.  "
+"Version numbers E<gt> 0 are compressed unless B<-l> prevents it.  Version "
+"number 0 is not compressed because a process might still have I<file> opened "
+"for I/O.  Only I<cycle> versions of the file are kept."
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:36
+msgid "If the file does not exist and B<-t> was given, it will be created."
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:39
+msgid ""
+"For files that do exist and have lengths greater than zero, the following "
+"actions are performed:"
+msgstr ""
+
+# type: IP
+#: ../savelog.8:40
+#, no-wrap
+msgid "1)"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:55
+msgid ""
+"Version numbered files are cycled.  Version I<cycle>-2 is moved to version "
+"I<cycle>-3, version I<cycle>-1 is moved to version I<cycle>-2 , and so on.  "
+"Finally version 0 is moved to version 1, and version I<cycle> is deleted.  "
+"Both compressed names and uncompressed names are cycled, regardless of "
+"B<-l>.  Missing version files are ignored."
+msgstr ""
+
+# type: IP
+#: ../savelog.8:56
+#, no-wrap
+msgid "2)"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:64
+msgid ""
+"The new I<file.1> is compressed unless the B<-l> flag was given.  It is "
+"changed subject to the B<-m>, B<-u>, and B<-g> flags."
+msgstr ""
+
+# type: IP
+#: ../savelog.8:65
+#, no-wrap
+msgid "3)"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:68
+msgid "The main file is moved to I<file.0>."
+msgstr ""
+
+# type: IP
+#: ../savelog.8:69
+#, no-wrap
+msgid "4)"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:78
+msgid ""
+"If the B<-m>, B<-u>, B<-g>, B<-t>, or B<-p> flags are given, then an empty "
+"I<file> is created subject to the given flags.  With the B<-p> flag, the "
+"file is created with the same owner, group, and permissions as before."
+msgstr ""
+
+# type: IP
+#: ../savelog.8:79
+#, no-wrap
+msgid "5)"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:85
+msgid "The new I<file.0> is changed subject to the B<-m>, B<-u>, and B<-g> flags."
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:91
+msgid ""
+"Since the version numbers start with 0, version number I<cycle> is never "
+"formed.  The I<cycle> count must be at least 2."
+msgstr ""
+
+# type: TP
+#: ../savelog.8:93
+#, no-wrap
+msgid "B<-m mode>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:97
+msgid "chmod the log files to mode, implies B<-t>"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:97
+#, no-wrap
+msgid "B<-u user>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:101
+msgid "chown log files to user, implies B<-t>"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:101
+#, no-wrap
+msgid "B<-g group>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:105
+msgid "chgrp log files to group, implies B<-t>"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:105
+#, no-wrap
+msgid "B<-c cycle>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:108
+msgid "Save cycle versions of the logfile (default: 7)"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:108
+#, no-wrap
+msgid "B<-t>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:111
+msgid "touch new logfile into existence"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:111
+#, no-wrap
+msgid "B<-l>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:114
+msgid "don't compress any log files (default: do compress)"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:114
+#, no-wrap
+msgid "B<-p>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:117
+msgid "preserve owner, group, and permissions of logfile"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:117
+#, no-wrap
+msgid "B<-j>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:120
+msgid "compress with bzip2 instead of gzip"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:120
+#, no-wrap
+msgid "B<-C>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:123
+msgid "force cleanup of cycled logfiles"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:123
+#, no-wrap
+msgid "B<-d>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:126
+msgid "use standard date for rolling"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:126
+#, no-wrap
+msgid "B<-r>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:131
+msgid "use I<rolldir> instead of . to roll files"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:131
+#, no-wrap
+msgid "B<-n>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:134
+msgid "do not rotate empty files"
+msgstr ""
+
+# type: TP
+#: ../savelog.8:134
+#, no-wrap
+msgid "B<-q>"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:137
+msgid "be quiet"
+msgstr ""
+
+# type: Plain text
+#: ../savelog.8:142
+msgid ""
+"If a process is still writing to I<file.0>, and savelog moves it to "
+"I<file.1> and compresses it, data could be lost."
+msgstr ""
+
+# type: TH
+#: ../sensible-editor.1:2
+#, no-wrap
+msgid "SENSIBLE-EDITOR"
+msgstr ""
+
+# type: TH
+#: ../sensible-editor.1:2
+#, no-wrap
+msgid "03 Mar 2004"
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:5
+msgid ""
+"sensible-editor, sensible-pager, sensible-browser - sensible editing, "
+"paging, and web browsing"
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:7
+msgid "B<sensible-editor> [OPTIONS...]"
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:9
+msgid "B<sensible-pager> [OPTIONS...]"
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:11
+msgid "B<sensible-browser> url"
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:17
+msgid ""
+"B<sensible-editor>, B<sensible-pager> and B<sensible-browser> make sensible "
+"decisions on which editor, pager, and web browser to call, respectively.  "
+"Programs in Debian can use these scripts as their default editor, pager, or "
+"web browser or emulate their behavior."
+msgstr ""
+
+# type: Plain text
+#: ../sensible-editor.1:19
+msgid "Documentation of the EDITOR, PAGER, and BROWSER variables in B<environ>(7)"
+msgstr ""
+
+# type: TH
+#: ../tempfile.1:2
+#, no-wrap
+msgid "TEMPFILE"
+msgstr ""
+
+# type: TH
+#: ../tempfile.1:2
+#, no-wrap
+msgid "3 June 2007"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:5
+msgid "tempfile - create a temporary file in a safe manner"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:9
+msgid ""
+"B<tempfile> [-d DIR] [-p STRING] [-s STRING] [-m MODE] [-n FILE] "
+"[--directory=DIR] [--prefix=STRING] [--suffix=STRING] [--mode=MODE] "
+"[--name=FILE] [--help] [--version]"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:16
+msgid ""
+"B<tempfile> creates a temporary file in a safe manner.  It uses "
+"B<tempnam>(3)  to choose the name and opens it with O_RDWR | O_CREAT | "
+"O_EXCL.  The filename is printed on standard output."
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:19
+msgid ""
+"The directory in which to create the file might be searched for in this "
+"order:"
+msgstr ""
+
+# type: IP
+#: ../tempfile.1:19
+#, no-wrap
+msgid "a)"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:23
+msgid "The directory specified by the environment variable B<TMPDIR>, if it exists."
+msgstr ""
+
+# type: IP
+#: ../tempfile.1:23
+#, no-wrap
+msgid "b)"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:27
+msgid "The directory specified by the B<--directory> argument, if given."
+msgstr ""
+
+# type: IP
+#: ../tempfile.1:27
+#, no-wrap
+msgid "c)"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:30
+msgid "The directory I</tmp>."
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:34
+msgid "See B<tempnam>(3)  for the actual steps involved in directory selection."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:35
+#, no-wrap
+msgid "B<-d, --directory >I<DIR>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:38
+msgid "Place the file in DIR."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:38
+#, no-wrap
+msgid "B<-p, --prefix >I<STRING>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:41
+msgid "Use up to five letters of STRING to generate the name."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:41
+#, no-wrap
+msgid "B<-s, --suffix >I<STRING>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:44
+msgid "Generate the file with STRING as the suffix."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:44
+#, no-wrap
+msgid "B<-m, --mode >I<MODE>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:47
+msgid "Open the file with MODE instead of 0600."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:47
+#, no-wrap
+msgid "B<-n, --name >I<FILE>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:52
+msgid ""
+"Use FILE for the name instead of B<tempnam>(3)B<.> The options -d, -p, and "
+"-s are ignored if this option is given."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:52
+#, no-wrap
+msgid "B<--help>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:55
+msgid "Print a usage message on standard output and exit successfully."
+msgstr ""
+
+# type: TP
+#: ../tempfile.1:55
+#, no-wrap
+msgid "B<--version>"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:58
+msgid "Print version information on standard output and exit successfully."
+msgstr ""
+
+# type: SH
+#: ../tempfile.1:58
+#, no-wrap
+msgid "RETURN VALUES"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:61
+msgid ""
+"An exit status of 0 means the temporary file was created successfully.  Any "
+"other exit status indicates an error."
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:64
+msgid "Exclusive creation is not guaranteed when creating files on NFS partitions."
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:66
+msgid "B<tempnam>(3)  B<mktemp>(1)"
+msgstr ""
+
+# type: TH
+#: ../which.1:2
+#, no-wrap
+msgid "WHICH"
+msgstr ""
+
+# type: TH
+#: ../which.1:2
+#, no-wrap
+msgid "12 Jul 2004"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:5
+msgid "which - locate a command"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:7
+msgid "which [-a] filename ..."
+msgstr ""
+
+# type: Plain text
+#: ../which.1:13
+msgid ""
+"B<which> returns the pathnames of the files which would be executed in the "
+"current environment, had its arguments been given as commands in a strictly "
+"POSIX-conformant shell.  It does this by searching the PATH for executable "
+"files matching the names of the arguments."
+msgstr ""
+
+# type: TP
+#: ../which.1:14
+#, no-wrap
+msgid "B<-a>"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:17
+msgid "print all matching pathnames of each argument"
+msgstr ""
+
+# type: SH
+#: ../which.1:17
+#, no-wrap
+msgid "EXIT STATUS"
+msgstr ""
+
+# type: TP
+#: ../which.1:18
+#, no-wrap
+msgid "B<0>"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:21
+msgid "if all specified commands are found and executable"
+msgstr ""
+
+# type: TP
+#: ../which.1:21
+#, no-wrap
+msgid "B<1>"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:24
+msgid "if one or more specified commands is nonexistent or not executable"
+msgstr ""
+
+# type: TP
+#: ../which.1:24
+#, no-wrap
+msgid "B<2>"
+msgstr ""
+
+# type: Plain text
+#: ../which.1:26
+msgid "if an invalid option is specified"
+msgstr ""

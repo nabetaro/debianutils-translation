@@ -1,0 +1,34 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH ADD\-SHELL 8 "7 avril 2005"  
+.SH NOM
+add\-shell \- ajoute des interpréteurs à la liste des interpréteurs initiaux
+valables
+.SH SYNOPSIS
+\fBadd\-shell\fP \fIinterpréteur\fP [\fIinterpréteur\fP...]
+.SH DESCRIPTION
+\fBadd\-shell\fP copie \fI/etc/shells\fP dans \fI/etc/shells.tmp\fP, ajoute les
+interpréteurs de commandes («\ shell\ ») à ce fichier s'il n'y est pas déjà,
+puis copie ce fichier temporaire dans \fI/etc/shells\fP.
+
+Le chemin complet des interpréteurs doit être fourni.
+.SH "VOIR AUSSI"
+\fBshells\fP(5)
+.SH TRADUCTION
+Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
+8 décembre 2005.
+
+L'équipe de traduction a fait le maximum pour réaliser une adaptation
+française de qualité.
+
+La version anglaise la plus à jour de ce document est toujours consultable
+en ajoutant l'option «\ \-L C\ » à la commande \fBman\fR.
+
+N'hésitez pas à signaler à l'auteur ou à la liste de traduction
+.nh
+<\fIdebian\-l10\-french@lists.debian.org\fR>,
+.hy
+selon le cas, toute erreur dans cette page de manuel.

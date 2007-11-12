@@ -1,6 +1,9 @@
 #!/bin/sh
 # 
 # Copyright (C) 1995 - 1998, Ian A. Murdock <imurdock@debian.org>
+# Copyright (C) 1998, 1999, Guy Maor
+# Copyright (C) 2002, Matthew Wilcox
+# Copyright (C) 2002, 2004, 2005, 2007, Clint Adams
 #
 # Install the kernel on a Debian Linux system.
 #
@@ -21,7 +24,7 @@ if [ $# -eq 3 ] || [ $# -eq 4 ] ; then
       dir="/boot"
   fi
 else
-  echo "Usage: installkernel <version> <zImage> <System.map> <directory>"
+  echo "Usage: installkernel <version> <image> <System.map> <directory>"
   exit 1
 fi
 
@@ -44,7 +47,7 @@ updatever () {
   ln -sf "$1-$ver" "$dir/$1"
 }
 
-if [ "$img" = "vmlinux" ] ; then
+if [ "$(basename $img)" = "vmlinux" ] ; then
   updatever vmlinux "$img"
 else
   updatever vmlinuz "$img"
@@ -57,4 +60,8 @@ if [ -f "$config" ] ; then
   updatever config "$config"
 fi
 
-mkboot -i ${dir}/${img}-${ver}
+if [ "$(basename $img)" = "vmlinux" ] && [ "$(id -u)" = "0" ] ; then
+  mkboot -i ${dir}/vmlinux-${ver}
+else
+  mkboot -i ${dir}/vmlinuz-${ver}
+fi

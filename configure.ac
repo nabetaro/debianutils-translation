@@ -6,5 +6,5 @@ AC_PROG_CC
 AC_HEADER_STDC
 AC_CHECK_HEADERS(paths.h getopt.h)
 
-AC_CONFIG_FILES([Makefile fr/Makefile])
+AC_CONFIG_FILES([Makefile po4a/Makefile po4a/fr/Makefile])
 AC_OUTPUT

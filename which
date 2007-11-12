@@ -1,13 +1,23 @@
 #! /bin/sh
 set -ef
 
+if test -n "$KSH_VERSION"; then
+	puts() {
+		print -r -- "$*"
+	}
+else
+	puts() {
+		printf '%s\n' "$*"
+	}
+fi
+
 ALLMATCHES=0
 
 while getopts a whichopts
 do
         case "$whichopts" in
                 a) ALLMATCHES=1 ;;
-                ?) printf "Usage: %s [-a] args\n" $0 ; exit 2 ;;
+                ?) puts "Usage: $0 [-a] args"; exit 2 ;;
         esac
 done
 shift $(($OPTIND - 1))
@@ -28,7 +38,7 @@ for PROGRAM in "$@"; do
  case $PROGRAM in
   */*)
    if [ -f "$PROGRAM" ] && [ -x "$PROGRAM" ]; then
-    printf '%s\n' "$PROGRAM"
+    puts "$PROGRAM"
     RET=0
    fi
    ;;
@@ -38,7 +48,7 @@ for PROGRAM in "$@"; do
      ELEMENT=.
     fi
     if [ -f "$ELEMENT/$PROGRAM" ] && [ -x "$ELEMENT/$PROGRAM" ]; then
-     printf '%s\n' "$ELEMENT/$PROGRAM"
+     puts "$ELEMENT/$PROGRAM"
      RET=0
      [ "$ALLMATCHES" -eq 1 ] || break
     fi

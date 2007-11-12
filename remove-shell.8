@@ -1,0 +1,14 @@
+.TH REMOVE-SHELL 8 "7 Apr 2005"
+.SH NAME
+remove-shell \- remove shells from the list of valid login shells
+.SH SYNOPSIS
+.B  remove-shell
+.I  shellname
+.RI [ shellname ...]
+.SH DESCRIPTION
+.B remove-shell
+operates on the temporary files \fI/etc/shells.tmp\fR and
+\fI/etc/shells.tmp2\fR to remove the given shells from the list of valid
+login shells, and copy the result back to \fI/etc/shells\fR.
+.SH "SEE ALSO"
+.BR shells (5)

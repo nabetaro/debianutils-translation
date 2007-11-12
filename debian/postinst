@@ -1,5 +1,9 @@
-#! /bin/sh
-set -e
+#! /bin/sh -e
+
+if test -z "$2" && test ! -f /etc/shells
+then
+        cp -p /usr/share/debianutils/shells /etc/shells
+fi
 
 case "$1" in
     configure)

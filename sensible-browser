@@ -1,40 +1,50 @@
-#!/usr/bin/perl
-# This program is copyright 2002 by Joey Hess <joeyh@debian.org>,
-# and is licensed under the terms of the GNU GPL, version 2 or higher.
-my $url=shift;
-if (exists $ENV{BROWSER}) {
-	foreach (split ':' , $ENV{BROWSER}) {
-		if (! /%s/) {
-			$_.=" %s";
-		}
-		# substitute %s with url, and %% to %.
-		s/%([%s])/$1 eq '%' ? '%' : $url/eg;
-		$ret=system split ' ', $_;
-		if ($ret >> 8 == 0) {
-			exit(0);
-		}
-		# on failure, continue to next in list
-	}
+#!/bin/sh
 
-	print STDERR "None of the browsers in \$BROWSER worked!\n";
-	exit 1;
-}
+URL="$1"
 
-if (exists $ENV{DISPLAY}) {
-	if (-e '/usr/bin/x-www-browser') {
-		exec '/usr/bin/x-www-browser', $url;
-		exit 1;
-	}
-	elsif (-e '/usr/bin/x-terminal-emulator' && -e '/usr/bin/www-browser') {
-		exec "x-terminal-emulator", "-e", "/usr/bin/www-browser", $url;
-		exit 1;
-	}
-}
-elsif (-e '/usr/bin/www-browser') {
-	exec '/usr/bin/www-browser', $url;
-	exit 1;
-}
+if test -n "$BROWSER"; then
+    OLDIFS="$IFS"
+    IFS=:
+    for i in $BROWSER; do
+	case "$i" in
+	    (*sensible-browser*)
+	    printf 'Using sensible-browser in $BROWSER makes no sense.\n' >&2
+	    exit 1
+	    ;;
+	    (*%s*)
+	    :
+	    ;;
+	    (*)
+	    i="$i %s"
+	    ;;
+	esac
+        IFS="$OLDIFS"
+        cmd=$(printf "$i\n" "$URL")
+        $cmd && exit 0
+    done
+    printf 'None of the browsers in $BROWSER worked!\n' >&2
+    exit 1
+fi
 
-print STDERR "Couldn't find a suitable web browser!\n";
-print STDERR "Set the BROWSER environment variable to your desired browser.\n";
+if test -n "$DISPLAY"; then
+    if test -n "$GNOME_DESKTOP_SESSION_ID"; then
+        if test -x /usr/bin/gnome-www-browser; then
+            exec /usr/bin/gnome-www-browser "$URL"
+        elif test -x /usr/bin/x-www-browser; then
+            exec /usr/bin/x-www-browser "$URL"
+        elif test -x /usr/bin/gnome-terminal && test -x /usr/bin/www-browser; then
+            exec /usr/bin/gnome-terminal -e "/usr/bin/www-browser \"$URL\""
+        fi
+    fi
+    if test -x /usr/bin/x-www-browser; then
+        exec /usr/bin/x-www-browser "$URL"
+    elif test -x /usr/bin/x-terminal-emulator && test -x /usr/bin/www-browser; then
+        exec /usr/bin/x-terminal-emulator -e /usr/bin/www-browser "$URL"
+    fi
+elif test -x /usr/bin/www-browser; then
+    exec /usr/bin/www-browser "$URL"
+fi
+
+printf "Couldn't find a suitable web browser!\n" >&2
+printf "Set the BROWSER environment variable to your desired browser.\n" >&2
 exit 1;

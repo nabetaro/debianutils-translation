@@ -17,7 +17,11 @@ else
 fi
 
 # root partition
-which rdev >/dev/null && rootpart=$(rdev | cut -d ' ' -f 1)
+if mount | grep -q "^proc " && [ -e /proc/cmdline ]; then
+	rootpart=$(grep -o "root=[^ ]*" /proc/cmdline | cut -d \= -f 2)
+else
+	which rdev >/dev/null && rootpart=$(rdev | cut -d ' ' -f 1)
+fi
 # temporary directory
 tmpdir=${TMPDIR-/tmp}
 
@@ -45,7 +49,17 @@ silocheck() {
 
 # check whether GRUB is installed
 grubcheck () {
-    if ! which grub >/dev/null; then return 1; fi
+    if ! which update-grub >/dev/null && ! which grub-install >/dev/null; then return 1; fi
+}
+
+# check whether Yaboot is installed
+yabootcheck () {
+    [ -f /etc/yaboot.conf ] && [ -x /usr/sbin/ybin ] && return 0 || return 1
+}
+
+# check whether Arcboot is installed
+arcbootcheck () {
+    [ -f /etc/arcboot.conf ] && [ -x /usr/sbin/arcboot ] && return 0 || return 1
 }
 
 # check whether LILO is installed
@@ -356,6 +370,14 @@ if [ "$installkernel" ] ; then
         printf "\nGRUB is installed. To automatically switch to new kernels, point your\n"
         echo "default entry in menu.lst to $1"
         exit 0
+    elif yabootcheck; then
+        printf "\nYaboot is installed. To automatically switch to new kernels, point your\n"
+        echo "default entry in /etc/yaboot.conf to $1"
+        exit 0
+    elif arcbootcheck; then
+        printf "\nArcboot is installed. To automatically switch to new kernels, point your\n"
+        echo "default entry in /etc/arcboot.conf to $1"
+        exit 0
     fi
 
     if lilocheck; then
@@ -388,7 +410,7 @@ if [ "$installkernel" ] ; then
     fi
 
     printf "\nWARNING: Your system is probably unbootable now.  After correcting any\n"
-    echo "problems, rerun this script with the command \`mkboot -installkernel'."
+    echo "problems, rerun this script with the command \`mkboot -i'."
     exit 1
 fi
 

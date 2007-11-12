@@ -9,7 +9,7 @@ INSTALL_PROGRAM = $(INSTALL) -p    -o root -g root  -m  755
 INSTALL_SCRIPT  = $(INSTALL) -p    -o root -g root  -m  755
 INSTALL_DIR     = $(INSTALL) -p -d -o root -g root  -m  755
 
-DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
+DEB_BUILD_ARCH_OS ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
 DEB_BUILD_GNU_TYPE = $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 DEB_HOST_GNU_TYPE = $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
@@ -21,9 +21,9 @@ CFLAGS += -O0
 else
 CFLAGS += -O2
 endif
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-INSTALL_PROGRAM += -s
-endif
+#ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+#INSTALL_PROGRAM += -s
+#endif
 
 build:
 	$(checkdir)
@@ -51,19 +51,27 @@ binary-arch:	checkroot build
 		       debian/tmp/usr/sbin \
 		       debian/tmp/usr/share/man/man1 \
 		       debian/tmp/usr/share/man/man8 \
+		       debian/tmp/usr/share/man/fr/man1 \
 		       debian/tmp/usr/share/man/fr/man8 \
 		       debian/tmp/usr/lib/mime/packages \
-		       debian/tmp/usr/share/doc/$(package)
+		       debian/tmp/usr/share/doc/$(package) \
+		       debian/tmp/usr/share/$(package)
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp INSTALL_PROGRAM="$(INSTALL_PROGRAM)"
 	mv debian/tmp/usr/bin/run-parts \
 	   debian/tmp/usr/bin/tempfile \
-	   debian/tmp/usr/bin/mktemp \
 	   debian/tmp/usr/bin/which \
 	   debian/tmp/bin/
-ifeq ($(DEB_BUILD_GNU_SYSTEM),gnu)
+
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	strip --remove-section=.comment --remove-section=.note \
+		debian/tmp/bin/run-parts \
+	   	debian/tmp/bin/tempfile
+endif
+
+ifneq ($(DEB_HOST_ARCH_OS),hurd)
 	ln -s /bin/which debian/tmp/usr/bin/which
 endif
-ifeq ($(DEB_BUILD_GNU_SYSTEM),linux)
+ifeq ($(DEB_HOST_ARCH_OS),linux)
 	mv debian/tmp/usr/sbin/installkernel debian/tmp/sbin/
 else
 	rm debian/tmp/usr/sbin/installkernel \
@@ -73,18 +81,24 @@ else
 endif
 	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-pager.1.gz
 	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-browser.1.gz
+	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/fr/man1/sensible-pager.1.gz
+	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/fr/man1/sensible-browser.1.gz
+	$(INSTALL_FILE) debian/shells debian/tmp/usr/share/$(package)
 	$(INSTALL_FILE) debian/changelog debian/tmp/usr/share/doc/$(package)
+	$(INSTALL_FILE) debian/README.shells debian/tmp/usr/share/doc/$(package)
 	find debian/tmp/usr/share/man/man[18] \
+	     debian/tmp/usr/share/man/fr/man[18] \
              debian/tmp/usr/share/doc/$(package) -type f | xargs gzip -9
-	gzip -9f debian/tmp/usr/share/man/fr/man1/which.1 \
-	         debian/tmp/usr/share/man/fr/man8/savelog.8
 	$(INSTALL_FILE) debian/copyright debian/tmp/usr/share/doc/$(package)
 	$(INSTALL_SCRIPT) debian/preinst debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/prerm debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/postinst debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/postrm debian/tmp/DEBIAN/
 	$(INSTALL_FILE) debian/mime debian/tmp/usr/lib/mime/packages/debianutils
-	dpkg-shlibdeps run-parts tempfile mktemp
+
+	cd debian/tmp && find * -type f ! -regex '^DEBIAN/.*' -print0 | xargs -r0 md5sum > DEBIAN/md5sums
+
+	dpkg-shlibdeps run-parts tempfile
 	dpkg-gencontrol -isp
 	dpkg --build debian/tmp ..
 
@@ -102,6 +116,9 @@ prebuild:
 	printf "define(DEBIANUTILS_VERSION, %s)\n" $$(dpkg-parsechangelog | sed -n '/^Version: \(.*\)$$/ {s//\1/;p}') >acinclude.m4
 
 	autoreconf -fi
+
+	cd po4a && po4a --no-backups po4a.conf
+
 
 .PHONY: binary binary-arch binary-indep clean checkroot build prebuild
 

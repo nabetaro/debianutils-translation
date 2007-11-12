@@ -21,6 +21,7 @@
 #	-r rolldir- use rolldir instead of . to roll files
 #	-C	  - force cleanup of cycled logfiles
 #	-d	  - use standard date for rolling
+#	-D	  - override date format for -d 
 #	-t	  - touch file
 #	-l	  - don't compress any log files	(default: compress)
 #       -p        - preserve mode/user/group of original file
@@ -77,7 +78,8 @@
 
 # common location
 export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin
-COMPRESS="gzip -9f"
+COMPRESS="gzip"
+COMPRESS_OPTS="-9f"
 DOT_Z=".gz"
 DATUM=`date +%Y%m%d%H%M%S`
 
@@ -107,6 +109,7 @@ usage()
     echo "	-r rolldir - use rolldir instead of . to roll files"
     echo "	-C	   - force cleanup of cycled logfiles"
     echo "	-d	   - use standard date for rolling"
+    echo "	-D	   - override date format for -d"
     echo "	-t	   - touch file"
     echo "	-l	   - don't compress any log files (default: compress)"
     echo "	-p         - preserve mode/user/group of original file"
@@ -131,7 +134,7 @@ fixfile()
 }
 
 
-while getopts m:u:g:c:r:Cdtlphjnq opt ; do
+while getopts m:u:g:c:r:CdD:tlphjnq opt ; do
 	case "$opt" in
 	m) mode="$OPTARG" ;;
 	u) user="$OPTARG" ;;
@@ -140,8 +143,9 @@ while getopts m:u:g:c:r:Cdtlphjnq opt ; do
 	r) rolldir="$OPTARG" ;;
 	C) forceclean=1 ;;
 	d) datum=1 ;;
+	D) DATUM=$(date +$OPTARG) ;;
 	t) touch=1 ;;
-	j) COMPRESS="bzip2 -9f" ; DOT_Z=".bz2" ;;
+	j) COMPRESS="bzip2"; COMPRESS_OPTS="-9f"; DOT_Z=".bz2" ;;
 	l) COMPRESS="" ;;
 	p) preserve=1 ;;
 	n) rotateifempty="no" ;;
@@ -156,6 +160,11 @@ shift $(($OPTIND - 1))
 if [ "$count" -lt 2 ]; then
 	echo "$prog: count must be at least 2" 1>&2
 	exit 2
+fi
+
+if [ -n "$COMPRESS" ] && [ -z "`which $COMPRESS`"  ]; then
+       echo "$prog: Compression binary not available, please make sure '$COMPRESS' is installed" 1>&2
+       exit 2
 fi
 
 # cycle thru filenames
@@ -194,7 +203,14 @@ while [ $# -gt 0 ]; do
  	if [ -z "$savedir" ]; then
  		savedir=.
  	fi
-	savedir="$savedir/$rolldir"
+	case "$rolldir" in
+		(/*)
+		savedir="$rolldir"
+		;;
+		(*)
+		savedir="$savedir/$rolldir"
+		;;
+	esac
  	if [ ! -d "$savedir" ]; then
  		mkdir -p -- "$savedir"
  		if [ "$?" -ne 0 ]; then
@@ -239,9 +255,9 @@ while [ $# -gt 0 ]; do
 			mv -- "$newname.0" "$newfile"
 		else
 			newfile="$newname.1$DOT_Z"
-#			$COMPRESS < $newname.0 > $newfile
+#			$COMPRESS $COMPRESS_OPTS < $newname.0 > $newfile
 #			rm -f $newname.0
-			$COMPRESS "$newname.0"
+			$COMPRESS $COMPRESS_OPTS "$newname.0"
 			mv -- "$newname.0$DOT_Z" "$newfile"
 		fi
 		fixfile "$newfile"
@@ -249,7 +265,7 @@ while [ $# -gt 0 ]; do
 
 	# compress the old uncompressed log if needed
 	if test -n "$datum" && test -n "$COMPRESS"; then
-		$COMPRESS -- "$newname".[0-9]*[0-9]
+		$COMPRESS $COMPRESS_OPTS -- "$newname".[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
 	fi
 
 	# remove old files if so desired

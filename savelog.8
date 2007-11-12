@@ -1,11 +1,11 @@
 .\" -*- nroff -*-
-.TH SAVELOG 8 "12 April 2003" "Debian"
+.TH SAVELOG 8 "21 October 2007" "Debian"
 .SH NAME
 savelog \- save a log file
 .SH SYNOPSIS
 .B savelog
 [\-m mode] [\-u user] [\-g group] [\-t] [\-p] [\-c cycle] [\-l] [\-j]
-[\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] file ...
+[\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
 .SH DESCRIPTION
 The
 .B savelog
@@ -23,7 +23,7 @@ where
 is the version number, 0 being the newest.  Version numbers > 0 are compressed
 unless
 .B \-l
-prevents it.  Version number 0 is not compressed becase a process might still
+prevents it.  Version number 0 is not compressed because a process might still
 have 
 .I file
 opened for I/O.  Only
@@ -92,13 +92,16 @@ count must be at least 2.
 .SH OPTIONS
 .TP
 .B "\-m mode"
-chmod the log files to mode
+chmod the log files to mode, implies
+.B \-t
 .TP
 .B "\-u user"
-chown log files to user
+chown log files to user, implies
+.B \-t
 .TP
 .B "\-g group"
-chgrp log files to group
+chgrp log files to group, implies
+.B \-t
 .TP
 .B "\-c cycle"
 Save cycle versions of the logfile (default: 7)
@@ -120,6 +123,10 @@ force cleanup of cycled logfiles
 .TP
 .B \-d
 use standard date for rolling
+.TP
+.B "\-D dateformat"
+override date format, in the form of
+.I [MMDDhhmm[[CC]YY][.ss]]
 .TP
 .B \-r
 use

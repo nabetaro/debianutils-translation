@@ -1,0 +1,49 @@
+.\" -*- nroff -*-
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH WHICH 1 "12 juillet 2004" "Debian GNU/Linux" 
+.SH NOM
+which \- localise une commande
+.SH SYNOPSIS
+\fBwhich\fP [\fB\-a\fP] \fInom_de_fichier\fP ...
+.SH DESCRIPTION
+\fBwhich\fP retourne le chemin des fichiers qui seraient exécutés dans
+l'environnement courant si ses arguments avaient été donnés comme commandes
+dans un interpréteur de commandes strictement conforme à POSIX. Pour ce
+faire, \fBwhich\fP cherche dans la variable PATH les fichiers exécutables
+correspondants aux noms des arguments.
+.SH OPTIONS
+.TP 
+\fB\-a\fP
+Affiche tous les chemins correspondant à chaque argument.
+.SH "VALEURS DE RETOUR"
+.TP 
+\fB0\fP
+si toutes les commandes spécifiées sont trouvées et exécutables
+.TP 
+\fB1\fP
+si une (ou plus) des commandes spécifiées n'existe pas ou n'est pas
+exécutable
+.TP 
+\fB2\fP
+si une option non valable est spécifiée
+.SH TRADUCTION
+Ce document est une traduction, réalisée par
+Laëtitia Groslong <\fIlgr@tartine.org\fR>.
+.PP
+Elle a été reprise avec po4a par Nicolas FRANÇOIS le 29 octobre 2004.
+
+L'équipe de traduction a fait le maximum pour réaliser une adaptation
+française de qualité.
+
+La version anglaise la plus à jour de ce document est toujours consultable
+en ajoutant l'option «\ \-L C\ » à la commande \fBman\fR.
+
+N'hésitez pas à signaler à l'auteur ou à la liste de traduction
+.nh
+<\fIdebian\-l10\-french@lists.debian.org\fR>,
+.hy
+selon le cas, toute erreur dans cette page de manuel.

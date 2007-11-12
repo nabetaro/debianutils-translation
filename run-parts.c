@@ -31,17 +31,24 @@
 #include <sys/time.h>
 #include <regex.h>
 
+#define RUNPARTS_NORMAL 0
+#define RUNPARTS_ERE 1
+#define RUNPARTS_LSBSYSINIT 100
+
 int test_mode = 0;
 int list_mode = 0;
 int verbose_mode = 0;
 int report_mode = 0;
 int reverse_mode = 0;
 int exitstatus = 0;
-int lsbsysinit_mode = 0;
+int regex_mode = 0;
 int exit_on_error_mode = 0;
+int new_session_mode = 0;
 
 int argcount = 0, argsize = 0;
 char **args = 0;
+
+char *custom_ere;
 
 void error(char *format, ...)
 {
@@ -62,7 +69,7 @@ void version()
   fprintf(stderr, "Debian run-parts program, version " PACKAGE_VERSION
 	  "\nCopyright (C) 1994 Ian Jackson, Copyright (C) 1996 Jeff Noxon.\n"
 	  "Copyright (C) 1996,1997,1998,1999 Guy Maor\n"
-	  "Copyright (C) 2002, 2003, 2004, 2005 Clint Adams\n"
+	  "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams\n"
 	  "This is free software; see the GNU General Public License version 2\n"
 	  "or later for copying conditions.  There is NO warranty.\n");
   exit(0);
@@ -81,6 +88,8 @@ void usage()
 	  "      --exit-on-error exit as soon as a script returns with a non-zero exit\n"
 	  "                      code.\n"
 	  "      --lsbsysinit    validate filenames based on LSB sysinit specs.\n"
+	  "      --new-session   run each script in a separate process session\n"
+	  "      --regex=PATTERN validate filenames based on POSIX ERE pattern PATTERN.\n"
 	  "  -u, --umask=UMASK   sets umask to UMASK (octal), default is 022.\n"
 	  "  -a, --arg=ARGUMENT  pass ARGUMENT to scripts, use once for each argument.\n"
 	  "  -V, --version       output version information and exit.\n"
@@ -125,11 +134,17 @@ void add_argument(char *newarg)
 int valid_name(const struct dirent *d)
 {
   char *c = d->d_name;
-  regex_t hierre, tradre, excsre, classicalre;
+  regex_t hierre, tradre, excsre, classicalre, customre;
 
   /* The regcomps should be moved to program init */
-
-  if (lsbsysinit_mode) {
+  if (regex_mode == RUNPARTS_ERE) {
+    if (regcomp(&customre, custom_ere, REG_EXTENDED | REG_NOSUB)) {
+      error("custom regex failure");
+      exit(1);
+    }
+    return !regexec(&customre, c, 0, NULL, 0);
+  }
+  else if (regex_mode == RUNPARTS_LSBSYSINIT) {
 
     if (regcomp
 	(&hierre, "^_?([a-z0-9_.]+-)+[a-z0-9]+$", REG_EXTENDED | REG_NOSUB)
@@ -155,34 +170,6 @@ int valid_name(const struct dirent *d)
 
 }
 
-
-void set_fl(int fd, int flags)
-{
-  int val;
-  if ((val = fcntl(fd, F_GETFL, 0)) < 0) {
-    error("fcntl F_GETFL: %s", strerror(errno));
-    exit(1);
-  }
-  val |= flags;
-  if (fcntl(fd, F_SETFL, val) < 0) {
-    error("fcntl F_SETFL: %s", strerror(errno));
-    exit(1);
-  }
-}
-
-
-/* We have to abort the select() call in run_part when we receive a
- * SIGCHLD signal. We can't simply ignore it, so we do nothing.
- */
-
-/* itz Tue Nov 26 13:23:27 PST 2002 why "We have to abort?"
-   just leave the default and reap child at the end
- */
-void catch_sigchld(int sig)
-{
-}
-
-
 /* Execute a file */
 void run_part(char *progname)
 {
@@ -199,7 +186,8 @@ void run_part(char *progname)
     exit(1);
   }
   else if (!pid) {
-    setsid();
+    if (new_session_mode)
+      setsid();
     if (report_mode) {
       if (dup2(pout[1], STDOUT_FILENO) == -1 ||
 	  dup2(perr[1], STDERR_FILENO) == -1) {
@@ -225,28 +213,19 @@ void run_part(char *progname)
 
     close(pout[1]);
     close(perr[1]);
-    /* itz Tue Nov 26 13:26:09 PST 2002 why is this necessary? */
-    /*     set_fl(pout[0], O_NONBLOCK); */
-    /*     set_fl(perr[0], O_NONBLOCK); */
     max = pout[0] > perr[0] ? pout[0] + 1 : perr[0] + 1;
     printflag = 0;
 
     while (pout[0] >= 0 || perr[0] >= 0) {
 
-      FD_ZERO(&set);
-      if (pout[0] >= 0)
-	FD_SET(pout[0], &set);
-      if (perr[0] >= 0)
-	FD_SET(perr[0], &set);
-      r = select(max, &set, 0, 0, 0);
-      while (r < 0 && errno == EINTR) {
+      do {
 	FD_ZERO(&set);
 	if (pout[0] >= 0)
 	  FD_SET(pout[0], &set);
 	if (perr[0] >= 0)
 	  FD_SET(perr[0], &set);
 	r = select(max, &set, 0, 0, 0);
-      }				/*while */
+      } while (r < 0 && errno == EINTR);
 
       if (r < 0) {
 	/* assert(errno != EINTR) */
@@ -268,6 +247,11 @@ void run_part(char *progname)
 	    close(pout[0]);
 	    pout[0] = -1;
 	  }
+	  else if (c < 0) {
+	    close(pout[0]);
+	    pout[0] = -1;
+	    error("failed to read from stdout pipe: %s", strerror (errno)); 
+	  }
 	}
 	if (perr[0] >= 0 && FD_ISSET(perr[0], &set)) {
 	  c = read(perr[0], buf, sizeof(buf));
@@ -282,6 +266,11 @@ void run_part(char *progname)
 	  else if (c == 0) {
 	    close(perr[0]);
 	    perr[0] = -1;
+	  }
+	  else if (c < 0) {
+	    close(perr[0]);
+	    perr[0] = -1;
+	    error("failed to read from error pipe: %s", strerror (errno)); 
 	  }
 	}
       }
@@ -421,8 +410,10 @@ int main(int argc, char *argv[])
       {"arg", 1, 0, 'a'},
       {"help", 0, 0, 'h'},
       {"version", 0, 0, 'V'},
-      {"lsbsysinit", 0, &lsbsysinit_mode, 1},
+      {"lsbsysinit", 0, &regex_mode, RUNPARTS_LSBSYSINIT},
+      {"regex", 1, &regex_mode, RUNPARTS_ERE},
       {"exit-on-error", 0, &exit_on_error_mode, 1},
+      {"new-session", 0, &new_session_mode, 1},
       {0, 0, 0, 0}
     };
 
@@ -431,6 +422,9 @@ int main(int argc, char *argv[])
       break;
     switch (c) {
     case 0:
+      if(option_index==10) { /* hardcoding this will lead to trouble */
+        custom_ere = strdup(optarg);
+      }
       break;
     case 'u':
       set_umask();

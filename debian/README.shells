@@ -1,0 +1,19 @@
+/etc/shells micropolicy
+
+The expected audience of this is debian developers packaging programs
+meant to be used as login shells.
+
+/etc/shells is no longer a config file, but is maintained by the
+add-shell and remove-shell programs.  So, if a package contains
+something that the maintainer thinks ought to be a valid login shell,
+it's postinst should, (on initial install only, to allow a sysadmin to
+take it out again), run:
+
+/usr/sbin/add-shell /path/to/shell
+
+In the postrm, probably on remove, the package should call
+
+/usr/sbin/remove-shell /path/to/shell
+
+As the various shells start to use it, the default shells list will
+shrink.
