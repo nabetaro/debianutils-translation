@@ -1,3 +1,10 @@
+debianutils (2.28) unstable; urgency=low
+
+  * Apply patch from Martin Krafft to add -x option to savelog.
+    closes: #452261.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 21 Nov 2007 10:53:22 -0500
+
 debianutils (2.27.1) unstable; urgency=low
 
   * Add Vcs-Git and Vcs-Browser fields to the control file now that

@@ -26,6 +26,7 @@
 #	-l	  - don't compress any log files	(default: compress)
 #       -p        - preserve mode/user/group of original file
 #	-j        - use bzip2 instead of gzip
+#	-x script - invoke script with rotated log file in $FILE
 #	-n	  - do not rotate empty files
 #	-q	  - be quiet
 #	file 	  - log file names
@@ -94,6 +95,7 @@ forceclean=
 rolldir=
 datum=
 preserve=
+hookscript=
 quiet=0
 rotateifempty=yes
 count=7
@@ -114,6 +116,7 @@ usage()
     echo "	-l	   - don't compress any log files (default: compress)"
     echo "	-p         - preserve mode/user/group of original file"
     echo "	-j         - use bzip2 instead of gzip"
+    echo "	-x script  - invoke script with rotated log file in \$FILE"
     echo "	-n         - do not rotate empty files"
     echo "	-q         - suppress rotation message"
     echo "	file 	   - log file names"
@@ -134,7 +137,7 @@ fixfile()
 }
 
 
-while getopts m:u:g:c:r:CdD:tlphjnq opt ; do
+while getopts m:u:g:c:r:CdD:tlphjx:nq opt ; do
 	case "$opt" in
 	m) mode="$OPTARG" ;;
 	u) user="$OPTARG" ;;
@@ -146,6 +149,7 @@ while getopts m:u:g:c:r:CdD:tlphjnq opt ; do
 	D) DATUM=$(date +$OPTARG) ;;
 	t) touch=1 ;;
 	j) COMPRESS="bzip2"; COMPRESS_OPTS="-9f"; DOT_Z=".bz2" ;;
+	x) hookscript="$OPTARG" ;;
 	l) COMPRESS="" ;;
 	p) preserve=1 ;;
 	n) rotateifempty="no" ;;
@@ -291,24 +295,34 @@ while [ $# -gt 0 ]; do
 		filenew=1
 	fi
 
+	newfilename="$newname.0"
 	# link the file into the file.0 holding place
 	if [ -f "$filename" ]; then
 		if [ -n "$filenew" ]; then
-			if ln -f -- "$filename" "$newname.0"; then
+			if ln -f -- "$filename" "$newfilename"; then
 				mv -- "$filename.new" "$filename"
 			else
-				echo "Error hardlinking $filename to $newname.0" >&2
+				echo "Error hardlinking $filename to $newfilename" >&2
 				exitcode=8
 				continue
 			fi
 		else
-			mv -- "$filename" "$newname.0"
+			mv -- "$filename" "$newfilename"
 		fi
 	fi
-	[ ! -f "$newname.0" ] && touch -- "$newname.0"
-	fixfile "$newname.0"
+	[ ! -f "$newfilename" ] && touch -- "$newfilename"
+	fixfile "$newfilename"
 	if [ -n "$datum" ]; then
-		mv -- "$newname.0" "$newname.$DATUM"
+		mv -- "$newfilename" "$newname.$DATUM"
+		newfilename="$newname.$DATUM"
+	fi
+
+	if [ -n "$hookscript" ]; then
+	  FILE="$newfilename" $SHELL -c "$hookscript" || \
+	  {
+	    ret=$?
+	    test "$quiet" -eq 1 || echo "Hook script failed with exit code $ret." 1>&2
+	  }
 	fi
 
 	# report successful rotation
