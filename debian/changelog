@@ -1,3 +1,10 @@
+debianutils (2.28.1) unstable; urgency=low
+
+  * which: make case statement more concise as per suggestion of
+    Adam Katz.  closes: #453345.
+
+ -- Clint Adams <schizo@debian.org>  Tue, 04 Dec 2007 18:24:07 -0500
+
 debianutils (2.28) unstable; urgency=low
 
   * Apply patch from Martin Krafft to add -x option to savelog.

@@ -28,8 +28,7 @@ else
  ALLRET=0
 fi
 case $PATH in
- *::) : "not *DIR:" ;;
-  *:) PATH="$PATH:" ;;
+	(*[^:]:) PATH="$PATH:" ;;
 esac
 for PROGRAM in "$@"; do
  RET=1
