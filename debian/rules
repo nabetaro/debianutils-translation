@@ -116,6 +116,7 @@ prebuild:
 	printf "define(DEBIANUTILS_VERSION, %s)\n" $$(dpkg-parsechangelog | sed -n '/^Version: \(.*\)$$/ {s//\1/;p}') >acinclude.m4
 
 	autoreconf -fi
+	$(RM) -rf autom4te.cache
 
 	cd po4a && po4a --no-backups po4a.conf
 
