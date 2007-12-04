@@ -33,7 +33,7 @@ build:
 
 clean:
 	$(checkdir)
-	-$(MAKE) clean
+	test ! -f Makefile || $(MAKE) distclean
 	$(RM) -rf autom4te.cache
 	$(RM) -r debian/tmp* debian/files* debian/substvars debianutils*
 	find . -name '*~' -print0 | xargs -0 rm -f
