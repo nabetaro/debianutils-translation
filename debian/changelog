@@ -1,6 +1,7 @@
 debianutils (2.28.3) unstable; urgency=low
 
   * tempfile.1: add usage example.  closes: #455693.
+  * Bump to Standards-Version 3.7.3.
 
  -- Clint Adams <schizo@debian.org>  Fri, 08 Feb 2008 21:40:11 -0500
 
