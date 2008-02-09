@@ -1,5 +1,5 @@
 .\" -*- nroff -*-
-.TH TEMPFILE 1 "3 June 2007" "Debian"
+.TH TEMPFILE 1 "8 February 2008" "Debian"
 .SH NAME
 tempfile \- create a temporary file in a safe manner
 .SH SYNOPSIS
@@ -61,6 +61,19 @@ Any other exit status indicates an error.
 .SH BUGS
 Exclusive creation is not guaranteed when creating files on NFS
 partitions.
+.SH EXAMPLE
+
+.RS
+.nf
+#!/bin/sh
+#[...]
+t=$(tempfile) || exit
+trap "rm -f -- '$t'" EXIT
+#[...]
+rm -f -- "$t"
+trap - EXIT
+exit
+.fi
 .SH "SEE ALSO"
-.BR tempnam (3)
+.BR tempnam (3),
 .BR mktemp (1)

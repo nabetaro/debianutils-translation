@@ -1,3 +1,9 @@
+debianutils (2.28.3) unstable; urgency=low
+
+  * tempfile.1: add usage example.  closes: #455693.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 08 Feb 2008 21:40:11 -0500
+
 debianutils (2.28.2) unstable; urgency=high
 
   * which: fix bracket expression for matching.  closes: #453345.
