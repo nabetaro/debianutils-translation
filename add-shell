@@ -25,7 +25,7 @@ fi
 
 for i
 do
-        if ! grep -q "^${i}$" $tmpfile >/dev/null
+        if ! grep -q "^${i}$" $tmpfile
         then
                 echo $i >> $tmpfile
         fi

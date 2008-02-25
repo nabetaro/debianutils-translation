@@ -1,3 +1,10 @@
+debianutils (2.28.4) unstable; urgency=low
+
+  * add-shell: don't redirect grep output to /dev/null, since
+    -q is being used.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 24 Feb 2008 20:51:49 -0500
+
 debianutils (2.28.3) unstable; urgency=low
 
   * tempfile.1: add usage example.  closes: #455693.
