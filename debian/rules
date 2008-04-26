@@ -30,12 +30,14 @@ build:
 	CFLAGS="$(CFLAGS)" ./configure --prefix=/usr \
 		                       --mandir=/usr/share/man $(CONFARGS)
 	$(MAKE)
+	touch build
 
 clean:
 	$(checkdir)
 	test ! -f Makefile || $(MAKE) distclean
 	$(RM) -rf autom4te.cache
-	$(RM) -r debian/tmp* debian/files* debian/substvars debianutils*
+	$(RM) -r debian/tmp* debianutils*
+	$(RM) build debian/files* debian/substvars
 	find . -name '*~' -print0 | xargs -0 rm -f
 
 binary-indep:	checkroot build
@@ -121,7 +123,7 @@ prebuild:
 	cd po4a && po4a --no-backups po4a.conf
 
 
-.PHONY: binary binary-arch binary-indep clean checkroot build prebuild
+.PHONY: binary binary-arch binary-indep clean checkroot prebuild
 
 # Local Variables:
 # mode:Makefile

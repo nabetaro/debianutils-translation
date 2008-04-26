@@ -1,3 +1,10 @@
+debianutils (2.28.5) unstable; urgency=low
+
+  * Avoid running build target twice.  Thanks to Bernhard R. Link for
+    noticing the problem.  closes: #477944.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 26 Apr 2008 10:29:46 -0400
+
 debianutils (2.28.4) unstable; urgency=low
 
   * add-shell: don't redirect grep output to /dev/null, since
