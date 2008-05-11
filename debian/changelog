@@ -1,3 +1,9 @@
+debianutils (2.28.6) unstable; urgency=medium
+
+  * Drop preinst.  closes: #480593.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 11 May 2008 17:34:40 -0400
+
 debianutils (2.28.5) unstable; urgency=low
 
   * Avoid running build target twice.  Thanks to Bernhard R. Link for
