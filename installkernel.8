@@ -12,27 +12,16 @@ tree.  It is called by the Linux kernel makefiles when
 is invoked there.
 .P
 The new kernel is installed into
-.IR {directory}/vmlinuz-{version} ,
-a link is made from
+.IR {directory}/vmlinuz-{version} .
+If a symbolic link 
+.I {directory}/vmlinuz
+already exists, it is refreshed by making a link from
 .I {directory}/vmlinuz
 to the new kernel, and the previously installed kernel is available as
 .IR {directory}/vmlinuz.old .
-If you use LILO, 
-.I /etc/lilo.conf
-should contain entries for the images
-.IR {directory}/vmlinuz " and " {directory}/vmlinuz.old .
-.RI ( {version}
-is the new kernel's version.)
-.P
-.B installkernel
-calls
-.B mkboot -i
-to make the system bootable after the kernel is installed.
 .SH BUGS
 installkernel resides in /sbin only because the Linux kernel makefiles
 call it from there.  It should really be in /usr/sbin.  It isn't
 needed to boot a system, and it calls
 .BR mkboot ,
 which depends on the /usr partition being mounted.
-.SH "SEE ALSO"
-mkboot(8), lilo(8), lilo.conf(5)
