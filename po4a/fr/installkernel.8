@@ -14,22 +14,15 @@ installkernel \- installe une nouvelle image de noyau
 arborescence source de Linux. Cette commande est appelée par les makefiles
 du noyau Linux lors de l'invocation de \fBmake install\fP.
 .P
-Le nouveau noyau est installé dans \fI{répertoire}/vmlinuz\-{version}\fP, un
-lien vers ce noyau est placé dans \fI{répertoire}/vmlinuz\fP, et l'ancien noyau
-devient disponible via \fI{répertoire}/vmlinuz.old\fP. Si vous utilisez LILO,
-\fI/etc/lilo.conf\fP devrait contenir des entrées pour \fI{répertoire}/vmlinuz\fP
-et \fI{répertoire}/vmlinuz.old\fP. (\fI{version}\fP est la nouvelle version du
-noyau.)
-.P
-\fBinstallkernel\fP invoque \fBmkboot \-i\fP afin de rendre le système amorçable
-après que le noyau a été installé.
+The new kernel is installed into \fI{directory}/vmlinuz\-{version}\fP.  If a
+symbolic link \fI{directory}/vmlinuz\fP already exists, it is refreshed by
+making a link from \fI{directory}/vmlinuz\fP to the new kernel, and the
+previously installed kernel is available as \fI{directory}/vmlinuz.old\fP.
 .SH BOGUES
 Le programme \fBinstallkernel\fP est placé dans /sbin uniquement parce que les
 makefiles du noyau Linux l'appelle à cet emplacement. Il devrait être placé
 dans /usr/sbin. Il n'est pas nécessaire pour rendre un système amorçable, et
 il appelle \fBmkboot\fP, qui nécessite que la partition /usr soit montée.
-.SH "VOIR AUSSI"
-mkboot(8), lilo(8), lilo.conf(5)
 .SH TRADUCTION
 Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
 8 décembre 2005.

@@ -2,12 +2,12 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-11-12 11:58-0500\n"
+"POT-Creation-Date: 2008-06-08 18:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgid "The shells must be provided by their full pathnames."
 msgstr ""
 
 # type: SH
-#: ../add-shell.8:15 ../installkernel.8:37 ../mkboot.8:40 ../remove-shell.8:13 ../sensible-editor.1:17 ../tempfile.1:64
+#: ../add-shell.8:15 ../mkboot.8:40 ../remove-shell.8:13 ../sensible-editor.1:17 ../tempfile.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
@@ -116,41 +116,27 @@ msgid ""
 msgstr ""
 
 # type: Plain text
-#: ../installkernel.8:26
+#: ../installkernel.8:22
 msgid ""
-"The new kernel is installed into I<{directory}/vmlinuz-{version}>, a link is "
-"made from I<{directory}/vmlinuz> to the new kernel, and the previously "
-"installed kernel is available as I<{directory}/vmlinuz.old>.  If you use "
-"LILO, I</etc/lilo.conf> should contain entries for the images "
-"I<{directory}/vmlinuz> and I<{directory}/vmlinuz.old>.  (I<{version}> is the "
-"new kernel's version.)"
-msgstr ""
-
-# type: Plain text
-#: ../installkernel.8:31
-msgid ""
-"B<installkernel> calls B<mkboot -i> to make the system bootable after the "
-"kernel is installed."
+"The new kernel is installed into I<{directory}/vmlinuz-{version}>.  If a "
+"symbolic link I<{directory}/vmlinuz> already exists, it is refreshed by "
+"making a link from I<{directory}/vmlinuz> to the new kernel, and the "
+"previously installed kernel is available as I<{directory}/vmlinuz.old>."
 msgstr ""
 
 # type: SH
-#: ../installkernel.8:31 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
+#: ../installkernel.8:22 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 # type: Plain text
-#: ../installkernel.8:37
+#: ../installkernel.8:27
 msgid ""
 "installkernel resides in /sbin only because the Linux kernel makefiles call "
 "it from there.  It should really be in /usr/sbin.  It isn't needed to boot a "
 "system, and it calls B<mkboot>, which depends on the /usr partition being "
 "mounted."
-msgstr ""
-
-# type: Plain text
-#: ../installkernel.8:38
-msgid "mkboot(8), lilo(8), lilo.conf(5)"
 msgstr ""
 
 # type: TH
@@ -887,7 +873,7 @@ msgstr ""
 # type: TH
 #: ../tempfile.1:2
 #, no-wrap
-msgid "3 June 2007"
+msgid "8 February 2008"
 msgstr ""
 
 # type: Plain text
@@ -1053,9 +1039,29 @@ msgstr ""
 msgid "Exclusive creation is not guaranteed when creating files on NFS partitions."
 msgstr ""
 
+# type: SH
+#: ../tempfile.1:64
+#, no-wrap
+msgid "EXAMPLE"
+msgstr ""
+
 # type: Plain text
-#: ../tempfile.1:66
-msgid "B<tempnam>(3)  B<mktemp>(1)"
+#: ../tempfile.1:76
+#, no-wrap
+msgid ""
+"#!/bin/sh\n"
+"#[...]\n"
+"t=$(tempfile) || exit\n"
+"trap \"rm -f -- '$t'\" EXIT\n"
+"#[...]\n"
+"rm -f -- \"$t\"\n"
+"trap - EXIT\n"
+"exit\n"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:79
+msgid "B<tempnam>(3), B<mktemp>(1)"
 msgstr ""
 
 # type: TH

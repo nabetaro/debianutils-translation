@@ -7,11 +7,11 @@
 # Nicolas FRANÇOIS <nicolas.francois@centaliens.net>, 2004.
 # Reprise des traduction originelles de which.1 (Laëtitia Groslong)
 # et savelog.8 (Antoine Gémis, 13 janvier 2003).
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2007-11-12 11:58-0500\n"
+"POT-Creation-Date: 2008-06-08 18:20-0400\n"
 "PO-Revision-Date: 2005-12-08 23:19+0100\n"
 "Last-Translator: Nicolas François <nicolas.francois@centraliens.net>\n"
 "Language-Team: Debian French Team <debian-l10n-french@lists.debian.org>\n"
@@ -84,8 +84,8 @@ msgid "The shells must be provided by their full pathnames."
 msgstr "Le chemin complet des interpréteurs doit être fourni."
 
 # type: SH
-#: ../add-shell.8:15 ../installkernel.8:37 ../mkboot.8:40 ../remove-shell.8:13
-#: ../sensible-editor.1:17 ../tempfile.1:64
+#: ../add-shell.8:15 ../mkboot.8:40 ../remove-shell.8:13
+#: ../sensible-editor.1:17 ../tempfile.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
@@ -135,14 +135,13 @@ msgstr ""
 "du noyau Linux lors de l'invocation de B<make install>."
 
 # type: Plain text
-#: ../installkernel.8:26
+#: ../installkernel.8:22
+#, fuzzy
 msgid ""
-"The new kernel is installed into I<{directory}/vmlinuz-{version}>, a link is "
-"made from I<{directory}/vmlinuz> to the new kernel, and the previously "
-"installed kernel is available as I<{directory}/vmlinuz.old>.  If you use "
-"LILO, I</etc/lilo.conf> should contain entries for the images I<{directory}/"
-"vmlinuz> and I<{directory}/vmlinuz.old>.  (I<{version}> is the new kernel's "
-"version.)"
+"The new kernel is installed into I<{directory}/vmlinuz-{version}>.  If a "
+"symbolic link I<{directory}/vmlinuz> already exists, it is refreshed by "
+"making a link from I<{directory}/vmlinuz> to the new kernel, and the "
+"previously installed kernel is available as I<{directory}/vmlinuz.old>."
 msgstr ""
 "Le nouveau noyau est installé dans I<{répertoire}/vmlinuz-{version}>, un "
 "lien vers ce noyau est placé dans I<{répertoire}/vmlinuz>, et l'ancien noyau "
@@ -151,23 +150,14 @@ msgstr ""
 "et I<{répertoire}/vmlinuz.old>. (I<{version}> est la nouvelle version du "
 "noyau.)"
 
-# type: Plain text
-#: ../installkernel.8:31
-msgid ""
-"B<installkernel> calls B<mkboot -i> to make the system bootable after the "
-"kernel is installed."
-msgstr ""
-"B<installkernel> invoque B<mkboot -i> afin de rendre le système amorçable "
-"après que le noyau a été installé."
-
 # type: SH
-#: ../installkernel.8:31 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
+#: ../installkernel.8:22 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
 #, no-wrap
 msgid "BUGS"
 msgstr "BOGUES"
 
 # type: Plain text
-#: ../installkernel.8:37
+#: ../installkernel.8:27
 msgid ""
 "installkernel resides in /sbin only because the Linux kernel makefiles call "
 "it from there.  It should really be in /usr/sbin.  It isn't needed to boot a "
@@ -178,11 +168,6 @@ msgstr ""
 "makefiles du noyau Linux l'appelle à cet emplacement. Il devrait être placé "
 "dans /usr/sbin. Il n'est pas nécessaire pour rendre un système amorçable, et "
 "il appelle B<mkboot>, qui nécessite que la partition /usr soit montée."
-
-# type: Plain text
-#: ../installkernel.8:38
-msgid "mkboot(8), lilo(8), lilo.conf(5)"
-msgstr "mkboot(8), lilo(8), lilo.conf(5)"
 
 # type: TH
 #: ../mkboot.8:1
@@ -293,9 +278,9 @@ msgid ""
 "shells, and copy the result back to I</etc/shells>."
 msgstr ""
 "B<remove-shell> utilise les fichiers temporaires I</etc/shells.tmp> et I</"
-"etc/shells.tmp2> pour supprimer les interpréteurs de commandes (« shell ») "
-"de la liste des interpréteurs de commandes initiaux (« login shell ») "
-"valables, puis copie le résultat dans I</etc/shells>."
+"etc/shells.tmp2> pour supprimer les interpréteurs de commandes (« shell ») de "
+"la liste des interpréteurs de commandes initiaux (« login shell ») valables, "
+"puis copie le résultat dans I</etc/shells>."
 
 # type: TH
 #: ../run-parts.8:8
@@ -365,11 +350,11 @@ msgid ""
 "and the Debian cron script namespace (^[a-z0-9][a-z0-9-]*$)."
 msgstr ""
 "Si l'option B<--lsbsysinit> est utilisée, alors les noms ne doivent pas se "
-"terminer par « .dpkg-old », « .dpkg-dist », « .dpkg-new » ou « .dpkg-tmp » "
-"et doivent appartenir à un (ou plusieurs) des ensembles de noms suivants : "
-"noms spécifiés par LANANA (^[a-z0-9]+$) ; les noms hiérarchiques et réservés "
-"par LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$) ; les noms des scripts cron définis "
-"par Debian (^[a-z0-9][a-z0-9-]*$)."
+"terminer par « .dpkg-old », « .dpkg-dist », « .dpkg-new » ou « .dpkg-tmp » et "
+"doivent appartenir à un (ou plusieurs) des ensembles de noms suivants : noms "
+"spécifiés par LANANA (^[a-z0-9]+$) ; les noms hiérarchiques et réservés par "
+"LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$) ; les noms des scripts cron définis par "
+"Debian (^[a-z0-9][a-z0-9-]*$)."
 
 # type: Plain text
 #: ../run-parts.8:41
@@ -1019,8 +1004,8 @@ msgid ""
 msgstr ""
 "B<sensible-editor>, B<sensible-pager> et B<sensible-browser> prennent des "
 "décisions sensées respectivement sur le choix de l'éditeur, de l'outil de "
-"mise en page (« pageur ») et de l'outil de navigation qu'il faut appeler. "
-"Les programmes de la distribution Debian peuvent utiliser ces scripts comme "
+"mise en page (« pageur ») et de l'outil de navigation qu'il faut appeler. Les "
+"programmes de la distribution Debian peuvent utiliser ces scripts comme "
 "éditeur, pageur, ou navigateur par défaut ou peuvent simuler leur "
 "comportement."
 
@@ -1041,9 +1026,9 @@ msgstr "TEMPFILE"
 
 # type: TH
 #: ../tempfile.1:2
-#, fuzzy, no-wrap
-msgid "3 June 2007"
-msgstr "7 janvier 2001"
+#, no-wrap
+msgid "8 February 2008"
+msgstr ""
 
 # type: Plain text
 #: ../tempfile.1:5
@@ -1233,9 +1218,30 @@ msgstr ""
 "ou « race condition » ]) n'est pas garantie lorsque le fichier est créé sur "
 "une partition NFS."
 
+# type: SH
+#: ../tempfile.1:64
+#, fuzzy, no-wrap
+msgid "EXAMPLE"
+msgstr "EXEMPLES"
+
 # type: Plain text
-#: ../tempfile.1:66
-msgid "B<tempnam>(3)  B<mktemp>(1)"
+#: ../tempfile.1:76
+#, no-wrap
+msgid ""
+"#!/bin/sh\n"
+"#[...]\n"
+"t=$(tempfile) || exit\n"
+"trap \"rm -f -- '$t'\" EXIT\n"
+"#[...]\n"
+"rm -f -- \"$t\"\n"
+"trap - EXIT\n"
+"exit\n"
+msgstr ""
+
+# type: Plain text
+#: ../tempfile.1:79
+#, fuzzy
+msgid "B<tempnam>(3), B<mktemp>(1)"
 msgstr "B<tempnam>(3), B<mktemp>(1)"
 
 # type: TH
@@ -1326,6 +1332,23 @@ msgstr "B<2>"
 msgid "if an invalid option is specified"
 msgstr "si une option non valable est spécifiée"
 
+# type: Plain text
+#~ msgid ""
+#~ "B<installkernel> calls B<mkboot -i> to make the system bootable after the "
+#~ "kernel is installed."
+#~ msgstr ""
+#~ "B<installkernel> invoque B<mkboot -i> afin de rendre le système amorçable "
+#~ "après que le noyau a été installé."
+
+# type: Plain text
+#~ msgid "mkboot(8), lilo(8), lilo.conf(5)"
+#~ msgstr "mkboot(8), lilo(8), lilo.conf(5)"
+
+# type: TH
+#, fuzzy
+#~ msgid "3 June 2007"
+#~ msgstr "7 janvier 2001"
+
 # type: TH
 #~ msgid "12 April 2003"
 #~ msgstr "12 avril 2003"
@@ -1363,10 +1386,9 @@ msgstr "si une option non valable est spécifiée"
 #~ msgstr ""
 #~ "L'utilitaire B<mktemp> utilise le modèle de nom de fichier I<modèle> et "
 #~ "en réécrit une partie pour créer un nom de fichier unique. I<modèle> peut "
-#~ "être nimporte quel nom de fichier suivi de six « X », comme par exemple "
-#~ "I</tmp/fichier_temp.XXXXXX>. Si I<modèle> n'est pas spécifié, I<tmp."
-#~ "XXXXXX> est utilisé, l'option B<-t> sera alors utilisée (voir ci"
-#~ "\\(hydessous)."
+#~ "être nimporte quel nom de fichier suivi de six « X », comme par exemple I</"
+#~ "tmp/fichier_temp.XXXXXX>. Si I<modèle> n'est pas spécifié, I<tmp.XXXXXX> "
+#~ "est utilisé, l'option B<-t> sera alors utilisée (voir ci\\(hydessous)."
 
 # type: Plain text
 #~ msgid ""
@@ -1403,11 +1425,11 @@ msgstr "si une option non valable est spécifiée"
 #~ msgstr ""
 #~ "B<mktemp> est mis à disposition afin de permettre aux scripts shell de "
 #~ "créer des fichiers temporaires de façon sûre. Traditionnellement, "
-#~ "beaucoup de ces scripts utilisent l'identifiant du processus « PID » "
-#~ "comme suffixe pour le nom des fichiers temporaires. Le nom devient "
-#~ "prévisible et la situation de compétition (« race condition ») créée peut "
-#~ "facilement être exploitée par un attaquant. Une approche plus sûre, bien "
-#~ "que toujours insuffisante, consiste à créer un répertoire temporaire en "
+#~ "beaucoup de ces scripts utilisent l'identifiant du processus « PID » comme "
+#~ "suffixe pour le nom des fichiers temporaires. Le nom devient prévisible "
+#~ "et la situation de compétition (« race condition ») créée peut facilement "
+#~ "être exploitée par un attaquant. Une approche plus sûre, bien que "
+#~ "toujours insuffisante, consiste à créer un répertoire temporaire en "
 #~ "utilisant la même méthode de nommage. Même si ceci permet de garantir que "
 #~ "le fichier ne sera pas remplacé, cette méthode rend possible une attaque "
 #~ "simple de type déni de service. Pour ces raisons, il est recommandé "
