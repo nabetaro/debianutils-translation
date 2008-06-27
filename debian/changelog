@@ -1,3 +1,9 @@
+debianutils (2.30) unstable; urgency=low
+
+  * Raise sensible-browser's mime priority to 6.  closes: #466517.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 27 Jun 2008 09:47:54 -0400
+
 debianutils (2.29) unstable; urgency=low
 
   * installkernel, installkernel.8: apply patch from Manoj Srivastava
