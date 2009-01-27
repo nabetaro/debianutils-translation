@@ -51,11 +51,9 @@ char **args = 0;
 char *custom_ere;
 regex_t hierre, tradre, excsre, classicalre, customre;
 
-static char* regex_get_error (int errcode, regex_t *compiled);
-static void  regex_compile_pattern (void);
+static char* regex_get_error(int errcode, regex_t *compiled);
+static void  regex_compile_pattern(void);
 static void  regex_clean(void);
-
-void * Xmalloc (size_t size);
 
 void error(char *format, ...)
 {
@@ -445,22 +443,21 @@ int main(int argc, char *argv[])
     error("missing operand");
     fprintf(stderr, "Try `run-parts --help' for more information.\n");
     exit(1);
-
   } else if (list_mode && test_mode) {
     error("--list and --test can not be used together");
     fprintf(stderr, "Try `run-parts --help' for more information.\n");
     exit(1);
-
   } else {
+    regex_compile_pattern();
+    run_parts(argv[optind]);
+    regex_clean();
 
-      regex_compile_pattern();
-      run_parts(argv[optind]);
-      regex_clean();
-
+    if (args)
       free(args);
+    if (custom_ere)
       free(custom_ere);
 
-      return exitstatus;
+    return exitstatus;
   }
 }
 
@@ -521,14 +518,17 @@ regex_compile_pattern (void)
  * It returns a pointer on the current regex error description.
  */
 static char *
-regex_get_error (
-    int errcode, regex_t *compiled)
+regex_get_error(int errcode, regex_t *compiled)
 {
     size_t  length;
     char     *buf;
 
     length = regerror(errcode, compiled, NULL, 0);
-    buf    = Xmalloc(length);
+    buf    = malloc(length);
+    if (buf == 0) {
+        error("Virtual memory exhausted\n");
+        exit(1);
+    }
 
     regerror(errcode, compiled, buf, length);
 
@@ -539,7 +539,7 @@ regex_get_error (
  * Clean the compiled patterns according to the current regex_mode
  */
 static void
-regex_clean (void)
+regex_clean(void)
 {
     if (regex_mode == RUNPARTS_ERE)
         regfree(&customre);
@@ -551,18 +551,4 @@ regex_clean (void)
 
     } else
         regfree(&classicalre);
-}
-
-void *
-Xmalloc (
-    size_t size)
-{
-    register void *value = malloc(size);
-
-    if (value == 0) {
-        error("Virtual memory exhausted\n");
-        exit(1);
-    }
-
-    return value;
 }
