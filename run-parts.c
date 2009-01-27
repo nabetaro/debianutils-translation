@@ -49,6 +49,13 @@ int argcount = 0, argsize = 0;
 char **args = 0;
 
 char *custom_ere;
+regex_t hierre, tradre, excsre, classicalre, customre;
+
+static char* regex_get_error (int errcode, regex_t *compiled);
+static void  regex_compile_pattern (void);
+static void  regex_clean(void);
+
+void * Xmalloc (size_t size);
 
 void error(char *format, ...)
 {
@@ -133,41 +140,26 @@ void add_argument(char *newarg)
 /* True or false? Is this a valid filename? */
 int valid_name(const struct dirent *d)
 {
-  char *c = d->d_name;
-  regex_t hierre, tradre, excsre, classicalre, customre;
+    char         *s;
+    unsigned int  retval;
 
-  /* The regcomps should be moved to program init */
-  if (regex_mode == RUNPARTS_ERE) {
-    if (regcomp(&customre, custom_ere, REG_EXTENDED | REG_NOSUB)) {
-      error("custom regex failure");
-      exit(1);
-    }
-    return !regexec(&customre, c, 0, NULL, 0);
-  }
-  else if (regex_mode == RUNPARTS_LSBSYSINIT) {
+    s = (char *)&(d->d_name);
 
-    if (regcomp
-	(&hierre, "^_?([a-z0-9_.]+-)+[a-z0-9]+$", REG_EXTENDED | REG_NOSUB)
-	|| regcomp(&excsre, "^[a-z0-9-].*dpkg-(old|dist|new|tmp)$",
-		   REG_EXTENDED | REG_NOSUB)
-	|| regcomp(&tradre, "^[a-z0-9][a-z0-9-]*$", REG_NOSUB)) {
-      error("regex failure");
-      exit(1);
-    }
+    if (regex_mode == RUNPARTS_ERE)
+        retval = !regexec(&customre, s, 0, NULL, 0);
 
-    if (!regexec(&hierre, c, 0, NULL, 0))
-      return regexec(&excsre, c, 0, NULL, 0);
+    else if (regex_mode == RUNPARTS_LSBSYSINIT) {
 
-    return !regexec(&tradre, c, 0, NULL, 0);
-  }
-  else {
-    if (regcomp(&classicalre, "^[a-zA-Z0-9_-]+$", REG_EXTENDED | REG_NOSUB)) {
-      error("regex failure");
-      exit(1);
-    }
-    return !regexec(&classicalre, c, 0, NULL, 0);
-  }
+        if (!regexec(&hierre, s, 0, NULL, 0))
+            retval = regexec(&excsre, s, 0, NULL, 0);
 
+	else
+            retval = !regexec(&tradre, s, 0, NULL, 0);
+
+    } else
+        retval = !regexec(&classicalre, s, 0, NULL, 0);
+
+    return retval;
 }
 
 /* Execute a file */
@@ -393,6 +385,7 @@ void run_parts(char *dirname)
 /* Process options */
 int main(int argc, char *argv[])
 {
+  custom_ere = NULL;
   umask(022);
   add_argument(0);
 
@@ -452,15 +445,124 @@ int main(int argc, char *argv[])
     error("missing operand");
     fprintf(stderr, "Try `run-parts --help' for more information.\n");
     exit(1);
-  }
 
-  if (list_mode && test_mode) {
+  } else if (list_mode && test_mode) {
     error("--list and --test can not be used together");
     fprintf(stderr, "Try `run-parts --help' for more information.\n");
     exit(1);
+
+  } else {
+
+      regex_compile_pattern();
+      run_parts(argv[optind]);
+      regex_clean();
+
+      free(args);
+      free(custom_ere);
+
+      return exitstatus;
   }
+}
 
-  run_parts(argv[optind]);
+/*
+ * Compile patterns used by the application
+ *
+ * In order for a string to be matched by a pattern, this pattern must be
+ * compiled with the regcomp function. If an error occurs, the application
+ * exits and displays the error.
+ */
+static void
+regex_compile_pattern (void)
+{
+    int      err;
+    regex_t *pt_regex;
 
-  return exitstatus;
+    if (regex_mode == RUNPARTS_ERE) {
+
+        if ((err = regcomp(&customre, custom_ere,
+                    REG_EXTENDED | REG_NOSUB)) != 0)
+            pt_regex = &customre;
+
+    } else if (regex_mode == RUNPARTS_LSBSYSINIT) {
+
+        if ( (err = regcomp(&hierre, "^_?([a-z0-9_.]+-)+[a-z0-9]+$",
+                    REG_EXTENDED | REG_NOSUB)) != 0)
+            pt_regex = &hierre;
+
+        else if ( (err = regcomp(&excsre, "^[a-z0-9-].*dpkg-(old|dist|new|tmp)$",
+                    REG_EXTENDED | REG_NOSUB)) != 0)
+            pt_regex = &excsre;
+
+        else if ( (err = regcomp(&tradre, "^[a-z0-9][a-z0-9-]*$", REG_NOSUB))
+                    != 0)
+            pt_regex = &tradre;
+
+    } else if ( (err = regcomp(&classicalre, "^[a-zA-Z0-9_-]+$",
+                    REG_EXTENDED | REG_NOSUB)) != 0)
+        pt_regex = &classicalre;
+
+    if (err != 0) {
+        fprintf(stderr, "Unable to build regexp: %s", \
+                            regex_get_error(err, pt_regex));
+        exit(1);
+    }
+}
+
+/*
+ * Get a regex error.
+ *
+ * This function allocates a buffer to store the regex error description.
+ * If a buffer cannot be allocated, then the use of xmalloc will end the
+ * program.
+ *
+ * @errcode: return error code from a one of the regex functions
+ * @compiled: compile pattern which causes the failure
+ *
+ * It returns a pointer on the current regex error description.
+ */
+static char *
+regex_get_error (
+    int errcode, regex_t *compiled)
+{
+    size_t  length;
+    char     *buf;
+
+    length = regerror(errcode, compiled, NULL, 0);
+    buf    = Xmalloc(length);
+
+    regerror(errcode, compiled, buf, length);
+
+    return buf;
+}
+
+/*
+ * Clean the compiled patterns according to the current regex_mode
+ */
+static void
+regex_clean (void)
+{
+    if (regex_mode == RUNPARTS_ERE)
+        regfree(&customre);
+
+    else if (regex_mode == RUNPARTS_LSBSYSINIT) {
+        regfree(&hierre);
+        regfree(&excsre);
+        regfree(&tradre);
+
+    } else
+        regfree(&classicalre);
+}
+
+void *
+Xmalloc (
+    size_t size)
+{
+    register void *value = malloc(size);
+
+    if (value == 0) {
+        error("Virtual memory exhausted\n");
+        exit(1);
+    }
+
+    return value;
 }
