@@ -92,7 +92,6 @@ endif
 	     debian/tmp/usr/share/man/fr/man[18] \
              debian/tmp/usr/share/doc/$(package) -type f | xargs gzip -9
 	$(INSTALL_FILE) debian/copyright debian/tmp/usr/share/doc/$(package)
-	$(INSTALL_SCRIPT) debian/prerm debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/postinst debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/postrm debian/tmp/DEBIAN/
 	$(INSTALL_FILE) debian/mime debian/tmp/usr/lib/mime/packages/debianutils
