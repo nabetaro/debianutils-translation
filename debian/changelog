@@ -1,3 +1,12 @@
+debianutils (2.31) unstable; urgency=low
+
+  * run-parts.c: patch from Franck Joncourt to fix regex compilation
+    memory leak.  closes: #513125.
+  * Bump to Standards-Version 3.8.0.
+  * Remove empty prerm.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 26 Jan 2009 20:07:14 -0500
+
 debianutils (2.30) unstable; urgency=low
 
   * Raise sensible-browser's mime priority to 6.  closes: #466517.
