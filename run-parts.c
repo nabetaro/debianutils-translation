@@ -452,10 +452,8 @@ int main(int argc, char *argv[])
     run_parts(argv[optind]);
     regex_clean();
 
-    if (args)
-      free(args);
-    if (custom_ere)
-      free(custom_ere);
+    free(args);
+    free(custom_ere);
 
     return exitstatus;
   }
