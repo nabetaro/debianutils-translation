@@ -147,5 +147,6 @@ main (int argc, char **argv)
   if (close(fd))
     syserror("close");
   puts(name);
+  free(name);
   exit(0);
 }
