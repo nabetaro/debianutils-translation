@@ -19,10 +19,9 @@ symbolic link \fI{directory}/vmlinuz\fP already exists, it is refreshed by
 making a link from \fI{directory}/vmlinuz\fP to the new kernel, and the
 previously installed kernel is available as \fI{directory}/vmlinuz.old\fP.
 .SH BOGUES
-Le programme \fBinstallkernel\fP est placé dans /sbin uniquement parce que les
-makefiles du noyau Linux l'appelle à cet emplacement. Il devrait être placé
-dans /usr/sbin. Il n'est pas nécessaire pour rendre un système amorçable, et
-il appelle \fBmkboot\fP, qui nécessite que la partition /usr soit montée.
+installkernel resides in /sbin only because the Linux kernel makefiles call
+it from there.  It should really be in /usr/sbin.  It isn't needed to boot a
+system.
 .SH TRADUCTION
 Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
 8 décembre 2005.

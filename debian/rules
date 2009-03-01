@@ -77,9 +77,7 @@ ifeq ($(DEB_HOST_ARCH_OS),linux)
 	mv debian/tmp/usr/sbin/installkernel debian/tmp/sbin/
 else
 	rm debian/tmp/usr/sbin/installkernel \
-	   debian/tmp/usr/sbin/mkboot \
-	   debian/tmp/usr/share/man/man8/installkernel.8 \
-	   debian/tmp/usr/share/man/man8/mkboot.8
+	   debian/tmp/usr/share/man/man8/installkernel.8
 endif
 	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-pager.1.gz
 	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-browser.1.gz

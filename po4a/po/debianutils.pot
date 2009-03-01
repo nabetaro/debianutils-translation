@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-06-08 18:20-0400\n"
+"POT-Creation-Date: 2009-03-01 12:24-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgid "7 Apr 2005"
 msgstr ""
 
 # type: SH
-#: ../add-shell.8:2 ../installkernel.8:2 ../mkboot.8:2 ../remove-shell.8:2 ../run-parts.8:9 ../savelog.8:3 ../sensible-editor.1:3 ../tempfile.1:3 ../which.1:3
+#: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9 ../savelog.8:3 ../sensible-editor.1:3 ../tempfile.1:3 ../which.1:3
 #, no-wrap
 msgid "NAME"
 msgstr ""
@@ -39,7 +39,7 @@ msgid "add-shell - add shells to the list of valid login shells"
 msgstr ""
 
 # type: SH
-#: ../add-shell.8:4 ../installkernel.8:4 ../mkboot.8:4 ../remove-shell.8:4 ../run-parts.8:11 ../savelog.8:5 ../sensible-editor.1:5 ../tempfile.1:5 ../which.1:5
+#: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11 ../savelog.8:5 ../sensible-editor.1:5 ../tempfile.1:5 ../which.1:5
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr ""
@@ -50,7 +50,7 @@ msgid "B<add-shell> I<shellname> [I<shellname>...]"
 msgstr ""
 
 # type: SH
-#: ../add-shell.8:8 ../installkernel.8:6 ../mkboot.8:6 ../remove-shell.8:8 ../run-parts.8:20 ../savelog.8:9 ../sensible-editor.1:12 ../tempfile.1:9 ../which.1:7
+#: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20 ../savelog.8:9 ../sensible-editor.1:12 ../tempfile.1:9 ../which.1:7
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr ""
@@ -69,7 +69,7 @@ msgid "The shells must be provided by their full pathnames."
 msgstr ""
 
 # type: SH
-#: ../add-shell.8:15 ../mkboot.8:40 ../remove-shell.8:13 ../sensible-editor.1:17 ../tempfile.1:77
+#: ../add-shell.8:15 ../remove-shell.8:13 ../sensible-editor.1:17 ../tempfile.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
@@ -125,83 +125,17 @@ msgid ""
 msgstr ""
 
 # type: SH
-#: ../installkernel.8:22 ../mkboot.8:33 ../savelog.8:141 ../tempfile.1:61
+#: ../installkernel.8:22 ../savelog.8:141 ../tempfile.1:61
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 # type: Plain text
-#: ../installkernel.8:27
+#: ../installkernel.8:25
 msgid ""
 "installkernel resides in /sbin only because the Linux kernel makefiles call "
 "it from there.  It should really be in /usr/sbin.  It isn't needed to boot a "
-"system, and it calls B<mkboot>, which depends on the /usr partition being "
-"mounted."
-msgstr ""
-
-# type: TH
-#: ../mkboot.8:1
-#, no-wrap
-msgid "MKBOOT"
-msgstr ""
-
-# type: TH
-#: ../mkboot.8:1
-#, no-wrap
-msgid "18 September 2004"
-msgstr ""
-
-# type: TH
-#: ../mkboot.8:1 ../run-parts.8:8 ../savelog.8:2 ../sensible-editor.1:2 ../tempfile.1:2 ../which.1:2
-#, no-wrap
-msgid "Debian"
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:4
-msgid "mkboot - makes a bootdisk"
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:6
-msgid "B<mkboot [-r rootpartition] [-i] [-d device] [kernel]>"
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:10
-msgid "B<mkboot> makes a bootdisk."
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:19
-msgid ""
-"By default the bootdisk will use the kernel I</vmlinuz> and the current root "
-"partition.  Use the B<-r> option to specify a different partition, and "
-"provide the new kernel file directly to specify a different kernel.  Use the "
-"B<-d> option to specify a different device for the floppy drive."
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:33
-msgid ""
-"If invoked with the B<-i> option, it tries to make a Debian GNU/Linux system "
-"bootable after a new kernel was installed by B</sbin/installkernel>.  If "
-"ELILO is installed, it runs B</usr/sbin/elilo>.  If GRUB is installed, it "
-"does nothing.  If LILO is in use, it runs B</sbin/lilo>.  If SILO is "
-"installed, it does nothing.  Otherwise, B<mkboot> will make a new bootdisk."
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:39
-msgid ""
-"mkboot only works on i386 and ia64.  mkboot only works on floppy diskette "
-"drives.  If rdev is not present, mkboot will fail to determine the correct "
-"root partition.  Patches to correct these deficiencies are welcome."
-msgstr ""
-
-# type: Plain text
-#: ../mkboot.8:41
-msgid "installkernel(8), lilo(8), grub(8), silo(8)"
+"system."
 msgstr ""
 
 # type: TH
@@ -238,6 +172,12 @@ msgstr ""
 #: ../run-parts.8:8
 #, no-wrap
 msgid "29 Oct 2007"
+msgstr ""
+
+# type: TH
+#: ../run-parts.8:8 ../savelog.8:2 ../sensible-editor.1:2 ../tempfile.1:2 ../which.1:2
+#, no-wrap
+msgid "Debian"
 msgstr ""
 
 # type: Plain text
