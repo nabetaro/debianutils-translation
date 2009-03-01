@@ -65,14 +65,5 @@ config="${config}/.config"
 if [ -f "$config" ] ; then
   updatever config "$config"
 fi
-
-## This is very far from existing practice in modern Debian installations
-########################################################################
-# if [ "$(basename $img)" = "vmlinux" ] && [ "$(id -u)" = "0" ] ; then #
-#   mkboot -i ${dir}/vmlinux-${ver}                                    #
-# else                                                                 #
-#   mkboot -i ${dir}/vmlinuz-${ver}                                    #
-# fi                                                                   #
-########################################################################
  
 exit 0

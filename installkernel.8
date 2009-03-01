@@ -22,6 +22,4 @@ to the new kernel, and the previously installed kernel is available as
 .SH BUGS
 installkernel resides in /sbin only because the Linux kernel makefiles
 call it from there.  It should really be in /usr/sbin.  It isn't
-needed to boot a system, and it calls
-.BR mkboot ,
-which depends on the /usr partition being mounted.
+needed to boot a system.
