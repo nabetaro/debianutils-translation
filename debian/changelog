@@ -1,3 +1,28 @@
+debianutils (2.32) UNRELEASED; urgency=low
+
+  * [654eca6]: Remove mkboot entirely
+    mkboot has become increasingly distant from accepted practices on
+    modern Debian isntallations, and has limited utility. mkboot only
+    works on i386 and ia64. If GRUB is installed, it does nothing. It is
+    unsure how the grub2 detection works. mkboot only works on floppy
+    diskette drives, which are increasingly rare beasts. If rdev is not
+    present, mkboot will fail to determine the correct root partition. In
+    most cases, running mkboot is the wrong thing to do, and this
+    bugginess, in conjunction with its irrelevancy, require that this be
+    removed. 
+    Bug fix: "mkboot cannot make boot floppy without lilo installed, but
+    package has no dependency on lilo.", thanks to Chris Metzler
+   (Closes:  #197463).
+    Bug fix: "try different floppy formats when linux is larger than
+    1.44Mo", thanks to Jari Aalto (Closes: #272254).
+    Bug fix: "mkboot should send stderr from which to /dev/null", thanks
+    to Mike Frysinger (Closes: #438443).
+  * [f98b30f]: Document that installkernel no longer calls mkboot
+  * Added Manoj Srivastava to the uploaders field. This package is now
+    co-maintained. 
+
+ -- Manoj Srivastava <srivasta@debian.org>  Sun, 01 Mar 2009 12:43:53 -0600
+
 debianutils (2.31) unstable; urgency=low
 
   * run-parts.c: patch from Franck Joncourt to fix regex compilation
