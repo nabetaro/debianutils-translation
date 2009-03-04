@@ -9,7 +9,7 @@ debianutils (2.32) UNRELEASED; urgency=low
     present, mkboot will fail to determine the correct root partition. In
     most cases, running mkboot is the wrong thing to do, and this
     bugginess, in conjunction with its irrelevancy, require that this be
-    removed. 
+    removed.
     Bug fix: "mkboot cannot make boot floppy without lilo installed, but
     package has no dependency on lilo.", thanks to Chris Metzler
    (Closes:  #197463).
@@ -19,7 +19,7 @@ debianutils (2.32) UNRELEASED; urgency=low
     to Mike Frysinger (Closes: #438443).
   * [f98b30f]: Document that installkernel no longer calls mkboot
   * Added Manoj Srivastava to the uploaders field. This package is now
-    co-maintained. 
+    co-maintained.
 
  -- Manoj Srivastava <srivasta@debian.org>  Sun, 01 Mar 2009 12:43:53 -0600
 
@@ -170,7 +170,7 @@ debianutils (2.22.1) unstable; urgency=low
 
 debianutils (2.22) unstable; urgency=low
 
-  * sensible-browser: rewrite in POSIX sh. 
+  * sensible-browser: rewrite in POSIX sh.
   * sensible-browser: refuse to execute sensible-browser from
     $BROWSER, because that would be insensate.  closes: #360204.
 
@@ -232,7 +232,7 @@ debianutils (2.19) unstable; urgency=low
 
 debianutils (2.18.2) unstable; urgency=low
 
-  * Promote shlibdeps back to Pre-Depends. 
+  * Promote shlibdeps back to Pre-Depends.
 
  -- Clint Adams <schizo@debian.org>  Wed, 16 May 2007 22:32:48 -0400
 
@@ -314,7 +314,7 @@ debianutils (2.16.1) unstable; urgency=low
 
 debianutils (2.16) unstable; urgency=low
 
-  * Depend on mktemp. 
+  * Depend on mktemp.
   * Stop shipping mktemp.
   * Bump Standards-Version to 3.7.0.
 
@@ -336,7 +336,7 @@ debianutils (2.15.6) unstable; urgency=low
 debianutils (2.15.5) unstable; urgency=low
 
   * Add README.shells document which used to be in passwd.
-    closes: #346108. 
+    closes: #346108.
   * Remove ash, bash, sash, and zsh from the default
     /etc/shells list.
 
@@ -344,7 +344,7 @@ debianutils (2.15.5) unstable; urgency=low
 
 debianutils (2.15.4) unstable; urgency=low
 
-  * Strip .comment section from binaries. 
+  * Strip .comment section from binaries.
   * Update French man pages with portion of patch from Nicolas
     François.  closes: #346587.
 
@@ -397,7 +397,7 @@ debianutils (2.14.3) unstable; urgency=medium
 
 debianutils (2.14.2) unstable; urgency=low
 
-  * Bump to Standards-Version 3.6.2. 
+  * Bump to Standards-Version 3.6.2.
   * Apply patch from Nicolas François to move French manpages
     to a po4a framework.  closes: #321768.
 
@@ -464,7 +464,7 @@ debianutils (2.12.0) unstable; urgency=medium
 debianutils (2.11.2) unstable; urgency=low
 
   * configure.ac, debian/rules: derive version numbers from
-    debian/changelog. 
+    debian/changelog.
 
  -- Clint Adams <schizo@debian.org>  Thu, 23 Dec 2004 15:34:30 -0500
 
@@ -507,7 +507,7 @@ debianutils (2.10.2) unstable; urgency=low
 
 debianutils (2.10.1) unstable; urgency=medium
 
-  * sensible-pager: fix spacing problem.  closes: #272449.  
+  * sensible-pager: fix spacing problem.  closes: #272449.
 
  -- Clint Adams <schizo@debian.org>  Mon, 20 Sep 2004 09:28:58 -0400
 
@@ -756,7 +756,7 @@ debianutils (2.2.4) unstable; urgency=low
 debianutils (2.2.3) unstable; urgency=low
 
   * fr/which.1: French manpage for which by Laëtitia Groslong
-    <lgr@tartine.org>, submitted by Julien Louis.  closes: #180263. 
+    <lgr@tartine.org>, submitted by Julien Louis.  closes: #180263.
 
  -- Clint Adams <schizo@debian.org>  Sat,  8 Feb 2003 17:09:44 -0500
 
@@ -782,13 +782,13 @@ debianutils (2.2) unstable; urgency=low
 
 debianutils (2.1.8) unstable; urgency=low
 
-  * run-parts.8: clarify valid namespaces.  closes: #177302. 
+  * run-parts.8: clarify valid namespaces.  closes: #177302.
 
  -- Clint Adams <schizo@debian.org>  Thu, 30 Jan 2003 11:09:20 -0500
 
 debianutils (2.1.7) unstable; urgency=low
 
-  * Ship postinst and prerm again. 
+  * Ship postinst and prerm again.
 
  -- Clint Adams <schizo@debian.org>  Thu, 30 Jan 2003 10:00:02 -0500
 
@@ -840,7 +840,7 @@ debianutils (2.1) unstable; urgency=low
 
 debianutils (2.0.6) unstable; urgency=low
 
-  * run-parts.8: typo fix from Guillem Jover.  closes: #173808. 
+  * run-parts.8: typo fix from Guillem Jover.  closes: #173808.
 
  -- Clint Adams <schizo@debian.org>  Sat, 21 Dec 2002 15:53:52 -0500
 
@@ -853,7 +853,7 @@ debianutils (2.0.5) unstable; urgency=low
 
 debianutils (2.0.4) unstable; urgency=low
 
-  * Remove bashism from preinst.  closes: #171783. 
+  * Remove bashism from preinst.  closes: #171783.
 
  -- Clint Adams <schizo@debian.org>  Wed,  4 Dec 2002 19:18:32 -0500
 
@@ -883,7 +883,7 @@ debianutils (2.0.1) unstable; urgency=low
  -- Clint Adams <schizo@debian.org>  Wed, 20 Nov 2002 20:03:19 -0500
 
 debianutils (2.0) unstable; urgency=low
- 
+
   * Bump Standards-Version up to 3.5.8.
   * Joey Hess: Added sensible-browser command.
   * Joey Hess: Modifed sensible-* man page to document sensible-browser too.
@@ -899,13 +899,13 @@ debianutils (1.23) unstable; urgency=low
 
 debianutils (1.22.6) unstable; urgency=low
 
-  * run-parts.8: stop manpage from contradicting actual behavior. 
+  * run-parts.8: stop manpage from contradicting actual behavior.
 
  -- Clint Adams <schizo@debian.org>  Tue, 19 Nov 2002 06:09:26 -0500
 
 debianutils (1.22.5) unstable; urgency=low
 
-  * run-parts.c, Makefile.am, configure.ac: use automake to build binaries. 
+  * run-parts.c, Makefile.am, configure.ac: use automake to build binaries.
 
  -- Clint Adams <schizo@debian.org>  Mon, 18 Nov 2002 14:52:10 -0500
 
@@ -933,7 +933,7 @@ debianutils (1.22.2) unstable; urgency=low
 
 debianutils (1.22.1) unstable; urgency=low
 
-  * run-parts.c, tempfile.c: clean multi-line string literals 
+  * run-parts.c, tempfile.c: clean multi-line string literals
     to stop gcc 3.0 from bitching.
 
  -- Clint Adams <schizo@debian.org>  Thu, 14 Nov 2002 16:31:15 -0500
@@ -998,7 +998,7 @@ debianutils (1.17.0) unstable; urgency=low
 
 debianutils (1.16.9) unstable; urgency=low
 
-  * New maintainer. 
+  * New maintainer.
   * Add French translation of savelog.8.  closes: #168162.
   * run-paths.c, run-parts.8: add --list option from Jon Middleton.  closes:
     #149438.
@@ -1103,7 +1103,7 @@ debianutils (1.16) unstable; urgency=low
 debianutils (1.15.2) unstable; urgency=low
 
   * NMU
-  * fix the typo introduced by the last NMU (closes: #131376, #106829) 
+  * fix the typo introduced by the last NMU (closes: #131376, #106829)
     $filaname -> $filename
 
  -- Junichi Uekawa <dancer@debian.org>  Fri,  1 Feb 2002 01:04:38 +0900
