@@ -42,11 +42,15 @@ updatever () {
     # The presence of "$dir/$1" is unusual in modern intallations, and
     # the results are mostly unused.  So only recreate them if they
     # already existed.
-    if test -L "$dir/$1" &&
-        [ "$(readlink -f ${dir}/${1})" = "${dir}/${1}-${ver}" ]; then
-        ln -sf "$1-$ver.old" "$dir/$1.old"
-        ln -sf "$1-$ver" "$dir/$1"
-    else
+    if test -L "$dir/$1" ]; then
+        # If we were using links, continue to use links, updating if
+        # we need to.
+        if [ "$(readlink -f ${dir}/${1})" = "${dir}/${1}-${ver}" ]; then
+            # Yup, we need to change
+            ln -sf "$1-$ver.old" "$dir/$1.old"
+            ln -sf "$1-$ver" "$dir/$1"
+        fi
+    else                        # No links
         mv "$dir/$1" "$dir/$1.old"
         cat "$2" > "$dir/$1"
     fi
