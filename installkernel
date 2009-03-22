@@ -51,6 +51,8 @@ updatever () {
         if [ "$(readlink -f ${dir}/${1})" = "${dir}/${1}-${ver}" ]; then
             # Yup, we need to change
             ln -sf "$1-$ver.old" "$dir/$1.old"
+        else
+            mv "$dir/$1" "$dir/$1.old"
             ln -sf "$1-$ver" "$dir/$1"
         fi
     else                        # No links
