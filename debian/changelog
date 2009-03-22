@@ -1,5 +1,11 @@
-debianutils (2.32) UNRELEASED; urgency=low
+debianutils (2.32) unstable; urgency=low
 
+  [ Clint Adams ]
+  * tempfile.c: free memory right before exit, thanks to Franck
+    Joncourt.
+  * Bump to Standards-Version 3.8.1.
+
+  [ Manoj Srivastava ]
   * [654eca6]: Remove mkboot entirely
     mkboot has become increasingly distant from accepted practices on
     modern Debian isntallations, and has limited utility. mkboot only
@@ -12,7 +18,7 @@ debianutils (2.32) UNRELEASED; urgency=low
     removed.
     Bug fix: "mkboot cannot make boot floppy without lilo installed, but
     package has no dependency on lilo.", thanks to Chris Metzler
-   (Closes:  #197463).
+    (Closes:  #197463).
     Bug fix: "try different floppy formats when linux is larger than
     1.44Mo", thanks to Jari Aalto (Closes: #272254).
     Bug fix: "mkboot should send stderr from which to /dev/null", thanks
@@ -20,8 +26,10 @@ debianutils (2.32) UNRELEASED; urgency=low
   * [f98b30f]: Document that installkernel no longer calls mkboot
   * Added Manoj Srivastava to the uploaders field. This package is now
     co-maintained.
+  * installkernel: Handle symlinks in /boot when reinstalling.
+    closes: #520690.
 
- -- Manoj Srivastava <srivasta@debian.org>  Sun, 01 Mar 2009 12:43:53 -0600
+ -- Clint Adams <schizo@debian.org>  Sun, 22 Mar 2009 13:03:38 -0400
 
 debianutils (2.31) unstable; urgency=low
 
