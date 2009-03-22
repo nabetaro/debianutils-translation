@@ -14,12 +14,15 @@
 
 set -e
 
-# Parse the command line options
-if [ $# -eq 3 ] || [ $# -eq 4 ] ; then
+# Parse the command line options.  Of course, powerpc has to be all
+# different, and passes in a fifth argument, just because it is
+# "special". We ignore the fifth argument, and do not flag is as an
+# error, which it would be for any arch apart from powerpc
+if [ $# -eq 3 ] || [ $# -eq 4 ] || [ $# -eq 5 ] ; then
   img="$2"
   map="$3"
   ver="$1"
-  if [ $# -eq 4 ] && [ -n "$4" ] ; then
+  if [ $# -ge 4 ] && [ -n "$4" ] ; then
       dir="$4"
   else
       dir="/boot"
