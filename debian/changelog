@@ -1,3 +1,11 @@
+debianutils (2.32.2) unstable; urgency=low
+
+  * tempfile.c: patch from Ryan Niebur to fix breakage of -n option.
+    closes: #520940.
+  * tempfile.c: minor tweaks.
+
+ -- Clint Adams <schizo@debian.org>  Mon, 23 Mar 2009 21:45:08 -0400
+
 debianutils (2.32.1) unstable; urgency=low
 
   [ Manoj Srivastava ]
