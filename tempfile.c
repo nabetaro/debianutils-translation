@@ -91,7 +91,9 @@ main (int argc, char **argv)
       }
       break;
     case 'n':
-      name = optarg;
+      // strdup because it is freed later on
+      if((name = strdup(optarg)) == NULL)
+        syserror("strdup");
       break;
     case 'h':
       usage(0);
