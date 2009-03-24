@@ -12,6 +12,10 @@
 
 char *progname;
 
+void usage(int);
+void syserror(const char *);
+int parsemode(const char *, mode_t *);
+
 void
 usage (int status)
 {
@@ -91,7 +95,7 @@ main (int argc, char **argv)
       }
       break;
     case 'n':
-      // strdup because it is freed later on
+      /* strdup because it is freed later on */
       if((name = strdup(optarg)) == NULL)
         syserror("strdup");
       break;
@@ -109,7 +113,6 @@ main (int argc, char **argv)
     if ((fd = open(name, O_RDWR | O_CREAT | O_EXCL, mode)) < 0)
       syserror("open");
   }
-
   else {
     for (;;) {
       if (!(name = tempnam(dir, pfx)))
