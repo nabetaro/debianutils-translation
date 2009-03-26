@@ -3,7 +3,8 @@
 # Copyright (C) 1995 - 1998, Ian A. Murdock <imurdock@debian.org>
 # Copyright (C) 1998, 1999, Guy Maor
 # Copyright (C) 2002, Matthew Wilcox
-# Copyright (C) 2002, 2004, 2005, 2007, Clint Adams
+# Copyright (C) 2002, 2004, 2005, 2007, 2009  Clint Adams
+# Copyright (C) 2009  Manoj Srivasta
 #
 # Install the kernel on a Debian Linux system.
 #
@@ -45,7 +46,7 @@ updatever () {
     # The presence of "$dir/$1" is unusual in modern intallations, and
     # the results are mostly unused.  So only recreate them if they
     # already existed.
-    if test -L "$dir/$1" ]; then
+    if test -L "$dir/$1" ; then
         # If we were using links, continue to use links, updating if
         # we need to.
         if [ "$(readlink -f ${dir}/${1})" = "${dir}/${1}-${ver}" ]; then
