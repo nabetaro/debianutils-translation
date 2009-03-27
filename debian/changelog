@@ -1,3 +1,11 @@
+debianutils (3.0) unstable; urgency=low
+
+  * Stop shipping sensible-browser, sensible-editor, sensible-pager, and
+    accompanying man pages, and declare a dependency on sensible-utils,
+    to which they have moved.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 26 Mar 2009 21:25:08 -0400
+
 debianutils (2.32.3) unstable; urgency=medium
 
   * installkernel: remove stray right bracket, thanks to Alban Browaeys.
