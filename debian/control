@@ -10,6 +10,7 @@ Vcs-Browser: http://git.debian.org/?p=private/schizo/debianutils.git
 Package: debianutils
 Architecture: any
 Pre-Depends: ${shlibs:Depends}
+Depends: sensible-utils
 Section: utils
 Essential: yes
 Description: Miscellaneous utilities specific to Debian
@@ -18,5 +19,4 @@ Description: Miscellaneous utilities specific to Debian
  you may use them directly.
  .
  The specific utilities included are: installkernel run-parts
- savelog sensible-browser sensible-editor sensible-pager tempfile
- which.
+ savelog tempfile which.

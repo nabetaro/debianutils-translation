@@ -55,7 +55,6 @@ binary-arch:	checkroot build
 		       debian/tmp/usr/share/man/man8 \
 		       debian/tmp/usr/share/man/fr/man1 \
 		       debian/tmp/usr/share/man/fr/man8 \
-		       debian/tmp/usr/lib/mime/packages \
 		       debian/tmp/usr/share/doc/$(package) \
 		       debian/tmp/usr/share/$(package)
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp INSTALL_PROGRAM="$(INSTALL_PROGRAM)"
@@ -79,10 +78,6 @@ else
 	rm debian/tmp/usr/sbin/installkernel \
 	   debian/tmp/usr/share/man/man8/installkernel.8
 endif
-	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-pager.1.gz
-	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/man1/sensible-browser.1.gz
-	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/fr/man1/sensible-pager.1.gz
-	ln -s sensible-editor.1.gz debian/tmp/usr/share/man/fr/man1/sensible-browser.1.gz
 	$(INSTALL_FILE) debian/shells debian/tmp/usr/share/$(package)
 	$(INSTALL_FILE) debian/changelog debian/tmp/usr/share/doc/$(package)
 	$(INSTALL_FILE) debian/README.shells debian/tmp/usr/share/doc/$(package)
@@ -92,7 +87,6 @@ endif
 	$(INSTALL_FILE) debian/copyright debian/tmp/usr/share/doc/$(package)
 	$(INSTALL_SCRIPT) debian/postinst debian/tmp/DEBIAN/
 	$(INSTALL_SCRIPT) debian/postrm debian/tmp/DEBIAN/
-	$(INSTALL_FILE) debian/mime debian/tmp/usr/lib/mime/packages/debianutils
 
 	cd debian/tmp && find * -type f ! -regex '^DEBIAN/.*' -print0 | xargs -r0 md5sum > DEBIAN/md5sums
 

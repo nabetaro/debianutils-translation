@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2009-03-01 12:24-0600\n"
+"POT-Creation-Date: 2009-03-26 21:20-0300\n"
 "PO-Revision-Date: 2005-12-08 23:19+0100\n"
 "Last-Translator: Nicolas François <nicolas.francois@centraliens.net>\n"
 "Language-Team: Debian French Team <debian-l10n-french@lists.debian.org>\n"
@@ -33,7 +33,7 @@ msgstr "7 avril 2005"
 
 # type: SH
 #: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9
-#: ../savelog.8:3 ../sensible-editor.1:3 ../tempfile.1:3 ../which.1:3
+#: ../savelog.8:3 ../tempfile.1:3 ../which.1:3
 #, no-wrap
 msgid "NAME"
 msgstr "NOM"
@@ -47,7 +47,7 @@ msgstr ""
 
 # type: SH
 #: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11
-#: ../savelog.8:5 ../sensible-editor.1:5 ../tempfile.1:5 ../which.1:5
+#: ../savelog.8:5 ../tempfile.1:5 ../which.1:5
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "SYNOPSIS"
@@ -59,7 +59,7 @@ msgstr "B<add-shell> I<interpréteur> [I<interpréteur>...]"
 
 # type: SH
 #: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20
-#: ../savelog.8:9 ../sensible-editor.1:12 ../tempfile.1:9 ../which.1:7
+#: ../savelog.8:9 ../tempfile.1:9 ../which.1:7
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "DESCRIPTION"
@@ -81,8 +81,7 @@ msgid "The shells must be provided by their full pathnames."
 msgstr "Le chemin complet des interpréteurs doit être fourni."
 
 # type: SH
-#: ../add-shell.8:15 ../remove-shell.8:13 ../sensible-editor.1:17
-#: ../tempfile.1:77
+#: ../add-shell.8:15 ../remove-shell.8:13 ../tempfile.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
@@ -209,8 +208,7 @@ msgid "29 Oct 2007"
 msgstr "17 octobre 2004"
 
 # type: TH
-#: ../run-parts.8:8 ../savelog.8:2 ../sensible-editor.1:2 ../tempfile.1:2
-#: ../which.1:2
+#: ../run-parts.8:8 ../savelog.8:2 ../tempfile.1:2 ../which.1:2
 #, no-wrap
 msgid "Debian"
 msgstr "Debian GNU/Linux"
@@ -880,66 +878,6 @@ msgstr ""
 "renomme I<fichier.1> et le compresse, des données peuvent être perdues."
 
 # type: TH
-#: ../sensible-editor.1:2
-#, no-wrap
-msgid "SENSIBLE-EDITOR"
-msgstr "SENSIBLE-EDITOR"
-
-# type: TH
-#: ../sensible-editor.1:2
-#, no-wrap
-msgid "03 Mar 2004"
-msgstr "03 mars 2004"
-
-# type: Plain text
-#: ../sensible-editor.1:5
-msgid ""
-"sensible-editor, sensible-pager, sensible-browser - sensible editing, "
-"paging, and web browsing"
-msgstr ""
-"sensible-editor, sensible-pager, sensible-browser - outils pratiques "
-"d'édition, de mise en page et de navigation sur le web"
-
-# type: Plain text
-#: ../sensible-editor.1:7
-msgid "B<sensible-editor> [OPTIONS...]"
-msgstr "B<sensible-editor> [OPTIONS...]"
-
-# type: Plain text
-#: ../sensible-editor.1:9
-msgid "B<sensible-pager> [OPTIONS...]"
-msgstr "B<sensible-pager> [OPTIONS...]"
-
-# type: Plain text
-#: ../sensible-editor.1:11
-msgid "B<sensible-browser> url"
-msgstr "B<sensible-browser> url"
-
-# type: Plain text
-#: ../sensible-editor.1:17
-msgid ""
-"B<sensible-editor>, B<sensible-pager> and B<sensible-browser> make sensible "
-"decisions on which editor, pager, and web browser to call, respectively.  "
-"Programs in Debian can use these scripts as their default editor, pager, or "
-"web browser or emulate their behavior."
-msgstr ""
-"B<sensible-editor>, B<sensible-pager> et B<sensible-browser> prennent des "
-"décisions sensées respectivement sur le choix de l'éditeur, de l'outil de "
-"mise en page (« pageur ») et de l'outil de navigation qu'il faut appeler. Les "
-"programmes de la distribution Debian peuvent utiliser ces scripts comme "
-"éditeur, pageur, ou navigateur par défaut ou peuvent simuler leur "
-"comportement."
-
-# NOTE : manque un verbe
-# type: Plain text
-#: ../sensible-editor.1:19
-msgid ""
-"Documentation of the EDITOR, PAGER, and BROWSER variables in B<environ>(7)"
-msgstr ""
-"La documentation des variables d'environnement EDITOR, PAGER, et BROWSER se "
-"trouve dans B<environ>(7)."
-
-# type: TH
 #: ../tempfile.1:2
 #, no-wrap
 msgid "TEMPFILE"
@@ -1252,6 +1190,56 @@ msgstr "B<2>"
 #: ../which.1:26
 msgid "if an invalid option is specified"
 msgstr "si une option non valable est spécifiée"
+
+# type: TH
+#~ msgid "SENSIBLE-EDITOR"
+#~ msgstr "SENSIBLE-EDITOR"
+
+# type: TH
+#~ msgid "03 Mar 2004"
+#~ msgstr "03 mars 2004"
+
+# type: Plain text
+#~ msgid ""
+#~ "sensible-editor, sensible-pager, sensible-browser - sensible editing, "
+#~ "paging, and web browsing"
+#~ msgstr ""
+#~ "sensible-editor, sensible-pager, sensible-browser - outils pratiques "
+#~ "d'édition, de mise en page et de navigation sur le web"
+
+# type: Plain text
+#~ msgid "B<sensible-editor> [OPTIONS...]"
+#~ msgstr "B<sensible-editor> [OPTIONS...]"
+
+# type: Plain text
+#~ msgid "B<sensible-pager> [OPTIONS...]"
+#~ msgstr "B<sensible-pager> [OPTIONS...]"
+
+# type: Plain text
+#~ msgid "B<sensible-browser> url"
+#~ msgstr "B<sensible-browser> url"
+
+# type: Plain text
+#~ msgid ""
+#~ "B<sensible-editor>, B<sensible-pager> and B<sensible-browser> make "
+#~ "sensible decisions on which editor, pager, and web browser to call, "
+#~ "respectively.  Programs in Debian can use these scripts as their default "
+#~ "editor, pager, or web browser or emulate their behavior."
+#~ msgstr ""
+#~ "B<sensible-editor>, B<sensible-pager> et B<sensible-browser> prennent des "
+#~ "décisions sensées respectivement sur le choix de l'éditeur, de l'outil de "
+#~ "mise en page (« pageur ») et de l'outil de navigation qu'il faut appeler. "
+#~ "Les programmes de la distribution Debian peuvent utiliser ces scripts "
+#~ "comme éditeur, pageur, ou navigateur par défaut ou peuvent simuler leur "
+#~ "comportement."
+
+# NOTE : manque un verbe
+# type: Plain text
+#~ msgid ""
+#~ "Documentation of the EDITOR, PAGER, and BROWSER variables in B<environ>(7)"
+#~ msgstr ""
+#~ "La documentation des variables d'environnement EDITOR, PAGER, et BROWSER "
+#~ "se trouve dans B<environ>(7)."
 
 # type: TH
 #~ msgid "MKBOOT"
