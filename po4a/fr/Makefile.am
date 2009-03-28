@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS=foreign
 
 manfronedir = $(mandir)/fr/man1
-manfrone_DATA = sensible-editor.1 tempfile.1 which.1
+manfrone_DATA = tempfile.1 which.1
 # readlink.1 is now distributed by coreutils
 
 manfreightdir = $(mandir)/fr/man8
