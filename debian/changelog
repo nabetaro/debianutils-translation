@@ -1,3 +1,9 @@
+debianutils (3.0.1) unstable; urgency=low
+
+  * Remove French sensible-editor man page as well.  closes: #521543.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 29 Mar 2009 17:55:21 -0400
+
 debianutils (3.0) unstable; urgency=low
 
   * Stop shipping sensible-browser, sensible-editor, sensible-pager, and
