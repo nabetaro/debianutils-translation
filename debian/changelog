@@ -1,3 +1,9 @@
+debianutils (3.0.2) unstable; urgency=low
+
+  * installkernel: fix symlinking of kernel images.  closes: #526493.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 01 May 2009 11:08:13 -0400
+
 debianutils (3.0.1) unstable; urgency=low
 
   * Remove French sensible-editor man page as well.  closes: #521543.
