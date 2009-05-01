@@ -54,8 +54,8 @@ updatever () {
             ln -sf "$1-$ver.old" "$dir/$1.old"
         else
             mv "$dir/$1" "$dir/$1.old"
-            ln -sf "$1-$ver" "$dir/$1"
         fi
+        ln -sf "$1-$ver" "$dir/$1"
     else                        # No links
         mv "$dir/$1" "$dir/$1.old"
         cat "$2" > "$dir/$1"
