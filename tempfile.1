@@ -12,25 +12,37 @@ tempfile \- create a temporary file in a safe manner
 creates a temporary file in a safe manner.  It uses
 .BR tempnam (3)
 to choose the name and opens it with O_RDWR | O_CREAT | O_EXCL.  The filename
-is printed on standard output.
-.PP
-The directory in which to create the file might be searched for in this
-order:
-.IP a)
-The directory specified by the environment variable
-.BR TMPDIR ,
-if it exists.
-.IP b)
-The directory specified by the
-.B --directory
-argument, if given.
-.IP c)
-The directory
-.IR /tmp .
-.PP
-See
+is printed on standard output. See
 .BR tempnam (3)
 for the actual steps involved in directory selection.
+.PP
+The directory in which to create the file might be searched for in this
+order (but refer to
+.BR tempnam (3)
+for authoritative answers):
+.TP 3
+a)
+In case the environment variable
+.B TMPDIR
+exists and
+contains the name of an appropriate directory, that is used.
+.TP
+b)
+Otherwise, if the
+.I \-\-directory
+argument is specified and appropriate, it is used.
+.TP
+c)
+Otherwise,
+.I P_tmpdir
+(as defined in
+.IR <stdio.h> )
+is used when appropriate.
+.TP
+d)
+Finally an implementation-defined directory 
+.IR (/tmp)
+may be used.
 .SH OPTIONS
 .TP
 .BI "-d, --directory " DIR
