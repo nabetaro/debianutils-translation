@@ -330,12 +330,12 @@ void run_parts(char *dirname)
 
     result = stat(filename, &st);
     if (result < 0) {
+      error("failed to stat component %s: %s", filename, strerror(errno));
       if (exit_on_error_mode) {
-        error("failed to stat component %s: %s", filename, strerror(errno));
         exit(1);
       }
       else
-	return;
+        continue;
     }
 
     if (S_ISREG(st.st_mode)) {
