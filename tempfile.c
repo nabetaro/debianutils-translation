@@ -59,7 +59,7 @@ parsemode (const char *in, mode_t *out)
 int
 main (int argc, char **argv)
 {
-  char *name=0, *dir=0, *pfx=0, *sfx=0;
+  char *name=0, *dir=0, *pfx=0, *sfx=0, *filename=0;
   mode_t mode = 0600;
   int fd, optc;
   struct option long_options[] = {
@@ -117,33 +117,24 @@ main (int argc, char **argv)
     for (;;) {
       if (!(name = tempnam(dir, pfx)))
 	syserror("tempnam");
-      if ((fd = open(name, O_RDWR | O_CREAT | O_EXCL, mode)) < 0) {
+      if(sfx) {
+        char *namesfx;
+        if (!(namesfx = (char *)malloc(strlen(name) + strlen(sfx) + 1)))
+          syserror("malloc");
+        strcpy(namesfx, name);
+        strcat(namesfx, sfx);
+        filename = namesfx;
+      }
+      else
+        filename = name;
+
+      if ((fd = open(filename, O_RDWR | O_CREAT | O_EXCL, mode)) < 0) {
 	if (errno == EEXIST) {
 	  free(name);
+	  free(filename);
 	  continue;
 	}
 	syserror("open");
-      }
-      if (sfx) {
-	char *namesfx;
-	if (!(namesfx = malloc(strlen(name) + strlen(sfx) + 1)))
-	  syserror("malloc");
-	strcpy(namesfx, name);
-	strcat(namesfx, sfx);
-	if (link(name, namesfx) < 0) {
-	  if (errno == EEXIST) {
-	    if (unlink(name) < 0)
-	      syserror("unlink");
-	    free(name);
-	    free(namesfx);
-	    continue;
-	  }
-	  syserror("link");
-	}
-	if (unlink(name) < 0)
-	  syserror("unlink");
-	free(name);
-	name = namesfx;
       }
       break;
     }
@@ -151,7 +142,8 @@ main (int argc, char **argv)
   
   if (close(fd))
     syserror("close");
-  puts(name);
+  puts(filename);
+  free(filename);
   free(name);
   exit(0);
 }
