@@ -18,13 +18,13 @@ are named:
 .IR "file" "." "<number>" "" "<compress_suffix>"
 
 .RE
-where 
+where
 .I <number>
 is the version number, 0 being the newest.  Version numbers > 0 are compressed
 unless
 .B \-l
 prevents it.  Version number 0 is not compressed because a process might still
-have 
+have
 .I file
 opened for I/O.  Only
 .I cycle
@@ -46,9 +46,9 @@ version
 .IR "file" "." "1"
 is moved to version
 .IR "file" "." "2",
-and so on.  Finally version 
+and so on.  Finally version
 .IR "file" "." "0"
-is moved to version 
+is moved to version
 .IR "file" "." "1",
 and version
 .I "file"
@@ -67,7 +67,7 @@ flag was given.  It is changed subject to the
 flags.
 
 .IP 3)
-The main 
+The main
 .IR "file"
 is moved to
 .IR "file" "." "0".
