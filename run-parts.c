@@ -328,17 +328,17 @@ void run_parts(char *dirname)
     strcat(filename, "/");
     strcat(filename, namelist[i]->d_name);
 
-    result = lstat(filename, &st);
+    result = stat(filename, &st);
     if (result < 0) {
       if (exit_on_error_mode) {
-        error("failed to lstat component %s: %s", filename, strerror(errno));
+        error("failed to stat component %s: %s", filename, strerror(errno));
         exit(1);
       }
       else
 	return;
     }
 
-    if (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode)) {
+    if (S_ISREG(st.st_mode)) {
       if (!access(filename, X_OK)) {
 	if (test_mode) {
 	  printf("%s\n", filename);
