@@ -1,3 +1,22 @@
+debianutils (3.1) unstable; urgency=medium
+
+  [ Manoj Srivastava ]
+  * which.1: clarify that which does not follow symlinks.  closes: #268624.
+  * run-parts.c: permission and sanity checks run on link targets, not
+    symlinks.  closes: #294789.
+  * tempfile.c: tempfile with a suffix no longer needs hardlinks.
+    closes: #312270.
+  * savelog.8: disambiguate version numbering in manual.  closes: #330289.
+  * tempfile.1: update manual page with up-to-date tempnam behaviors.
+    closes: #338490.
+
+  [ Clint Adams ]
+  * savelog.8, tempfile.1: remove spurious trailing whitespace
+  * savelog.8, tempfile.1, which.1: update dates in manual pages.
+  * po4a/po/fr.po: tweak French translations enough to reach 80%.
+
+ -- Clint Adams <schizo@debian.org>  Fri, 01 May 2009 18:01:28 -0400
+
 debianutils (3.0.2) unstable; urgency=low
 
   * installkernel: fix symlinking of kernel images.  closes: #526493.
