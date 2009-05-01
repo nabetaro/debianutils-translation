@@ -5,3 +5,7 @@ configure
 depcomp
 install-sh
 missing
+po4a/fr/savelog.8
+po4a/fr/tempfile.1
+po4a/fr/which.1
+po4a/po/debianutils.pot
