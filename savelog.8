@@ -39,15 +39,19 @@ actions are performed:
 
 .IP 1)
 Version numbered files are cycled.  Version
-.IR cycle \-2
+.IR "file" "." "2"
 is moved to version
-.IR cycle "\-3,"
+.IR "file" "." "3",
 version
-.IR cycle \-1
+.IR "file" "." "1"
 is moved to version
-.IR cycle "\-2 ,"
-and so on.  Finally version 0 is moved to version 1, and version
-.I cycle
+.IR "file" "." "2",
+and so on.  Finally version 
+.IR "file" "." "0"
+is moved to version 
+.IR "file" "." "1",
+and version
+.I "file"
 is deleted.  Both
 compressed names and uncompressed names are cycled, regardless of
 .BR \-l .
@@ -55,7 +59,7 @@ Missing version files are ignored.
 
 .IP 2)
 The new
-.I file.1
+.IR "file" "." "1"
 is compressed unless the
 .B \-l
 flag was given.  It is changed subject to the
@@ -63,8 +67,10 @@ flag was given.  It is changed subject to the
 flags.
 
 .IP 3)
-The main file is moved to
-.IR file.0 .
+The main 
+.IR "file"
+is moved to
+.IR "file" "." "0".
 
 .IP 4)
 If the
@@ -78,16 +84,10 @@ before.
 
 .IP 5)
 The new
-.I file.0
+.IR "file" "." "0"
 is changed subject to the
 .BR "\-m" ", " "\-u" ", and " "\-g"
 flags.
-
-Since the version numbers start with 0, version number
-.I cycle
-is never formed.  The
-.I cycle
-count must be at least 2.
 
 .SH OPTIONS
 .TP
@@ -104,7 +104,9 @@ chgrp log files to group, implies
 .B \-t
 .TP
 .B "\-c cycle"
-Save cycle versions of the logfile (default: 7)
+Save cycle versions of the logfile (default: 7). The
+.I cycle
+count must be at least 2.
 .TP
 .B \-t
 touch new logfile into existence
