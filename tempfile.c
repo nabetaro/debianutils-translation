@@ -130,7 +130,8 @@ main (int argc, char **argv)
 
       if ((fd = open(filename, O_RDWR | O_CREAT | O_EXCL, mode)) < 0) {
 	if (errno == EEXIST) {
-	  free(name);
+          if(name != filename)
+            free(name);
 	  free(filename);
 	  continue;
 	}
@@ -143,7 +144,8 @@ main (int argc, char **argv)
   if (close(fd))
     syserror("close");
   puts(filename);
+  if(name != filename)
+    free(name);
   free(filename);
-  free(name);
   exit(0);
 }
