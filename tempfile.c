@@ -112,6 +112,7 @@ main (int argc, char **argv)
   if (name) {
     if ((fd = open(name, O_RDWR | O_CREAT | O_EXCL, mode)) < 0)
       syserror("open");
+    filename = name;
   }
   else {
     for (;;) {
