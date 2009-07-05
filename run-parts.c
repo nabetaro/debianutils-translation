@@ -349,7 +349,16 @@ void run_parts(char *dirname)
 	}
 	else {
 	  if (verbose_mode)
-	    fprintf(stderr, "run-parts: executing %s\n", filename);
+	    if (argcount) {
+	      char **a = args;
+
+	      fprintf(stderr, "run-parts: executing %s", filename);
+	      while(*(++a))
+		fprintf(stderr, " %s", *a);
+	      fprintf(stderr, "\n");
+	    } else {
+	      fprintf(stderr, "run-parts: executing %s\n", filename);
+	    }
 	  run_part(filename);
 	  if (exitstatus != 0 && exit_on_error_mode) return;
 	}
