@@ -1,3 +1,11 @@
+debianutils (3.2) unstable; urgency=low
+
+  * run-parts.c: print command arguments when --verbose and --arg are
+    used.  closes: #535621.
+  * Bump to Standards-Version 3.8.2.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 05 Jul 2009 15:03:00 -0400
+
 debianutils (3.1.3) unstable; urgency=low
 
   * Remove any mention of readlink from debian/copyright.  closes:
