@@ -10,7 +10,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH RUN\-PARTS 8 "29 Oct 2007" "Debian GNU/Linux" 
+.TH RUN\-PARTS 8 "9 Aug 2009" "Debian GNU/Linux" 
 .SH NOM
 run\-parts \- exécute les scripts ou les exécutables d'un répertoire
 .SH SYNOPSIS
@@ -32,12 +32,12 @@ alors les noms ne doivent être constitués que de lettres minuscules ou
 majuscules, de chiffres, de tirets de soulignement («\ underscore\ ») ou de
 tirets.
                                                                                 
-Si l'option \fB\-\-lsbsysinit\fP est utilisée, alors les noms ne doivent pas se
-terminer par «\ .dpkg\-old\ », «\ .dpkg\-dist\ », «\ .dpkg\-new\ » ou «\ .dpkg\-tmp\ »
-et doivent appartenir à un (ou plusieurs) des ensembles de noms suivants\ :
-noms spécifiés par LANANA (^[a\-z0\-9]+$)\ ; les noms hiérarchiques et réservés
-par LSB (^_?([a\-z0\-9_.]+\-)+[a\-z0\-9]+$)\ ; les noms des scripts cron définis
-par Debian (^[a\-z0\-9][a\-z0\-9\-]*$).
+If the \-\-lsbsysinit option is given, then the names must not end in
+\&.dpkg\-old or .dpkg\-dist or .dpkg\-new or .dpkg\-tmp, and must belong to one or
+more of the following namespaces: the LANANA\-assigned namespace
+(^[a\-z0\-9]+$); the LSB hierarchical and reserved namespaces
+(^_?([a\-z0\-9_.]+\-)+[a\-z0\-9]+$); and the Debian cron script namespace
+(^[a\-zA\-Z0\-9_\-]+$).
 
 If the \-\-regex option is given, the names must match the custom extended
 regular expression specified as that option's argument.
@@ -116,7 +116,7 @@ Copyright (C) 1996 Jeff Noxon.
 .P
 Copyright (C) 1996, 1997, 1998 Guy Maor
 .P
-Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams
+Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams
 
 \fBrun\-parts\fP est un logiciel libre\ ; voyez la «\ GNU General Public Licence\ »
 version 2 ou supérieure pour le copyright. Il n'y a \fIpas\fP de garantie.

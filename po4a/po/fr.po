@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2009-05-01 18:40-0300\n"
+"POT-Creation-Date: 2009-08-09 15:19-0300\n"
 "PO-Revision-Date: 2005-12-08 23:19+0100\n"
 "Last-Translator: Nicolas François <nicolas.francois@centraliens.net>\n"
 "Language-Team: Debian French Team <debian-l10n-french@lists.debian.org>\n"
@@ -229,9 +229,8 @@ msgstr "RUN-PARTS"
 # type: TH
 #. type: TH
 #: ../run-parts.8:8
-#, fuzzy, no-wrap
-msgid "29 Oct 2007"
-msgstr "17 octobre 2004"
+msgid "9 Aug 2009"
+msgstr "9 août 2009"
 
 # type: TH
 #. type: TH
@@ -299,14 +298,14 @@ msgid ""
 "old or .dpkg-dist or .dpkg-new or .dpkg-tmp, and must belong to one or more "
 "of the following namespaces: the LANANA-assigned namespace (^[a-z0-9]+$); "
 "the LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
-"and the Debian cron script namespace (^[a-z0-9][a-z0-9-]*$)."
+"and the Debian cron script namespace (^[a-zA-Z0-9_-]+$)."
 msgstr ""
 "Si l'option B<--lsbsysinit> est utilisée, alors les noms ne doivent pas se "
 "terminer par « .dpkg-old », « .dpkg-dist », « .dpkg-new » ou « .dpkg-tmp » et "
 "doivent appartenir à un (ou plusieurs) des ensembles de noms suivants : noms "
 "spécifiés par LANANA (^[a-z0-9]+$) ; les noms hiérarchiques et réservés par "
 "LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$) ; les noms des scripts cron définis par "
-"Debian (^[a-z0-9][a-z0-9-]*$)."
+"Debian (^[a-zA-Z0-9_-]+$)."
 
 # type: Plain text
 #. type: Plain text
@@ -443,9 +442,8 @@ msgstr "utilise les noms LSB plutôt que le comportement ordinaire."
 # type: TP
 #. type: TP
 #: ../run-parts.8:72
-#, fuzzy, no-wrap
 msgid "B<--new-session>"
-msgstr "B<--version>"
+msgstr "B<--new-session>"
 
 # type: Plain text
 #. type: Plain text
@@ -597,8 +595,9 @@ msgstr "Copyright (C) 1996, 1997, 1998 Guy Maor"
 # type: Plain text
 #. type: Plain text
 #: ../run-parts.8:124
-msgid "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams"
-msgstr "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Clint Adams"
+msgid ""
+"Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
+msgstr "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 
 # type: Plain text
 #. type: Plain text
@@ -1071,7 +1070,8 @@ msgid ""
 "Otherwise, if the I<--directory> argument is specified and appropriate, it "
 "is used."
 msgstr ""
-"Sinon, si l'option I<--directory> est utilisée, le répertoire spécifié est utilisé."
+"Sinon, si l'option I<--directory> est utilisée, le répertoire spécifié est "
+"utilisé."
 
 # type: IP
 #. type: TP
@@ -1087,7 +1087,8 @@ msgid ""
 "Otherwise, I<P_tmpdir> (as defined in I<E<lt>stdio.hE<gt>>)  is used when "
 "appropriate."
 msgstr ""
-"Sinon, le répertoire I<P_tmpdir> (selon la définition de I<E<lt>stdio.hE<gt>>) est utilisé selon les exigences. "
+"Sinon, le répertoire I<P_tmpdir> (selon la définition de I<E<lt>stdio."
+"hE<gt>>) est utilisé selon les exigences. "
 
 #. type: TP
 #: ../tempfile.1:41
