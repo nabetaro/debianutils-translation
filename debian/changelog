@@ -1,3 +1,10 @@
+debianutils (3.2.1) unstable; urgency=low
+
+  * run-parts.8: conform man page regex with the actual regex used by
+    run-parts.  closes: #536395.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 09 Aug 2009 15:18:52 -0400
+
 debianutils (3.2) unstable; urgency=low
 
   * run-parts.c: print command arguments when --verbose and --arg are
