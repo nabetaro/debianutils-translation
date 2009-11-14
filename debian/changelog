@@ -1,3 +1,11 @@
+debianutils (3.2.2) unstable; urgency=low
+
+  * savelog: patch from Patrick Coleman to fix breakage when target file
+    does not exist.  closes: #556227.
+  * Bump to Standards-Version 3.8.3.
+
+ -- Clint Adams <schizo@debian.org>  Sat, 14 Nov 2009 13:16:01 -0500
+
 debianutils (3.2.1) unstable; urgency=low
 
   * run-parts.8: conform man page regex with the actual regex used by
