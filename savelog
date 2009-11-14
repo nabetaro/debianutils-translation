@@ -185,9 +185,9 @@ while [ $# -gt 0 ]; do
 		continue
 	fi
 
-	# if not a file or empty, do nothing major
-	# (in the Debian version, we rotate even if empty by default)
-	if [ ! -s "$filename" ] && [ "$rotateifempty" != "yes" ]; then
+	# if file does not exist or is empty, and we've been told to not rotate
+	# empty files, create if requested and skip to the next file.
+	if [ ! -s "$filename" ] && [ "$rotateifempty" = "no" ]; then
 		# if -t was given and it does not exist, create it
 		if test -n "$touch" && [ ! -f "$filename" ]; then 
 			touch -- "$filename"
@@ -199,6 +199,16 @@ while [ $# -gt 0 ]; do
 			fixfile "$filename"
 		fi
 		continue
+	# otherwise if the file does not exist and we've been told to rotate it
+	# anyway, create an empty file to rotate.
+	elif [ ! -e "$filename" ]; then
+		touch -- "$filename"
+		if [ "$?" -ne 0 ]; then
+			echo "$prog: could not touch $filename" 1>&2
+			exitcode=4
+			continue
+		fi
+		fixfile "$filename"
 	fi
 
  	# be sure that the savedir exists and is writable
