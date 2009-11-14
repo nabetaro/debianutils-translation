@@ -10,6 +10,6 @@ bin_SCRIPTS = which savelog
 
 sbin_SCRIPTS = installkernel add-shell remove-shell
 
-man_MANS = run-parts.8 tempfile.1 \
+man_MANS = run-parts.8 \
 	   installkernel.8 savelog.8 \
 	   tempfile.1 which.1 add-shell.8 remove-shell.8
