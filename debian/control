@@ -3,7 +3,7 @@ Section: utils
 Priority: required
 Maintainer: Clint Adams <schizo@debian.org>
 Uploaders: Manoj Srivastava <srivasta@debian.org>
-Standards-Version: 3.8.3
+Standards-Version: 3.8.4
 Vcs-Git: git://git.debian.org/git/private/schizo/debianutils.git
 Vcs-Browser: http://git.debian.org/?p=private/schizo/debianutils.git
 
