@@ -1,3 +1,12 @@
+debianutils (3.2.3) unstable; urgency=low
+
+  * Switch to 3.0 (native) source format.
+  * French man page translation updates from Alexandre Hoïde.
+    closes: #579652.
+  * Bump to Standards-Version 3.8.4.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 29 Apr 2010 11:12:26 -0400
+
 debianutils (3.2.2) unstable; urgency=low
 
   * savelog: patch from Patrick Coleman to fix breakage when target file
