@@ -26,6 +26,7 @@
 #	-l	  - don't compress any log files	(default: compress)
 #       -p        - preserve mode/user/group of original file
 #	-j        - use bzip2 instead of gzip
+#	-J        - use xz instead of gzip
 #	-x script - invoke script with rotated log file in $FILE
 #	-n	  - do not rotate empty files
 #	-q	  - be quiet
@@ -116,6 +117,7 @@ usage()
     echo "	-l	   - don't compress any log files (default: compress)"
     echo "	-p         - preserve mode/user/group of original file"
     echo "	-j         - use bzip2 instead of gzip"
+    echo "	-J         - use xz instead of gzip"
     echo "	-x script  - invoke script with rotated log file in \$FILE"
     echo "	-n         - do not rotate empty files"
     echo "	-q         - suppress rotation message"
@@ -137,7 +139,7 @@ fixfile()
 }
 
 
-while getopts m:u:g:c:r:CdD:tlphjx:nq opt ; do
+while getopts m:u:g:c:r:CdD:tlphjJx:nq opt ; do
 	case "$opt" in
 	m) mode="$OPTARG" ;;
 	u) user="$OPTARG" ;;
@@ -149,6 +151,7 @@ while getopts m:u:g:c:r:CdD:tlphjx:nq opt ; do
 	D) DATUM=$(date +$OPTARG) ;;
 	t) touch=1 ;;
 	j) COMPRESS="bzip2"; COMPRESS_OPTS="-9f"; DOT_Z=".bz2" ;;
+	J) COMPRESS="xz"; COMPRESS_OPTS="-9f"; DOT_Z=".xz" ;;
 	x) hookscript="$OPTARG" ;;
 	l) COMPRESS="" ;;
 	p) preserve=1 ;;

@@ -5,7 +5,7 @@ savelog \- save a log file
 .SH SYNOPSIS
 .B savelog
 [\-m mode] [\-u user] [\-g group] [\-t] [\-p] [\-c cycle] [\-l] [\-j]
-[\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
+[\-J] [\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
 .SH DESCRIPTION
 The
 .B savelog
@@ -119,6 +119,9 @@ preserve owner, group, and permissions of logfile
 .TP
 .B \-j
 compress with bzip2 instead of gzip
+.TP
+.B \-J
+compress with xz instead of gzip
 .TP
 .B \-C
 force cleanup of cycled logfiles
