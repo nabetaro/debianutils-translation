@@ -1,3 +1,10 @@
+debianutils (3.3) unstable; urgency=low
+
+  * savelog.8: add SEE ALSO for logrotate(8).  closes: #487171.
+  * savelog: add -J option for xz compression.  closes: #587520.
+
+ -- Clint Adams <schizo@debian.org>  Wed, 30 Jun 2010 10:38:10 -0400
+
 debianutils (3.2.3) unstable; urgency=low
 
   * Switch to 3.0 (native) source format.
