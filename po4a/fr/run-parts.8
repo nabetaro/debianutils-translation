@@ -10,91 +10,89 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH RUN\-PARTS 8 "9 Aug 2009" "Debian GNU/Linux" 
+.TH RUN\-PARTS 8 "9 aoÃ»t 2009" "Debian GNU/Linux" 
 .SH NOM
-run\-parts \- exécute les scripts ou les exécutables d'un répertoire
+run\-parts \- exÃ©cute les scripts ou les exÃ©cutables d'un rÃ©pertoire
 .SH SYNOPSIS
 .PP
-\fBrun\-parts\fP [\fB\-\-test\fP] [\fB\-\-verbose\fP] [\fB\-\-report\fP]
-[\fB\-\-lsbsysinit\fP][\fB\-\-regex\fP=\fIRE\fP] [\fB\-\-umask\fP=\fIumask\fP]
-[\fB\-\-arg\fP=\fIargument\fP] [\fB\-\-exit\-on\-error\fP] [\fB\-\-help\fP] [\fB\-\-version\fP]
-[\fB\-\-list\fP] [\fB\-\-reverse\fP] [\fB\-\-\fP] \fIrépertoire\fP
+\fBrun\-parts\fP [\fB\-\-test\fP] [\fB\-\-verbose\fP] [\fB\-\-report\fP] [\fB\-\-lsbsysinit\fP]
+[\fB\-\-regex\fP=\fIRE\fP] [\fB\-\-umask\fP=\fIumask\fP] [\fB\-\-arg\fP=\fIargument\fP]
+[\fB\-\-exit\-on\-error\fP] [\fB\-\-help\fP] [\fB\-\-version\fP] [\fB\-\-list\fP] [\fB\-\-reverse\fP]
+[\fB\-\-\fP] \fIrÃ©pertoire\fP
 .PP
 \fBrun\-parts\fP \-V
 .SH DESCRIPTION
 .PP
-\fBrun\-parts\fP exécute tous les fichiers exécutables situés dans
-\fIrépertoire\fP, et dont le nom satisfait les contraintes décrites
-ci\-dessous. Les autres fichiers sont ignorés.
+\fBrun\-parts\fP exÃ©cute tous les fichiers exÃ©cutables situÃ©s dans
+\fIrÃ©pertoire\fP, et dont le nom satisfait les contraintes dÃ©crites
+ci\-dessous. Les autres fichiers sont ignorÃ©s.
 
-Si ni l'option \fB\-\-lsbsysinit\fP ni l'option \fB\-\-regex\fP n'est pas utilisée,
-alors les noms ne doivent être constitués que de lettres minuscules ou
-majuscules, de chiffres, de tirets de soulignement («\ underscore\ ») ou de
-tirets.
-                                                                                
-If the \-\-lsbsysinit option is given, then the names must not end in
-\&.dpkg\-old or .dpkg\-dist or .dpkg\-new or .dpkg\-tmp, and must belong to one or
-more of the following namespaces: the LANANA\-assigned namespace
-(^[a\-z0\-9]+$); the LSB hierarchical and reserved namespaces
-(^_?([a\-z0\-9_.]+\-)+[a\-z0\-9]+$); and the Debian cron script namespace
-(^[a\-zA\-Z0\-9_\-]+$).
+Si ni l'option \fB\-\-lsbsysinit\fP ni l'option \fB\-\-regex\fP n'est utilisÃ©e, alors
+les noms ne doivent comporter que des lettres (minuscules ou majuscules),
+des chiffres, des tirets de soulignement (Â«\ underscore\ Â») ou des tirets.
 
-If the \-\-regex option is given, the names must match the custom extended
-regular expression specified as that option's argument.
+Si l'option \fB\-\-lsbsysinit\fP est utilisÃ©e, alors les noms ne doivent pas se
+terminer par Â«\ .dpkg\-old\ Â», Â«\ .dpkg\-dist\ Â», Â«\ .dpkg\-new\ Â» ou Â«\ .dpkg\-tmp\ Â»
+et doivent appartenir Ã  un (ou plusieurs) des ensembles de noms suivants\ :
+ \- noms spÃ©cifiÃ©s par LANANA (^[a\-z0\-9]+$)\ ;
+ \- noms hiÃ©rarchiques et rÃ©servÃ©s par LSB (^_?([a\-z0\-9_.]+\-)+[a\-z0\-9]+$)\ ;
+ \- noms des scripts cron dÃ©finis par Debian (^[a\-zA\-Z0\-9_\-]+$).
 
-Les fichiers sont exécutés dans l'ordre lexicographique de leur nom à moins
-que l'option \fB\-\-reverse\fP ne soit utilisée, auquel cas ils sont exécutés
+Si l'option \fB\-\-regex\fP est utilisÃ©e, les noms doivent correspondre Ã 
+l'expression rationnelle spÃ©cifiÃ©e en tant qu'argument Ã  cette option.
+
+Les fichiers sont exÃ©cutÃ©s dans l'ordre lexicographique de leur nom Ã  moins
+que l'option \fB\-\-reverse\fP ne soit utilisÃ©e, auquel cas ils sont exÃ©cutÃ©s
 dans l'ordre inverse.
 
 .SH OPTIONS
 .TP 
 \fB\-\-test\fP
-affiche le nom des scripts qui seront exécutés, mais ne les exécute pas.
+affiche le nom des scripts qui seront exÃ©cutÃ©s, mais ne les exÃ©cute pas.
 .TP 
 \fB\-\-list\fP
 affiche le nom de tous les fichiers dont le nom satisfait les contraintes
-(pas uniquement les exécutables), mais ne les exécute pas. Cette option ne
-peut pas être utilisée en conjonction de l'option \fB\-\-test\fP.
+(pas uniquement les exÃ©cutables), mais ne les exÃ©cute pas. Cette option ne
+peut pas Ãªtre utilisÃ©e en conjonction de l'option \fB\-\-test\fP.
 .TP 
 \fB\-v\fP, \fB\-\-verbose\fP
-affiche le nom de chaque script sur la sortie d'erreur avant de l'exécuter.
+affiche le nom de chaque script sur la sortie d'erreur avant de l'exÃ©cuter.
 .TP 
 \fB\-\-report\fP
-similaire à \fB\-\-verbose\fP, mais n'affiche que le nom des scripts qui
-produisent une sortie. Le nom du script est affiché soit sur la sortie
-standard, soit sur la sortie d'erreur, suivant la sortie utilisée en
-premier.
+similaire Ã  \fB\-\-verbose\fP, mais n'affiche que le nom des scripts qui
+produisent une sortie. Le nom du script est affichÃ© sur la sortie utilisÃ©e
+en premier\ : soit la sortie standard, soit la sortie d'erreur.
 .TP 
 \fB\-\-reverse\fP
-inverse l'ordre d'exécution des scripts.
+inverse l'ordre d'exÃ©cution des scripts.
 .TP 
 \fB\-\-exit\-on\-error\fP
-permet de quitter dès qu'un script retourne une valeur non nulle.
+permet de quitter dÃ¨s qu'un script retourne une valeur non nulle.
 .TP 
 \fB\-\-lsbsysinit\fP
-utilise les noms LSB plutôt que le comportement ordinaire.
+utilise les noms LSB plutÃ´t que le comportement ordinaire.
 .TP 
 \fB\-\-new\-session\fP
-run each script in a separate process session.  If you use this option,
-killing run\-parts will not kill the currently running script, it will run
-until completion.
+exÃ©cute chaque script dans un processus sÃ©parÃ©. Si cette option est
+utilisÃ©e, tuer run\-parts ne tuera pas le script en cours d'exÃ©cution\ : il
+s'exÃ©cutera jusqu'au bout.
 .TP 
 \fB\-\-regex=\fP\fIRE\fP
-validate filenames against custom extended regular expression \fIRE\fP.  See
-the EXAMPLES section for an example.
+valide les noms de fichier en fonction de l'expression rationnelle
+\fIRE\fP. Voir la section \fBEXEMPLES\fP.
 .TP 
 \fB\-u\fP, \fB\-\-umask\fP=\fIumask\fP
-positionne le masque de création de fichier («\ umask\ ») à \fIumask\fP avant de
-lancer les scripts. \fIumask\fP doit être spécifié en octal. Par défaut, le
-masque utilisé est 022.
+positionne le masque de crÃ©ation de fichier (Â«\ umask\ Â») Ã  \fIumask\fP avant de
+lancer les scripts. \fIumask\fP doit Ãªtre spÃ©cifiÃ© en octal. Par dÃ©faut, le
+masque utilisÃ© est 022.
 .TP 
-\fB\-a\fP, \fB\-\-arg\fP=\fIargument\fP
+\fB\-a\fP, \fB\-\-arg=\fP\fIargument\fP
 passe \fIargument\fP aux scripts. Utilisez \fB\-\-arg\fP pour chacun des arguments
 que vous voulez passer.
 .TP 
 \fB\-\-\fP
-spécifie la fin des options. Tout nom de fichier situé après \fB\-\-\fP ne sera
-pas interprété comme une option, même s'il commence par un tiret.
+spÃ©cifie la fin des options. Tout nom de fichier situÃ© aprÃ¨s \fB\-\-\fP ne sera
+pas interprÃ©tÃ© comme une option, mÃªme s'il commence par un tiret.
 .TP 
 \fB\-h\fP, \fB\-\-help\fP
 affiche un message d'aide puis quitte.
@@ -104,7 +102,8 @@ affiche la version et le copyright, puis quitte.
 
 .SH EXEMPLES
 .P
-Print the names of all files in /etc that start with `p' and end with `d':
+Affiche les noms de tous les fichiers dans /etc commenÃ§ant par Â«\ p\ Â» et se
+terminant par Â«\ d\ Â»\ :
 .P
 run\-parts \-\-list \-\-regex \[aq]^p.*d$\[aq] /etc
 
@@ -118,19 +117,19 @@ Copyright (C) 1996, 1997, 1998 Guy Maor
 .P
 Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams
 
-\fBrun\-parts\fP est un logiciel libre\ ; voyez la «\ GNU General Public Licence\ »
-version 2 ou supérieure pour le copyright. Il n'y a \fIpas\fP de garantie.
+\fBrun\-parts\fP est un logiciel libre\ ; voyez la Â«\ GNU General Public Licence\ Â»
+version 2 ou supÃ©rieure pour le copyright. Il n'y a \fIpas\fP de garantie.
 .SH TRADUCTION
-Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
-8 décembre 2005.
+Ce document est une traduction, rÃ©alisÃ©e par Nicolas FRANÃ‡OIS le
+8 dÃ©cembre 2005.
 
-L'équipe de traduction a fait le maximum pour réaliser une adaptation
-française de qualité.
+L'Ã©quipe de traduction a fait le maximum pour rÃ©aliser une adaptation
+franÃ§aise de qualitÃ©.
 
-La version anglaise la plus à jour de ce document est toujours consultable
-en ajoutant l'option «\ \-L C\ » à la commande \fBman\fR.
+La version anglaise la plus Ã  jour de ce document est toujours consultable
+en ajoutant l'option Â«Â \-L CÂ Â» Ã  la commande \fBman\fR.
 
-N'hésitez pas à signaler à l'auteur ou à la liste de traduction
+N'hÃ©sitez pas Ã  signaler Ã  l'auteur ou Ã  la liste de traduction
 .nh
 <\fIdebian\-l10\-french@lists.debian.org\fR>,
 .hy

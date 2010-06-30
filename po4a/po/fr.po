@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2009-08-09 15:19-0300\n"
+"POT-Creation-Date: 2010-06-30 10:39-0300\n"
 "PO-Revision-Date: 2010-04-25 18:28+0200\n"
 "Last-Translator: Alexandre Hoïde <alexandre.hoide@gmail.com>\n"
 "Language-Team: Debian French Team <debian-l10n-french@lists.debian.org>\n"
@@ -92,7 +92,7 @@ msgstr "Le chemin complet des interpréteurs doit être fourni."
 
 # type: SH
 #. type: SH
-#: ../add-shell.8:15 ../remove-shell.8:13 ../tempfile.1:89
+#: ../add-shell.8:15 ../remove-shell.8:13 ../savelog.8:153 ../tempfile.1:89
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
@@ -164,7 +164,7 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../installkernel.8:22 ../savelog.8:143 ../tempfile.1:73
+#: ../installkernel.8:22 ../savelog.8:146 ../tempfile.1:73
 #, no-wrap
 msgid "BUGS"
 msgstr "BOGUES"
@@ -226,6 +226,7 @@ msgstr "RUN-PARTS"
 # type: TH
 #. type: TH
 #: ../run-parts.8:8
+#, no-wrap
 msgid "9 Aug 2009"
 msgstr "9 août 2009"
 
@@ -283,9 +284,8 @@ msgid ""
 "underscores, and hyphens."
 msgstr ""
 "Si ni l'option B<--lsbsysinit> ni l'option B<--regex> n'est utilisée, alors "
-"les noms ne doivent comporter que des lettres (minuscules ou "
-"majuscules), des chiffres, des tirets de soulignement (« underscore ») ou "
-"des tirets."
+"les noms ne doivent comporter que des lettres (minuscules ou majuscules), "
+"des chiffres, des tirets de soulignement (« underscore ») ou des tirets."
 
 # type: Plain text
 #. type: Plain text
@@ -441,6 +441,7 @@ msgstr "utilise les noms LSB plutôt que le comportement ordinaire."
 # type: TP
 #. type: TP
 #: ../run-parts.8:72
+#, no-wrap
 msgid "B<--new-session>"
 msgstr "B<--new-session>"
 
@@ -625,10 +626,11 @@ msgstr "SAVELOG"
 
 # type: TH
 #. type: TH
-#: ../savelog.8:2 ../tempfile.1:2 ../which.1:2
-#, no-wrap
-msgid "1 May 2009"
-msgstr "1 mai 2009"
+#: ../savelog.8:2
+#, fuzzy, no-wrap
+#| msgid "7 Jan 2001"
+msgid "30 Jun 2010"
+msgstr "7 janvier 2001"
 
 # type: Plain text
 #. type: Plain text
@@ -640,9 +642,13 @@ msgstr "savelog - sauvegarde un fichier journal"
 # type: Plain text
 #. type: Plain text
 #: ../savelog.8:9
+#, fuzzy
+#| msgid ""
+#| "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
+#| "[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgid ""
 "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] [-"
-"C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
+"J] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgstr ""
 "B<savelog> [B<-m> I<mode>] [B<-u> I<utilisateur>] [B<-g> I<groupe>] [B<-t>] "
 "[B<-p>] [B<-c> I<cycle>] [B<-l>] [B<-j>] [B<-C>] [B<-d>] [B<-l>] [B<-r> "
@@ -909,53 +915,69 @@ msgstr "compresse avec bzip2 au lieu de gzip."
 # type: TP
 #. type: TP
 #: ../savelog.8:122
+#, fuzzy, no-wrap
+#| msgid "B<-->"
+msgid "B<-J>"
+msgstr "B<-->"
+
+# type: Plain text
+#. type: Plain text
+#: ../savelog.8:125
+#, fuzzy
+#| msgid "compress with bzip2 instead of gzip"
+msgid "compress with xz instead of gzip"
+msgstr "compresse avec bzip2 au lieu de gzip."
+
+# type: TP
+#. type: TP
+#: ../savelog.8:125
 #, no-wrap
 msgid "B<-C>"
 msgstr "B<-C>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:125
+#: ../savelog.8:128
 msgid "force cleanup of cycled logfiles"
 msgstr "force la suppression des sauvegardes."
 
 # type: TP
 #. type: TP
-#: ../savelog.8:125
+#: ../savelog.8:128
 #, no-wrap
 msgid "B<-d>"
 msgstr "B<-d>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:128
+#: ../savelog.8:131
 msgid "use standard date for rolling"
 msgstr "utilise la date (AAMMJJhhmmss) au lieu du numéro de version."
 
 # type: TP
 #. type: TP
-#: ../savelog.8:128
+#: ../savelog.8:131
 #, no-wrap
 msgid "B<-D dateformat>"
 msgstr "B<-D> I<format_de_date>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:132
+#: ../savelog.8:135
 msgid "override date format, in the form of I<[MMDDhhmm[[CC]YY][.ss]]>"
 msgstr "remplace le format de la date sous la forme I<[MMJJhhmm[[CC]AA][.ss]]>"
 
 # NOTE : manque rolldir
 # type: TP
 #. type: TP
-#: ../savelog.8:132
+#: ../savelog.8:135
 #, no-wrap
 msgid "B<-r>"
 msgstr "B<-r> I<répertoire_cyclique>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:137
+#: ../savelog.8:140
 msgid "use I<rolldir> instead of . to roll files"
 msgstr ""
 "sauvegarde les fichiers journaux dans le répertoire I<répertoire_cyclique> "
@@ -963,33 +985,33 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../savelog.8:137
+#: ../savelog.8:140
 #, no-wrap
 msgid "B<-n>"
 msgstr "B<-n>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:140
+#: ../savelog.8:143
 msgid "do not rotate empty files"
 msgstr "ne sauvegarde pas les fichiers vides."
 
 # type: TP
 #. type: TP
-#: ../savelog.8:140
+#: ../savelog.8:143
 #, no-wrap
 msgid "B<-q>"
 msgstr "B<-q>"
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:143
+#: ../savelog.8:146
 msgid "be quiet"
 msgstr "n'affiche pas de message."
 
 # type: Plain text
 #. type: Plain text
-#: ../savelog.8:148
+#: ../savelog.8:152
 msgid ""
 "If a process is still writing to I<file.0>, and savelog moves it to "
 "I<file.1> and compresses it, data could be lost."
@@ -997,12 +1019,24 @@ msgstr ""
 "Si un programme est en train d'écrire I<fichier.0>, et que savelog le "
 "renomme I<fichier.1> et le compresse, des données peuvent être perdues."
 
+#. type: Plain text
+#: ../savelog.8:154
+msgid "B<logrotate>(8)"
+msgstr ""
+
 # type: TH
 #. type: TH
 #: ../tempfile.1:2
 #, no-wrap
 msgid "TEMPFILE"
 msgstr "TEMPFILE"
+
+# type: TH
+#. type: TH
+#: ../tempfile.1:2 ../which.1:2
+#, no-wrap
+msgid "1 May 2009"
+msgstr "1 mai 2009"
 
 # type: Plain text
 #. type: Plain text

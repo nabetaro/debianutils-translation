@@ -7,32 +7,33 @@
 .SH NOM
 installkernel \- installe une nouvelle image de noyau
 .SH SYNOPSIS
-\fBinstallkernel\fP \fIversion zImage System.map\fP [\fIrépertoire\fP]
+\fBinstallkernel\fP \fIversion zImage System.map\fP [\fIrÃ©pertoire\fP]
 .SH DESCRIPTION
 .PP
 \fBinstallkernel\fP installe une nouvelle image de noyau depuis une
-arborescence source de Linux. Cette commande est appelée par les makefiles
+arborescence source de Linux. Cette commande est appelÃ©e par les makefiles
 du noyau Linux lors de l'invocation de \fBmake install\fP.
 .P
-The new kernel is installed into \fI{directory}/vmlinuz\-{version}\fP.  If a
-symbolic link \fI{directory}/vmlinuz\fP already exists, it is refreshed by
-making a link from \fI{directory}/vmlinuz\fP to the new kernel, and the
-previously installed kernel is available as \fI{directory}/vmlinuz.old\fP.
+Le nouveau noyau est installÃ© dans \fI{rÃ©pertoire}/vmlinuz\-{version}\fP. Si un
+lien symbolique \fI{rÃ©pertoire}/vmlinuz\fP existait, il sera modifiÃ© pour
+pointer sur le nouveau noyau et un lien symbolique
+\fI{rÃ©pertoire}/vmlinuz.old\fP pointera sur l'ancien noyau.
 .SH BOGUES
-installkernel resides in /sbin only because the Linux kernel makefiles call
-it from there.  It should really be in /usr/sbin.  It isn't needed to boot a
-system.
+Le programme \fBinstallkernel\fP est placÃ© dans /sbin uniquement parce que les
+makefiles du noyau Linux l'appellent Ã  cet emplacement \-\- mÃªme si, en
+principe, il devrait plutÃ´t Ãªtre placÃ© dans /usr/sbin, puisqu'il n'est pas
+nÃ©cessaire pour l'amorÃ§age du systÃ¨me.
 .SH TRADUCTION
-Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
-8 décembre 2005.
+Ce document est une traduction, rÃ©alisÃ©e par Nicolas FRANÃ‡OIS le
+8 dÃ©cembre 2005.
 
-L'équipe de traduction a fait le maximum pour réaliser une adaptation
-française de qualité.
+L'Ã©quipe de traduction a fait le maximum pour rÃ©aliser une adaptation
+franÃ§aise de qualitÃ©.
 
-La version anglaise la plus à jour de ce document est toujours consultable
-en ajoutant l'option «\ \-L C\ » à la commande \fBman\fR.
+La version anglaise la plus Ã  jour de ce document est toujours consultable
+en ajoutant l'option Â«Â \-L CÂ Â» Ã  la commande \fBman\fR.
 
-N'hésitez pas à signaler à l'auteur ou à la liste de traduction
+N'hÃ©sitez pas Ã  signaler Ã  l'auteur ou Ã  la liste de traduction
 .nh
 <\fIdebian\-l10\-french@lists.debian.org\fR>,
 .hy
