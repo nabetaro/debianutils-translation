@@ -1,3 +1,11 @@
+debianutils (3.4) unstable; urgency=low
+
+  * Apply patch from Ariel to add strength options for compression and
+    reduce xz default compression level.  closes: #587766.
+  * Bump Standards-Version to 3.9.0.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 15 Jul 2010 22:02:27 -0400
+
 debianutils (3.3) unstable; urgency=low
 
   * savelog.8: add SEE ALSO for logrotate(8).  closes: #487171.
