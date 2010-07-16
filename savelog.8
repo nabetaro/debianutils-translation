@@ -5,7 +5,7 @@ savelog \- save a log file
 .SH SYNOPSIS
 .B savelog
 [\-m mode] [\-u user] [\-g group] [\-t] [\-p] [\-c cycle] [\-l] [\-j]
-[\-J] [\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
+[\-J] [\-1\ .\|.\ \-9] [\-C] [\-d] [\-l] [\-r rolldir] [\-n] [\-q] [\-D dateformat] file ...
 .SH DESCRIPTION
 The
 .B savelog
@@ -122,6 +122,11 @@ compress with bzip2 instead of gzip
 .TP
 .B \-J
 compress with xz instead of gzip
+
+For xz no strength option is set, and xz decides on the default based on the total amount of physical RAM. Note that xz can use a very large amount of memory for the higher compression levels.
+.TP
+.B \-1\ .\|.\ \-9
+compression strength or memory usage (default: 9, except for xz)
 .TP
 .B \-C
 force cleanup of cycled logfiles

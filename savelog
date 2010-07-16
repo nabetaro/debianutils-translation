@@ -27,6 +27,7 @@
 #       -p        - preserve mode/user/group of original file
 #	-j        - use bzip2 instead of gzip
 #	-J        - use xz instead of gzip
+#	-1 .. -9  - compression strength or memory usage (default: 9, except for xz)
 #	-x script - invoke script with rotated log file in $FILE
 #	-n	  - do not rotate empty files
 #	-q	  - be quiet
@@ -81,7 +82,8 @@
 # common location
 export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin
 COMPRESS="gzip"
-COMPRESS_OPTS="-9f"
+COMPRESS_OPTS="-f"
+COMPRESS_STRENGTH_DEF="-9";
 DOT_Z=".gz"
 DATUM=`date +%Y%m%d%H%M%S`
 
@@ -118,6 +120,7 @@ usage()
     echo "	-p         - preserve mode/user/group of original file"
     echo "	-j         - use bzip2 instead of gzip"
     echo "	-J         - use xz instead of gzip"
+    echo "	-1 .. -9   - compression strength or memory usage (default: 9, except for xz)"
     echo "	-x script  - invoke script with rotated log file in \$FILE"
     echo "	-n         - do not rotate empty files"
     echo "	-q         - suppress rotation message"
@@ -139,7 +142,7 @@ fixfile()
 }
 
 
-while getopts m:u:g:c:r:CdD:tlphjJx:nq opt ; do
+while getopts m:u:g:c:r:CdD:tlphjJ123456789x:nq opt ; do
 	case "$opt" in
 	m) mode="$OPTARG" ;;
 	u) user="$OPTARG" ;;
@@ -150,8 +153,9 @@ while getopts m:u:g:c:r:CdD:tlphjJx:nq opt ; do
 	d) datum=1 ;;
 	D) DATUM=$(date +$OPTARG) ;;
 	t) touch=1 ;;
-	j) COMPRESS="bzip2"; COMPRESS_OPTS="-9f"; DOT_Z=".bz2" ;;
-	J) COMPRESS="xz"; COMPRESS_OPTS="-9f"; DOT_Z=".xz" ;;
+	j) COMPRESS="bzip2"; COMPRESS_OPTS="-f"; COMPRESS_STRENGTH_DEF="-9"; DOT_Z=".bz2" ;;
+	J) COMPRESS="xz"; COMPRESS_OPTS="-f"; COMPRESS_STRENGTH_DEF=""; DOT_Z=".xz" ;;
+	[1-9]) COMPRESS_STRENGTH="-$opt" ;;
 	x) hookscript="$OPTARG" ;;
 	l) COMPRESS="" ;;
 	p) preserve=1 ;;
@@ -172,6 +176,12 @@ fi
 if [ -n "$COMPRESS" ] && [ -z "`which $COMPRESS`"  ]; then
        echo "$prog: Compression binary not available, please make sure '$COMPRESS' is installed" 1>&2
        exit 2
+fi
+
+if [ -n "$COMPRESS_STRENGTH" ]; then
+	COMPRESS_OPTS="$COMPRESS_OPTS $COMPRESS_STRENGTH"
+else
+	COMPRESS_OPTS="$COMPRESS_OPTS $COMPRESS_STRENGTH_DEF"
 fi
 
 # cycle thru filenames
