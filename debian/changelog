@@ -1,3 +1,11 @@
+debianutils (3.4.1) unstable; urgency=low
+
+  * po4a/po/fr.po: French man page translation update from
+    Christian Perrier.  closes: #597430.
+  * Bump to Standards-Version 3.9.1.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 19 Sep 2010 12:58:38 -0400
+
 debianutils (3.4) unstable; urgency=low
 
   * Apply patch from Ariel to add strength options for compression and
