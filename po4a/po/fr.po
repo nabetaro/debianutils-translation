@@ -4,21 +4,24 @@
 # Copyright (C) 2004-2010 Software in the Public Interest
 # This file is distributed under the same license as the debianutils package.
 #
-# Nicolas FRANÇOIS <nicolas.francois@centaliens.net>, 2004.
 # Reprise des traduction originelles de which.1 (Laëtitia Groslong)
-# et savelog.8 (Antoine Gémis, 13 janvier 2003).
 # 20 avril 2010 - Traduction des messages « untranslated » et traitement des « fuzzy » <alexandre.hoide@gmail.com>
 #
+# Nicolas FRANÇOIS <nicolas.francois@centaliens.net>, 2004.
+# et savelog.8 (Antoine Gémis, 13 janvier 2003).
+# Christian Perrier <bubulle@debian.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "POT-Creation-Date: 2010-07-15 22:05-0300\n"
-"PO-Revision-Date: 2010-04-25 18:28+0200\n"
-"Last-Translator: Alexandre Hoïde <alexandre.hoide@gmail.com>\n"
-"Language-Team: Debian French Team <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: 2010-09-19 18:44+0200\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 # type: TH
 #. type: TH
@@ -602,8 +605,7 @@ msgstr "Copyright (C) 1996, 1997, 1998 Guy Maor"
 # type: Plain text
 #. type: Plain text
 #: ../run-parts.8:124
-msgid ""
-"Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
+msgid "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 msgstr ""
 "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 
@@ -627,10 +629,10 @@ msgstr "SAVELOG"
 # type: TH
 #. type: TH
 #: ../savelog.8:2
-#, fuzzy, no-wrap
+#, no-wrap
 #| msgid "7 Jan 2001"
 msgid "30 Jun 2010"
-msgstr "7 janvier 2001"
+msgstr "30 juin 2010"
 
 # type: Plain text
 #. type: Plain text
@@ -642,7 +644,6 @@ msgstr "savelog - sauvegarde un fichier journal"
 # type: Plain text
 #. type: Plain text
 #: ../savelog.8:9
-#, fuzzy
 #| msgid ""
 #| "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
 #| "[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
@@ -651,10 +652,11 @@ msgid ""
 "J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] "
 "file ..."
 msgstr ""
-"B<savelog> [B<-m> I<mode>] [B<-u> I<utilisateur>] [B<-g> I<groupe>] [B<-t>] "
-"[B<-p>] [B<-c> I<cycle>] [B<-l>] [B<-j>] [B<-C>] [B<-d>] [B<-l>] [B<-r> "
-"I<répertoire_cyclique>] [B<-n>] [B<-q>] [B<-D> I<format_de_date>] "
-"I<fichier>..."
+"B<savelog> [-m mode] [-u utilisateur] [-g groupe] [-t] [-p] [-c cycle] [-l] "
+"[-j] [-"
+"J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r répertoire_cyclique] [-n] [-q] [-D "
+"format_de_date] "
+"fichier ... "
 
 # type: Plain text
 #. type: Plain text
@@ -916,18 +918,17 @@ msgstr "compresse avec bzip2 au lieu de gzip."
 # type: TP
 #. type: TP
 #: ../savelog.8:122
-#, fuzzy, no-wrap
+#, no-wrap
 #| msgid "B<-->"
 msgid "B<-J>"
-msgstr "B<-->"
+msgstr "B<-J>"
 
 # type: Plain text
 #. type: Plain text
 #: ../savelog.8:125
-#, fuzzy
 #| msgid "compress with bzip2 instead of gzip"
 msgid "compress with xz instead of gzip"
-msgstr "compresse avec bzip2 au lieu de gzip."
+msgstr "compresse avec xz au lieu de gzip."
 
 #. type: Plain text
 #: ../savelog.8:127
@@ -936,17 +937,23 @@ msgid ""
 "total amount of physical RAM. Note that xz can use a very large amount of "
 "memory for the higher compression levels."
 msgstr ""
+"Pour xz, aucune option de compression n'est choisie, xz choisira la valeur "
+"par défaut en fonction du montant disponible de mémoire physique. Veuillez "
+"noter que xz peut utiliser des quantités importantes de mémoire pour les "
+"niveaux de compression les plus élevés."
 
 #. type: TP
 #: ../savelog.8:127
 #, no-wrap
 msgid "B<-1\\ .\\|.\\ -9>"
-msgstr ""
+msgstr "B<-1\\ .\\|.\\ -9>"
 
 #. type: Plain text
 #: ../savelog.8:130
 msgid "compression strength or memory usage (default: 9, except for xz)"
 msgstr ""
+"niveau de compression ou utilisation mémoire (valeur par défaut : 9, sauf "
+"pour xz)"
 
 # type: TP
 #. type: TP
@@ -1042,7 +1049,7 @@ msgstr ""
 #. type: Plain text
 #: ../savelog.8:159
 msgid "B<logrotate>(8)"
-msgstr ""
+msgstr "B<logrotate>(8)"
 
 # type: TH
 #. type: TH
@@ -1419,3 +1426,4 @@ msgstr "B<2>"
 #: ../which.1:27
 msgid "if an invalid option is specified"
 msgstr "si une option non valable est spécifiée."
+
