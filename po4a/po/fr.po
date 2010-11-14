@@ -938,7 +938,7 @@ msgid ""
 "memory for the higher compression levels."
 msgstr ""
 "Pour xz, aucune option de compression n'est choisie, xz choisira la valeur "
-"par défaut en fonction du montant disponible de mémoire physique. Veuillez "
+"par défaut en fonction de la quantité disponible de mémoire physique. Veuillez "
 "noter que xz peut utiliser des quantités importantes de mémoire pour les "
 "niveaux de compression les plus élevés."
 
