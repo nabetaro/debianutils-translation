@@ -1,3 +1,14 @@
+debianutils (3.4.2) unstable; urgency=low
+
+  * Add Slovene man page translations from Peter Kragelj.  closes:
+    #598531.
+  * French man page translation update from Christian Perrier.  closes:
+    #597486.
+  * run-parts.8: be more precise about ASCII requirement in naming.
+    closes: #542029.
+
+ -- Clint Adams <clint@gnu.org>  Sun, 14 Nov 2010 10:47:12 -0500
+
 debianutils (3.4.1) unstable; urgency=low
 
   * po4a/po/fr.po: French man page translation update from
