@@ -5,7 +5,7 @@
 .\"
 .\" This is free software; see the GNU General Public Licence version 2
 .\" or later for copying conditions.  There is NO warranty.
-.TH RUN\-PARTS 8 "9 Aug 2009" "Debian"
+.TH RUN\-PARTS 8 "14 Nov 2010" "Debian"
 .SH NAME
 run\-parts \- run scripts or programs in a directory
 .SH SYNOPSIS
@@ -26,8 +26,8 @@ in directory
 Other files and directories are silently ignored.
 
 If neither the \-\-lsbsysinit option nor the \-\-regex option is given
-then the names must consist entirely of upper and lower case letters,
-digits, underscores, and hyphens.
+then the names must consist entirely of ASCII upper- and lower-case
+letters, ASCII digits, ASCII underscores, and ASCII minus-hyphens.
 
 If the \-\-lsbsysinit option is given, then the names must not end
 in .dpkg\-old  or .dpkg\-dist or .dpkg\-new or .dpkg\-tmp, and must
