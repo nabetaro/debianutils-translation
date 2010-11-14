@@ -1,0 +1,8 @@
+PO4A-HEADER:mode=after;position=^\.SH IME;beginboundary=FausseLimitePo4a
+.SH TRANSLATION
+This document is a translation.
+
+Regarding errors such as tihs one, contact
+.nh
+<\fIsl@li.org\fR>,
+.hy
