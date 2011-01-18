@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-04-29 14:33-0300\n"
+"POT-Creation-Date: 2010-11-14 10:43-0500\n"
 "PO-Revision-Date: 2010-09-29 07:21+0000\n"
 "Last-Translator: Andrej Znidarsic <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +31,8 @@ msgid "7 Apr 2005"
 msgstr "7 apr 2005"
 
 #. type: SH
-#: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9 ../savelog.8:3 ../tempfile.1:3 ../which.1:3
+#: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9
+#: ../savelog.8:3 ../tempfile.1:3 ../which.1:3
 #, no-wrap
 msgid "NAME"
 msgstr "IME"
@@ -41,7 +43,8 @@ msgid "add-shell - add shells to the list of valid login shells"
 msgstr "add-shell - doda lupine v seznam veljavnih prijavnih lupin"
 
 #. type: SH
-#: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11 ../savelog.8:5 ../tempfile.1:5 ../which.1:5
+#: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11
+#: ../savelog.8:5 ../tempfile.1:5 ../which.1:5
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "POVZETEK"
@@ -52,7 +55,8 @@ msgid "B<add-shell> I<shellname> [I<shellname>...]"
 msgstr "B<add-shell> I<ime lupine> [I<ime lupine> ...]"
 
 #. type: SH
-#: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20 ../savelog.8:9 ../tempfile.1:9 ../which.1:7
+#: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20
+#: ../savelog.8:9 ../tempfile.1:9 ../which.1:7
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "OPIS"
@@ -65,8 +69,8 @@ msgid ""
 "back to I</etc/shells>."
 msgstr ""
 "B<add-shell> kopira I</etc/shells> v I</etc/shells.tmp>, doda podane lupine "
-"v to datoteko, če še niso prisotne, in kopira začasno datoteko nazaj v "
-"I</etc/shells>."
+"v to datoteko, če še niso prisotne, in kopira začasno datoteko nazaj v I</"
+"etc/shells>."
 
 #. type: Plain text
 #: ../add-shell.8:15
@@ -74,7 +78,7 @@ msgid "The shells must be provided by their full pathnames."
 msgstr "Lupine morajo biti podane z njihovimi polnimi imeni poti."
 
 #. type: SH
-#: ../add-shell.8:15 ../remove-shell.8:13 ../tempfile.1:89
+#: ../add-shell.8:15 ../remove-shell.8:13 ../savelog.8:158 ../tempfile.1:89
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "OGLEJTE SI TUDI"
@@ -136,7 +140,7 @@ msgstr ""
 "jedro je na voljo kot I<{directory}/vmlinuz.old>."
 
 #. type: SH
-#: ../installkernel.8:22 ../savelog.8:143 ../tempfile.1:73
+#: ../installkernel.8:22 ../savelog.8:151 ../tempfile.1:73
 #, no-wrap
 msgid "BUGS"
 msgstr "HROŠČI"
@@ -171,13 +175,13 @@ msgstr "B<remove-shell> I<ime lupine> [I<ime lupine>...]"
 #. type: Plain text
 #: ../remove-shell.8:13
 msgid ""
-"B<remove-shell> operates on the temporary files I</etc/shells.tmp> and "
-"I</etc/shells.tmp2> to remove the given shells from the list of valid login "
+"B<remove-shell> operates on the temporary files I</etc/shells.tmp> and I</"
+"etc/shells.tmp2> to remove the given shells from the list of valid login "
 "shells, and copy the result back to I</etc/shells>."
 msgstr ""
-"B<remove-shell> deluje na začasnih datotekah I</etc/shells.tmp> in "
-"I</etc/shells.tmp2> tako, da odstrani podane lupine iz seznama veljavnih "
-"prijavnih lupin in kopira rezultat nazaj v I</etc/shells>."
+"B<remove-shell> deluje na začasnih datotekah I</etc/shells.tmp> in I</etc/"
+"shells.tmp2> tako, da odstrani podane lupine iz seznama veljavnih prijavnih "
+"lupin in kopira rezultat nazaj v I</etc/shells>."
 
 #. type: TH
 #: ../run-parts.8:8
@@ -188,8 +192,8 @@ msgstr "RUN-PARTS"
 #. type: TH
 #: ../run-parts.8:8
 #, no-wrap
-msgid "9 Aug 2009"
-msgstr "9 avg 2009"
+msgid "14 Nov 2010"
+msgstr ""
 
 #. type: TH
 #: ../run-parts.8:8 ../savelog.8:2 ../tempfile.1:2 ../which.1:2
@@ -231,10 +235,15 @@ msgstr ""
 
 #. type: Plain text
 #: ../run-parts.8:31
+#, fuzzy
+#| msgid ""
+#| "If neither the --lsbsysinit option nor the --regex option is given then "
+#| "the names must consist entirely of upper and lower case letters, digits, "
+#| "underscores, and hyphens."
 msgid ""
 "If neither the --lsbsysinit option nor the --regex option is given then the "
-"names must consist entirely of upper and lower case letters, digits, "
-"underscores, and hyphens."
+"names must consist entirely of ASCII upper- and lower-case letters, ASCII "
+"digits, ASCII underscores, and ASCII minus-hyphens."
 msgstr ""
 "Če nista podani možnost --lsbsysinit ali pa možnost --regex, morajo biti "
 "imena sestavljena samo iz velikih in majhnih črk, številk, podčrtajev in "
@@ -249,8 +258,8 @@ msgid ""
 "the LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
 "and the Debian cron script namespace (^[a-zA-Z0-9_-]+$)."
 msgstr ""
-"Če je podana možnost --lsbsysinit, se imena ne smejo končati z .dpkg-old, "
-".dpkg-dist, .dpkg-new ali .dpkg-tmp. Pripadati morajo enemu izmed naslednjih "
+"Če je podana možnost --lsbsysinit, se imena ne smejo končati z .dpkg-old, ."
+"dpkg-dist, .dpkg-new ali .dpkg-tmp. Pripadati morajo enemu izmed naslednjih "
 "imenskih prostorov: LANANA-dodeljen imenski prostor (^[a-z0-9]+$); "
 "hierarhični in obraten imenski prostor  LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
 "in imenski prostor Debian cron skript (^[a-zA-Z0-9_-]+$)."
@@ -530,10 +539,11 @@ msgid "SAVELOG"
 msgstr "SAVELOG"
 
 #. type: TH
-#: ../savelog.8:2 ../tempfile.1:2 ../which.1:2
-#, no-wrap
-msgid "1 May 2009"
-msgstr "1 maj 2009"
+#: ../savelog.8:2
+#, fuzzy, no-wrap
+#| msgid "7 Jan 2001"
+msgid "30 Jun 2010"
+msgstr "7 jan 2001"
 
 #. type: Plain text
 #: ../savelog.8:5
@@ -542,9 +552,14 @@ msgstr "savelog - shrani datoteko dnevnika"
 
 #. type: Plain text
 #: ../savelog.8:9
+#, fuzzy
+#| msgid ""
+#| "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
+#| "[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgid ""
 "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] [-"
-"C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
+"J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] "
+"file ..."
 msgstr ""
 "B<savelog> [-m način] [-u uporabnik] [-g skupina] [-t] [-p] [-c cikel] [-l] "
 "[-j] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D oblikadatuma] datoteka ..."
@@ -763,71 +778,103 @@ msgstr "stisni z bzip2 namesto z gzip"
 #. type: TP
 #: ../savelog.8:122
 #, no-wrap
+msgid "B<-J>"
+msgstr ""
+
+#. type: Plain text
+#: ../savelog.8:125
+#, fuzzy
+#| msgid "compress with bzip2 instead of gzip"
+msgid "compress with xz instead of gzip"
+msgstr "stisni z bzip2 namesto z gzip"
+
+#. type: Plain text
+#: ../savelog.8:127
+msgid ""
+"For xz no strength option is set, and xz decides on the default based on the "
+"total amount of physical RAM. Note that xz can use a very large amount of "
+"memory for the higher compression levels."
+msgstr ""
+
+#. type: TP
+#: ../savelog.8:127
+#, no-wrap
+msgid "B<-1\\ .\\|.\\ -9>"
+msgstr ""
+
+#. type: Plain text
+#: ../savelog.8:130
+msgid "compression strength or memory usage (default: 9, except for xz)"
+msgstr ""
+
+#. type: TP
+#: ../savelog.8:130
+#, no-wrap
 msgid "B<-C>"
 msgstr "B<-C>"
 
 #. type: Plain text
-#: ../savelog.8:125
+#: ../savelog.8:133
 msgid "force cleanup of cycled logfiles"
 msgstr "prisili čiščenje krožnih datotek dnevnikov"
 
 #. type: TP
-#: ../savelog.8:125
+#: ../savelog.8:133
 #, no-wrap
 msgid "B<-d>"
 msgstr "B<-d>"
 
 #. type: Plain text
-#: ../savelog.8:128
+#: ../savelog.8:136
 msgid "use standard date for rolling"
 msgstr "za obračanje uporabi standardni datum"
 
 #. type: TP
-#: ../savelog.8:128
+#: ../savelog.8:136
 #, no-wrap
 msgid "B<-D dateformat>"
 msgstr "B<-D oblika datuma>"
 
 #. type: Plain text
-#: ../savelog.8:132
+#: ../savelog.8:140
 msgid "override date format, in the form of I<[MMDDhhmm[[CC]YY][.ss]]>"
 msgstr "prepiši obliko datuma z obliko zapisa I<[MMDDhhmm[[CC]YY][.ss]]>"
 
 #. type: TP
-#: ../savelog.8:132
+#: ../savelog.8:140
 #, no-wrap
 msgid "B<-r>"
 msgstr "B<-r>"
 
 #. type: Plain text
-#: ../savelog.8:137
+#: ../savelog.8:145
 msgid "use I<rolldir> instead of . to roll files"
 msgstr "uporabi I<rolldir> namesto . za obračanje datotek"
 
 #. type: TP
-#: ../savelog.8:137
+#: ../savelog.8:145
 #, no-wrap
 msgid "B<-n>"
 msgstr "B<-n>"
 
 #. type: Plain text
-#: ../savelog.8:140
+#: ../savelog.8:148
 msgid "do not rotate empty files"
 msgstr "ne vrti praznih datotek"
 
 #. type: TP
-#: ../savelog.8:140
+#: ../savelog.8:148
 #, no-wrap
 msgid "B<-q>"
 msgstr "B<-q>"
 
 #. type: Plain text
-#: ../savelog.8:143
+#: ../savelog.8:151
 msgid "be quiet"
 msgstr "molči"
 
 #. type: Plain text
-#: ../savelog.8:148
+#: ../savelog.8:157
 msgid ""
 "If a process is still writing to I<file.0>, and savelog moves it to "
 "I<file.1> and compresses it, data could be lost."
@@ -835,11 +882,22 @@ msgstr ""
 "Podatki se lahko izgubijo, če opravilo še vedno piše v I<file.0> in jo "
 "savelog premakne v I<file.1> ter stisne."
 
+#. type: Plain text
+#: ../savelog.8:159
+msgid "B<logrotate>(8)"
+msgstr ""
+
 #. type: TH
 #: ../tempfile.1:2
 #, no-wrap
 msgid "TEMPFILE"
 msgstr "TEMPFILE"
+
+#. type: TH
+#: ../tempfile.1:2 ../which.1:2
+#, no-wrap
+msgid "1 May 2009"
+msgstr "1 maj 2009"
 
 #. type: Plain text
 #: ../tempfile.1:5
@@ -860,14 +918,14 @@ msgstr ""
 #. type: Plain text
 #: ../tempfile.1:18
 msgid ""
-"B<tempfile> creates a temporary file in a safe manner.  It uses "
-"B<tempnam>(3)  to choose the name and opens it with O_RDWR | O_CREAT | "
-"O_EXCL.  The filename is printed on standard output. See B<tempnam>(3)  for "
-"the actual steps involved in directory selection."
+"B<tempfile> creates a temporary file in a safe manner.  It uses B<tempnam>"
+"(3)  to choose the name and opens it with O_RDWR | O_CREAT | O_EXCL.  The "
+"filename is printed on standard output. See B<tempnam>(3)  for the actual "
+"steps involved in directory selection."
 msgstr ""
-"B<tempfile> ustvari začasno datoteko na varnen način.  Uporabi B<tempnam>(3) "
-" za izbor imena in ga odpre z O_RDWR | O_CREAT | O_EXCL.  Ime datoteke je "
-"izpisano na standardnem izhodu.Glej B<tempnam>(3)  za dejanske korake pri "
+"B<tempfile> ustvari začasno datoteko na varnen način.  Uporabi B<tempnam>"
+"(3)  za izbor imena in ga odpre z O_RDWR | O_CREAT | O_EXCL.  Ime datoteke "
+"je izpisano na standardnem izhodu.Glej B<tempnam>(3)  za dejanske korake pri "
 "izboru mape."
 
 #. type: Plain text
@@ -905,8 +963,7 @@ msgstr "b)"
 msgid ""
 "Otherwise, if the I<--directory> argument is specified and appropriate, it "
 "is used."
-msgstr ""
-"Drugače se uporabi argument I<--directory>, če je določen in primeren."
+msgstr "Drugače se uporabi argument I<--directory>, če je določen in primeren."
 
 #. type: TP
 #: ../tempfile.1:34
@@ -1150,3 +1207,6 @@ msgstr "B<2>"
 #: ../which.1:27
 msgid "if an invalid option is specified"
 msgstr "Če je navedena neveljavna možnost"
+
+#~ msgid "9 Aug 2009"
+#~ msgstr "9 avg 2009"

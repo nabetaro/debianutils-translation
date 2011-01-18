@@ -13,10 +13,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2010-07-15 22:05-0300\n"
+"POT-Creation-Date: 2010-11-14 10:43-0500\n"
 "PO-Revision-Date: 2010-09-19 18:44+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -215,9 +216,9 @@ msgid ""
 "shells, and copy the result back to I</etc/shells>."
 msgstr ""
 "B<remove-shell> utilise les fichiers temporaires I</etc/shells.tmp> et I</"
-"etc/shells.tmp2> pour supprimer les interpréteurs de commandes (« shell ») de "
-"la liste des interpréteurs de commandes initiaux (« login shell ») valables, "
-"puis copie le résultat dans I</etc/shells>."
+"etc/shells.tmp2> pour supprimer les interpréteurs de commandes (« shell ») "
+"de la liste des interpréteurs de commandes initiaux (« login shell ») "
+"valables, puis copie le résultat dans I</etc/shells>."
 
 # type: TH
 #. type: TH
@@ -226,12 +227,11 @@ msgstr ""
 msgid "RUN-PARTS"
 msgstr "RUN-PARTS"
 
-# type: TH
 #. type: TH
 #: ../run-parts.8:8
 #, no-wrap
-msgid "9 Aug 2009"
-msgstr "9 août 2009"
+msgid "14 Nov 2010"
+msgstr ""
 
 # type: TH
 #. type: TH
@@ -281,10 +281,15 @@ msgstr ""
 # type: Plain text
 #. type: Plain text
 #: ../run-parts.8:31
+#, fuzzy
+#| msgid ""
+#| "If neither the --lsbsysinit option nor the --regex option is given then "
+#| "the names must consist entirely of upper and lower case letters, digits, "
+#| "underscores, and hyphens."
 msgid ""
 "If neither the --lsbsysinit option nor the --regex option is given then the "
-"names must consist entirely of upper and lower case letters, digits, "
-"underscores, and hyphens."
+"names must consist entirely of ASCII upper- and lower-case letters, ASCII "
+"digits, ASCII underscores, and ASCII minus-hyphens."
 msgstr ""
 "Si ni l'option B<--lsbsysinit> ni l'option B<--regex> n'est utilisée, alors "
 "les noms ne doivent comporter que des lettres (minuscules ou majuscules), "
@@ -301,8 +306,8 @@ msgid ""
 "and the Debian cron script namespace (^[a-zA-Z0-9_-]+$)."
 msgstr ""
 "Si l'option B<--lsbsysinit> est utilisée, alors les noms ne doivent pas se "
-"terminer par « .dpkg-old », « .dpkg-dist », « .dpkg-new » ou « .dpkg-tmp » et "
-"doivent appartenir à un (ou plusieurs) des ensembles de noms suivants :\n"
+"terminer par « .dpkg-old », « .dpkg-dist », « .dpkg-new » ou « .dpkg-tmp » "
+"et doivent appartenir à un (ou plusieurs) des ensembles de noms suivants :\n"
 " - noms spécifiés par LANANA (^[a-z0-9]+$) ;\n"
 " - noms hiérarchiques et réservés par LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$) ;\n"
 " - noms des scripts cron définis par Debian (^[a-zA-Z0-9_-]+$)."
@@ -605,7 +610,8 @@ msgstr "Copyright (C) 1996, 1997, 1998 Guy Maor"
 # type: Plain text
 #. type: Plain text
 #: ../run-parts.8:124
-msgid "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
+msgid ""
+"Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 msgstr ""
 "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 
@@ -630,7 +636,6 @@ msgstr "SAVELOG"
 #. type: TH
 #: ../savelog.8:2
 #, no-wrap
-#| msgid "7 Jan 2001"
 msgid "30 Jun 2010"
 msgstr "30 juin 2010"
 
@@ -644,19 +649,14 @@ msgstr "savelog - sauvegarde un fichier journal"
 # type: Plain text
 #. type: Plain text
 #: ../savelog.8:9
-#| msgid ""
-#| "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
-#| "[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgid ""
 "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] [-"
 "J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] "
 "file ..."
 msgstr ""
 "B<savelog> [-m mode] [-u utilisateur] [-g groupe] [-t] [-p] [-c cycle] [-l] "
-"[-j] [-"
-"J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r répertoire_cyclique] [-n] [-q] [-D "
-"format_de_date] "
-"fichier ... "
+"[-j] [-J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r répertoire_cyclique] [-n] [-"
+"q] [-D format_de_date] fichier ... "
 
 # type: Plain text
 #. type: Plain text
@@ -919,14 +919,12 @@ msgstr "compresse avec bzip2 au lieu de gzip."
 #. type: TP
 #: ../savelog.8:122
 #, no-wrap
-#| msgid "B<-->"
 msgid "B<-J>"
 msgstr "B<-J>"
 
 # type: Plain text
 #. type: Plain text
 #: ../savelog.8:125
-#| msgid "compress with bzip2 instead of gzip"
 msgid "compress with xz instead of gzip"
 msgstr "compresse avec xz au lieu de gzip."
 
@@ -938,9 +936,9 @@ msgid ""
 "memory for the higher compression levels."
 msgstr ""
 "Pour xz, aucune option de compression n'est choisie, xz choisira la valeur "
-"par défaut en fonction de la quantité disponible de mémoire physique. Veuillez "
-"noter que xz peut utiliser des quantités importantes de mémoire pour les "
-"niveaux de compression les plus élevés."
+"par défaut en fonction de la quantité disponible de mémoire physique. "
+"Veuillez noter que xz peut utiliser des quantités importantes de mémoire "
+"pour les niveaux de compression les plus élevés."
 
 #. type: TP
 #: ../savelog.8:127
@@ -1427,3 +1425,6 @@ msgstr "B<2>"
 msgid "if an invalid option is specified"
 msgstr "si une option non valable est spécifiée."
 
+# type: TH
+#~ msgid "9 Aug 2009"
+#~ msgstr "9 août 2009"

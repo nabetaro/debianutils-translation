@@ -10,7 +10,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH RUN\-PARTS 8 "9 août 2009" "Debian GNU/Linux" 
+.TH RUN\-PARTS 8 "14 Nov 2010" "Debian GNU/Linux" 
 .SH NOM
 run\-parts \- exécute les scripts ou les exécutables d'un répertoire
 .SH SYNOPSIS
@@ -27,9 +27,9 @@ run\-parts \- exécute les scripts ou les exécutables d'un répertoire
 \fIrépertoire\fP, et dont le nom satisfait les contraintes décrites
 ci\-dessous. Les autres fichiers sont ignorés.
 
-Si ni l'option \fB\-\-lsbsysinit\fP ni l'option \fB\-\-regex\fP n'est utilisée, alors
-les noms ne doivent comporter que des lettres (minuscules ou majuscules),
-des chiffres, des tirets de soulignement («\ underscore\ ») ou des tirets.
+If neither the \-\-lsbsysinit option nor the \-\-regex option is given then the
+names must consist entirely of ASCII upper\- and lower\-case letters, ASCII
+digits, ASCII underscores, and ASCII minus\-hyphens.
 
 Si l'option \fB\-\-lsbsysinit\fP est utilisée, alors les noms ne doivent pas se
 terminer par «\ .dpkg\-old\ », «\ .dpkg\-dist\ », «\ .dpkg\-new\ » ou «\ .dpkg\-tmp\ »
