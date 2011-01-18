@@ -1,3 +1,10 @@
+debianutils (3.4.3) unstable; urgency=low
+
+  * Patch from Ben Hutchings to have installkernel run hook scripts.
+    closes: #607411.
+
+ -- Clint Adams <clint@gnu.org>  Tue, 18 Jan 2011 15:29:35 -0500
+
 debianutils (3.4.2) unstable; urgency=low
 
   * Add Slovene man page translations from Peter Kragelj.  closes:
