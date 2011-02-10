@@ -1,7 +1,7 @@
 Source: debianutils
 Section: utils
 Priority: required
-Maintainer: Clint Adams <clint@gnu.org>
+Maintainer: Clint Adams <clint@debian.org>
 Uploaders: Manoj Srivastava <srivasta@debian.org>
 Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/private/schizo/debianutils.git
