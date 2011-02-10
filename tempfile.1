@@ -48,12 +48,6 @@ may be used.
 .BI "-d, --directory " DIR
 Place the file in DIR.
 .TP
-.BI "-p, --prefix " STRING
-Use up to five letters of STRING to generate the name.
-.TP
-.BI "-s, --suffix " STRING
-Generate the file with STRING as the suffix.
-.TP
 .BI "-m, --mode " MODE
 Open the file with MODE instead of 0600.
 .TP
@@ -61,6 +55,12 @@ Open the file with MODE instead of 0600.
 Use FILE for the name instead of
 .BR tempnam (3) .
 The options -d, -p, and -s are ignored if this option is given.
+.TP
+.BI "-p, --prefix " STRING
+Use up to five letters of STRING to generate the name.
+.TP
+.BI "-s, --suffix " STRING
+Generate the file with STRING as the suffix.
 .TP
 .B "--help"
 Print a usage message on standard output and exit successfully.

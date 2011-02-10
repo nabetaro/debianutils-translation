@@ -25,10 +25,10 @@ usage (int status)
     printf("Usage: %s [OPTION]\n\n"
 "Create a temporary file in a safe manner.\n\n"
 "-d, --directory=DIR  place temporary file in DIR\n"
-"-p, --prefix=STRING  set temporary file's prefix to STRING\n"
-"-s, --suffix=STRING  set temporary file's suffix to STRING\n"
 "-m, --mode=MODE      open with MODE instead of 0600\n"
 "-n, --name=FILE      use FILE instead of tempnam(3)\n"
+"-p, --prefix=STRING  set temporary file's prefix to STRING\n"
+"-s, --suffix=STRING  set temporary file's suffix to STRING\n"
 "    --help           display this help and exit\n"
 "    --version        output version information and exit\n", progname);
   exit(status);
