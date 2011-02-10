@@ -1,3 +1,12 @@
+debianutils (3.4.4) unstable; urgency=low
+
+  * French man page translation update from David Prévot.
+    closes: #603908.
+  * Patch from Jari Aalto to reorder tempfile options alphabetically.
+    closes: #600542.
+
+ -- Clint Adams <clint@debian.org>  Thu, 10 Feb 2011 17:24:34 -0500
+
 debianutils (3.4.3) unstable; urgency=low
 
   * Patch from Ben Hutchings to have installkernel run hook scripts.
