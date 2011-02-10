@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2010-11-14 10:58-0500\n"
+"POT-Creation-Date: 2011-02-10 17:25-0500\n"
 "PO-Revision-Date: 2010-09-19 18:44+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -287,8 +287,9 @@ msgid ""
 "digits, ASCII underscores, and ASCII minus-hyphens."
 msgstr ""
 "Si ni l'option B<--lsbsysinit> ni l'option B<--regex> n'est utilisée, alors "
-"les noms ne doivent comporter que des lettres ASCII (minuscules ou majuscules), "
-"des chiffres ASCII, des tirets de soulignement (« underscore ») ASCII ou des tirets (signes moins) ASCII."
+"les noms ne doivent comporter que des lettres ASCII (minuscules ou "
+"majuscules), des chiffres ASCII, des tirets de soulignement (« underscore ») "
+"ASCII ou des tirets (signes moins) ASCII."
 
 # type: Plain text
 #. type: Plain text
@@ -1181,57 +1182,57 @@ msgstr "place le fichier dans I<REP>."
 #. type: TP
 #: ../tempfile.1:50
 #, no-wrap
-msgid "B<-p, --prefix >I<STRING>"
-msgstr "B<-p>, B<--prefix> I<CHAÎNE>"
-
-# type: Plain text
-#. type: Plain text
-#: ../tempfile.1:53
-msgid "Use up to five letters of STRING to generate the name."
-msgstr "utilise jusqu'à cinq lettres de I<CHAÎNE> pour générer le nom."
-
-# type: TP
-#. type: TP
-#: ../tempfile.1:53
-#, no-wrap
-msgid "B<-s, --suffix >I<STRING>"
-msgstr "B<-s>, B<--suffix> I<CHAÎNE>"
-
-# type: Plain text
-#. type: Plain text
-#: ../tempfile.1:56
-msgid "Generate the file with STRING as the suffix."
-msgstr "génère le fichier en utilisant I<CHAÎNE> comme suffixe."
-
-# type: TP
-#. type: TP
-#: ../tempfile.1:56
-#, no-wrap
 msgid "B<-m, --mode >I<MODE>"
 msgstr "B<-m>, B<--mode> I<MODE>"
 
 # type: Plain text
 #. type: Plain text
-#: ../tempfile.1:59
+#: ../tempfile.1:53
 msgid "Open the file with MODE instead of 0600."
 msgstr "ouvre le fichier dans le mode I<MODE> plutôt que 0600."
 
 # type: TP
 #. type: TP
-#: ../tempfile.1:59
+#: ../tempfile.1:53
 #, no-wrap
 msgid "B<-n, --name >I<FILE>"
 msgstr "B<-n>, B<--name> I<FICHIER>"
 
 # type: Plain text
 #. type: Plain text
-#: ../tempfile.1:64
+#: ../tempfile.1:58
 msgid ""
 "Use FILE for the name instead of B<tempnam>(3)B<.> The options -d, -p, and -"
 "s are ignored if this option is given."
 msgstr ""
 "utilise I<FICHIER> comme nom plutôt que B<tempnam>(3). Les options B<-d> B<-"
 "p> et B<-s> sont ignorées si cette option est utilisée."
+
+# type: TP
+#. type: TP
+#: ../tempfile.1:58
+#, no-wrap
+msgid "B<-p, --prefix >I<STRING>"
+msgstr "B<-p>, B<--prefix> I<CHAÎNE>"
+
+# type: Plain text
+#. type: Plain text
+#: ../tempfile.1:61
+msgid "Use up to five letters of STRING to generate the name."
+msgstr "utilise jusqu'à cinq lettres de I<CHAÎNE> pour générer le nom."
+
+# type: TP
+#. type: TP
+#: ../tempfile.1:61
+#, no-wrap
+msgid "B<-s, --suffix >I<STRING>"
+msgstr "B<-s>, B<--suffix> I<CHAÎNE>"
+
+# type: Plain text
+#. type: Plain text
+#: ../tempfile.1:64
+msgid "Generate the file with STRING as the suffix."
+msgstr "génère le fichier en utilisant I<CHAÎNE> comme suffixe."
 
 # type: TP
 #. type: TP

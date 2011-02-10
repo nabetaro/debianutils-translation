@@ -4,8 +4,8 @@ Priority: required
 Maintainer: Clint Adams <clint@debian.org>
 Uploaders: Manoj Srivastava <srivasta@debian.org>
 Standards-Version: 3.9.1
-Vcs-Git: git://git.debian.org/git/private/schizo/debianutils.git
-Vcs-Browser: http://git.debian.org/?p=private/schizo/debianutils.git
+Vcs-Git: git://git.debian.org/users/clint/debianutils.git
+Vcs-Browser: http://git.debian.org/?p=users/clint/debianutils.git
 
 Package: debianutils
 Architecture: any

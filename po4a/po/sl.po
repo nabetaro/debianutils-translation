@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-11-14 10:43-0500\n"
+"POT-Creation-Date: 2011-02-10 17:25-0500\n"
 "PO-Revision-Date: 2010-09-29 07:21+0000\n"
 "Last-Translator: Andrej Znidarsic <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -1005,50 +1005,50 @@ msgstr "Vstavite datoteko v MAPO"
 #. type: TP
 #: ../tempfile.1:50
 #, no-wrap
-msgid "B<-p, --prefix >I<STRING>"
-msgstr "B<-p, --prefix >I<NIZ>"
-
-#. type: Plain text
-#: ../tempfile.1:53
-msgid "Use up to five letters of STRING to generate the name."
-msgstr "Uporabite do pet črk iz NIZA za ustvarjanje imena."
-
-#. type: TP
-#: ../tempfile.1:53
-#, no-wrap
-msgid "B<-s, --suffix >I<STRING>"
-msgstr "B<-s, --suffix >I<NIZ>"
-
-#. type: Plain text
-#: ../tempfile.1:56
-msgid "Generate the file with STRING as the suffix."
-msgstr "Ustvarite datoteko z NIZOM kot pripono."
-
-#. type: TP
-#: ../tempfile.1:56
-#, no-wrap
 msgid "B<-m, --mode >I<MODE>"
 msgstr "B<-m, --mode >I<NAČIN>"
 
 #. type: Plain text
-#: ../tempfile.1:59
+#: ../tempfile.1:53
 msgid "Open the file with MODE instead of 0600."
 msgstr "Odprite datoteko v NAČINU namesto 0600."
 
 #. type: TP
-#: ../tempfile.1:59
+#: ../tempfile.1:53
 #, no-wrap
 msgid "B<-n, --name >I<FILE>"
 msgstr "B<-n, --name >I<FILE>"
 
 #. type: Plain text
-#: ../tempfile.1:64
+#: ../tempfile.1:58
 msgid ""
 "Use FILE for the name instead of B<tempnam>(3)B<.> The options -d, -p, and -"
 "s are ignored if this option is given."
 msgstr ""
 "Uporabite DATOTEKA za ime namesto B<tempnam>(3)B<.> Možnosti -d, -p in -s so "
 "prezrte, ko je podana ta možnost."
+
+#. type: TP
+#: ../tempfile.1:58
+#, no-wrap
+msgid "B<-p, --prefix >I<STRING>"
+msgstr "B<-p, --prefix >I<NIZ>"
+
+#. type: Plain text
+#: ../tempfile.1:61
+msgid "Use up to five letters of STRING to generate the name."
+msgstr "Uporabite do pet črk iz NIZA za ustvarjanje imena."
+
+#. type: TP
+#: ../tempfile.1:61
+#, no-wrap
+msgid "B<-s, --suffix >I<STRING>"
+msgstr "B<-s, --suffix >I<NIZ>"
+
+#. type: Plain text
+#: ../tempfile.1:64
+msgid "Generate the file with STRING as the suffix."
+msgstr "Ustvarite datoteko z NIZOM kot pripono."
 
 #. type: TP
 #: ../tempfile.1:64
