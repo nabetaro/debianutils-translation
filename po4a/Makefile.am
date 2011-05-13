@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = foreign
 
-SUBDIRS = fr sl
+SUBDIRS = fr sl de
 
 #SUBDIRS = . fr
 

@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2011-02-10 17:25-0500\n"
+"POT-Creation-Date: 2011-05-12 22:27-0300\n"
 "PO-Revision-Date: 2010-09-19 18:44+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -33,10 +33,10 @@ msgstr "ADD-SHELL"
 
 # type: TH
 #. type: TH
-#: ../add-shell.8:1 ../remove-shell.8:1
+#: ../add-shell.8:1
 #, no-wrap
-msgid "7 Apr 2005"
-msgstr "7 avril 2005"
+msgid "12 May 2011"
+msgstr "12 mai 2011"
 
 # type: SH
 #. type: SH
@@ -80,9 +80,9 @@ msgstr "DESCRIPTION"
 #. type: Plain text
 #: ../add-shell.8:13
 msgid ""
-"B<add-shell> copy I</etc/shells> to I</etc/shells.tmp>, add the given shells "
-"to this file if they are not already present, and copy this temporary file "
-"back to I</etc/shells>."
+"B<add-shell> copies I</etc/shells> to I</etc/shells.tmp>, adds the given "
+"shells to this file if they are not already present, and copies this "
+"temporary file back to I</etc/shells>."
 msgstr ""
 "B<add-shell> copie I</etc/shells> dans I</etc/shells.tmp>, ajoute les "
 "interpréteurs de commandes (« shell ») à ce fichier s'il n'y est pas déjà, "
@@ -192,6 +192,13 @@ msgstr ""
 #, no-wrap
 msgid "REMOVE-SHELL"
 msgstr "REMOVE-SHELL"
+
+# type: TH
+#. type: TH
+#: ../remove-shell.8:1
+#, no-wrap
+msgid "7 Apr 2005"
+msgstr "7 avril 2005"
 
 # type: Plain text
 #. type: Plain text

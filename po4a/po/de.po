@@ -1,22 +1,18 @@
-# Slovenian translation for debianutils
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# Translation of debianutils man page template to German
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2011.
 # This file is distributed under the same license as the debianutils package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debianutils\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: debianutils man page\n"
 "POT-Creation-Date: 2011-05-12 22:27-0300\n"
-"PO-Revision-Date: 2010-09-29 07:21+0000\n"
-"Last-Translator: Andrej Znidarsic <andrej.znidarsic@gmail.com>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
-"Language: sl\n"
+"PO-Revision-Date: 2011-05-10 20:49+0200\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-29 17:52+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: utf-8\n"
 
 #. type: TH
 #: ../add-shell.8:1
@@ -29,38 +25,38 @@ msgstr "ADD-SHELL"
 #, fuzzy, no-wrap
 #| msgid "1 May 2009"
 msgid "12 May 2011"
-msgstr "1 maj 2009"
+msgstr "1. Mai 2009"
 
 #. type: SH
 #: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9
 #: ../savelog.8:3 ../tempfile.1:3 ../which.1:3
 #, no-wrap
 msgid "NAME"
-msgstr "IME"
+msgstr "NAME"
 
 #. type: Plain text
 #: ../add-shell.8:4
 msgid "add-shell - add shells to the list of valid login shells"
-msgstr "add-shell - doda lupine v seznam veljavnih prijavnih lupin"
+msgstr "add-shell - Shells zu der Liste der gültigen Anmelde-Shells hinzufügen"
 
 #. type: SH
 #: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11
 #: ../savelog.8:5 ../tempfile.1:5 ../which.1:5
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr "POVZETEK"
+msgstr "ÜBERSICHT"
 
 #. type: Plain text
 #: ../add-shell.8:8
 msgid "B<add-shell> I<shellname> [I<shellname>...]"
-msgstr "B<add-shell> I<ime lupine> [I<ime lupine> ...]"
+msgstr "B<add-shell> I<Shell-Name> [I<Shell-Name>...]"
 
 #. type: SH
 #: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20
 #: ../savelog.8:9 ../tempfile.1:9 ../which.1:7
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "OPIS"
+msgstr "BESCHREIBUNG"
 
 #. type: Plain text
 #: ../add-shell.8:13
@@ -69,20 +65,20 @@ msgid ""
 "shells to this file if they are not already present, and copies this "
 "temporary file back to I</etc/shells>."
 msgstr ""
-"B<add-shell> kopira I</etc/shells> v I</etc/shells.tmp>, doda podane lupine "
-"v to datoteko, če še niso prisotne, in kopira začasno datoteko nazaj v I</"
-"etc/shells>."
+"B<add-shell> kopiert I</etc/shells> nach I</etc/shells.tmp>, fügt die "
+"angegebenen Shells zu dieser Datei hinzu falls sie dort noch nicht enthalten "
+"sind und kopiert die temporäre Datei wieder zu I</etc/shells> zurück."
 
 #. type: Plain text
 #: ../add-shell.8:15
 msgid "The shells must be provided by their full pathnames."
-msgstr "Lupine morajo biti podane z njihovimi polnimi imeni poti."
+msgstr "Die Shells müssen mit ihrem vollen Pfadnamen angegeben werden."
 
 #. type: SH
 #: ../add-shell.8:15 ../remove-shell.8:13 ../savelog.8:158 ../tempfile.1:89
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "OGLEJTE SI TUDI"
+msgstr "SIEHE AUCH"
 
 #. type: Plain text
 #: ../add-shell.8:16 ../remove-shell.8:14
@@ -99,7 +95,7 @@ msgstr "INSTALLKERNEL"
 #: ../installkernel.8:1
 #, no-wrap
 msgid "7 Jan 2001"
-msgstr "7 jan 2001"
+msgstr "7. Jan. 2001"
 
 #. type: TH
 #: ../installkernel.8:1
@@ -110,12 +106,12 @@ msgstr "Debian Linux"
 #. type: Plain text
 #: ../installkernel.8:4
 msgid "installkernel - install a new kernel image"
-msgstr "installkernel - namesti nov odtis jedra"
+msgstr "installkernel - installiert ein neues Kernel-Image"
 
 #. type: Plain text
 #: ../installkernel.8:6
 msgid "B<installkernel >I<version zImage System.map [directory]>"
-msgstr "B<installkernel >I<version zImage System.map [mapa]>"
+msgstr "B<installkernel >I<Version zImage System.map [Verzeichnis]>"
 
 #. type: Plain text
 #: ../installkernel.8:13
@@ -124,8 +120,9 @@ msgid ""
 "source tree.  It is called by the Linux kernel makefiles when B<make "
 "install> is invoked there."
 msgstr ""
-"B<installkernel> iz Linux drevesa virov v sistem namesti nov odtis jedra.  "
-"Klican je s strani datotek make Linux jedra, ko je klican B<make install>."
+"B<installkernel> installiert ein neues Kernel-Image auf das System aus dem "
+"Linux-Quellbaum. Es wird von den Linux-Kernel-Makefiles aufgerufen, wenn "
+"dort B<make install> ausgeführt wird."
 
 #. type: Plain text
 #: ../installkernel.8:22
@@ -135,16 +132,17 @@ msgid ""
 "making a link from I<{directory}/vmlinuz> to the new kernel, and the "
 "previously installed kernel is available as I<{directory}/vmlinuz.old>."
 msgstr ""
-"Novo jedro je nameščeno v I<{directory}/vmlinuz-{version}>.  Če simbolna "
-"povezava I<{directory}/vmlinuz> že obstaja, je osvežena tako, da se ustvari "
-"povezava iz I<{directory}/vmlinuz> do novega jedra. Predhodno nameščeno "
-"jedro je na voljo kot I<{directory}/vmlinuz.old>."
+"Der neue Kernel wird in I<{Verzeichnis}/vmlinuz-{Version}> installiert. "
+"Falls bereits ein symbolischer Link I<{Verzeichnis}/vmlinuz> existiert, wird "
+"er erneuert, indem ein Link von I<{Verzeichnis}/vmlinuz> auf den neuen "
+"Kernel gelegt wird. Der vorher installierte Kernel ist unter I<{Verzeichnis}/"
+"vmlinuz.old> verfügbar."
 
 #. type: SH
 #: ../installkernel.8:22 ../savelog.8:151 ../tempfile.1:73
 #, no-wrap
 msgid "BUGS"
-msgstr "HROŠČI"
+msgstr "FEHLER"
 
 #. type: Plain text
 #: ../installkernel.8:25
@@ -153,9 +151,9 @@ msgid ""
 "it from there.  It should really be in /usr/sbin.  It isn't needed to boot a "
 "system."
 msgstr ""
-"installkernel se nahaja v /sbin zato, ker jo s tam kličejo datoteke make "
-"Linux jedra. Pravzaprav bi morala biti v /usr/sbin. Ni zahtevana za zagon "
-"sistema."
+"installkernel liegt nur in /sbin, da die Makefiles des Linux-Kernels es von "
+"dort aufrufen. Es sollte sich wirklich in /usr/sbin befinden. Es wird nicht "
+"benötigt, um ein System zu starten."
 
 #. type: TH
 #: ../remove-shell.8:1
@@ -167,17 +165,18 @@ msgstr "REMOVE-SHELL"
 #: ../remove-shell.8:1
 #, no-wrap
 msgid "7 Apr 2005"
-msgstr "7 apr 2005"
+msgstr "7. Apr. 2005"
 
 #. type: Plain text
 #: ../remove-shell.8:4
 msgid "remove-shell - remove shells from the list of valid login shells"
-msgstr "remove-shell - odstrani lupine iz seznama veljavnih prijavnih lupin."
+msgstr ""
+"remove-shell - entfernt Shells aus der Liste der gültigen Anmelde-Shells"
 
 #. type: Plain text
 #: ../remove-shell.8:8
 msgid "B<remove-shell> I<shellname> [I<shellname>...]"
-msgstr "B<remove-shell> I<ime lupine> [I<ime lupine>...]"
+msgstr "B<remove-shell> I<Shell-Name> [I<Shell-Name>...]"
 
 #. type: Plain text
 #: ../remove-shell.8:13
@@ -186,9 +185,10 @@ msgid ""
 "etc/shells.tmp2> to remove the given shells from the list of valid login "
 "shells, and copy the result back to I</etc/shells>."
 msgstr ""
-"B<remove-shell> deluje na začasnih datotekah I</etc/shells.tmp> in I</etc/"
-"shells.tmp2> tako, da odstrani podane lupine iz seznama veljavnih prijavnih "
-"lupin in kopira rezultat nazaj v I</etc/shells>."
+"B<remove-shell> arbeitet mit den temporären Dateien I</etc/shells.tmp> und "
+"I</etc/shells.tmp2>, um die angegebenen Shells aus der Liste der gültigen "
+"Anmelde-Shells zu entfernen und kopiert das Ergebnis zurück nach I</etc/"
+"shells>."
 
 #. type: TH
 #: ../run-parts.8:8
@@ -200,7 +200,7 @@ msgstr "RUN-PARTS"
 #: ../run-parts.8:8
 #, no-wrap
 msgid "14 Nov 2010"
-msgstr ""
+msgstr "14. Nov. 2010"
 
 #. type: TH
 #: ../run-parts.8:8 ../savelog.8:2 ../tempfile.1:2 ../which.1:2
@@ -211,7 +211,7 @@ msgstr "Debian"
 #. type: Plain text
 #: ../run-parts.8:11
 msgid "run-parts - run scripts or programs in a directory"
-msgstr "run-parts - zažene skripte ali programe v mapi"
+msgstr "run-parts - Skripte oder Programme in einem Verzeichnis ausführen"
 
 #. type: Plain text
 #: ../run-parts.8:17
@@ -221,8 +221,8 @@ msgid ""
 "list] [--reverse] [--] DIRECTORY"
 msgstr ""
 "B<run-parts> [--test] [--verbose] [--report] [--lsbsysinit] [--regex=RE] [--"
-"umask=umask] [--arg=argument] [--exit-on-error] [--help] [--version] [--"
-"list] [--reverse] [--] MAPA"
+"umask=Umask] [--arg=Option] [--exit-on-error] [--help] [--version] [--list] "
+"[--reverse] [--] VERZEICHNIS"
 
 #. type: Plain text
 #: ../run-parts.8:20
@@ -236,25 +236,20 @@ msgid ""
 "described below, found in directory I<directory>.  Other files and "
 "directories are silently ignored."
 msgstr ""
-"B<run-parts> zažene vse najdene izvedljive datoteke v mapi I<directory> "
-"poimenovane s spodaj opisanimi omejitvami. Druge datoteke in mape so tiho "
-"prezrte."
+"B<run-parts> führt alle ausführbaren Dateien im Verzeichnis I<Verzeichnis> "
+"aus, wobei die Namen den unten beschriebenen Randbedingungen genügen müssen. "
+"Andere Dateien und Verzeichnisse werden ohne Rückmeldung ignoriert."
 
 #. type: Plain text
 #: ../run-parts.8:31
-#, fuzzy
-#| msgid ""
-#| "If neither the --lsbsysinit option nor the --regex option is given then "
-#| "the names must consist entirely of upper and lower case letters, digits, "
-#| "underscores, and hyphens."
 msgid ""
 "If neither the --lsbsysinit option nor the --regex option is given then the "
 "names must consist entirely of ASCII upper- and lower-case letters, ASCII "
 "digits, ASCII underscores, and ASCII minus-hyphens."
 msgstr ""
-"Če nista podani možnost --lsbsysinit ali pa možnost --regex, morajo biti "
-"imena sestavljena samo iz velikih in majhnih črk, številk, podčrtajev in "
-"vezajev."
+"Falls weder die Option »--lsbsysinit« noch die Option »--regex« angegeben "
+"werden, dann müssen die Namen komplett aus ASCII-Groß- und -Kleinbuchstaben, "
+"ASCII-Ziffern, ASCII-Unterstrichen und ASCII-Minuszeichen bestehen."
 
 #. type: Plain text
 #: ../run-parts.8:38
@@ -265,11 +260,12 @@ msgid ""
 "the LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
 "and the Debian cron script namespace (^[a-zA-Z0-9_-]+$)."
 msgstr ""
-"Če je podana možnost --lsbsysinit, se imena ne smejo končati z .dpkg-old, ."
-"dpkg-dist, .dpkg-new ali .dpkg-tmp. Pripadati morajo enemu izmed naslednjih "
-"imenskih prostorov: LANANA-dodeljen imenski prostor (^[a-z0-9]+$); "
-"hierarhični in obraten imenski prostor  LSB (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
-"in imenski prostor Debian cron skript (^[a-zA-Z0-9_-]+$)."
+"Falls die Option »--lsbsysinit« angegeben ist, dürfen die Namen nicht in »."
+"dpkg-old«, ».dpkg-dist«, ».dpkg-new« oder ».dpkg-tmp« enden und müssen zu "
+"einem der folgenden Namensräume gehörten: dem LANANA-zugewiesenen Namensraum "
+"(^[a-z0-9]+$), den hierarchischen und reservierten LSB-Namensräumen (^_?([a-"
+"z0-9_.]+-)+[a-z0-9]+$) und dem Debian-Cron-Skript-Namensraum (^[a-zA-Z0-9_-]+"
+"$)."
 
 #. type: Plain text
 #: ../run-parts.8:41
@@ -277,8 +273,9 @@ msgid ""
 "If the --regex option is given, the names must match the custom extended "
 "regular expression specified as that option's argument."
 msgstr ""
-"Če je podana možnost --regex, morajo imena ustrezati po meri narejenemu "
-"razširjenemu logičnemu izrazu določenemu kot argument te možnosti."
+"Falls die Option »--regex« angegeben ist, müssen die Namen auf den "
+"angepassten erweiterten regulären Ausdruck passen, der der Option übergeben "
+"wurde."
 
 #. type: Plain text
 #: ../run-parts.8:45
@@ -286,14 +283,15 @@ msgid ""
 "Files are run in the lexical sort order of their names unless the --reverse "
 "option is given, in which case they are run in the opposite order."
 msgstr ""
-"Datoteke se zaganjajo po abecednem vrstnem redu njihovih imen, razen če je "
-"podana možnost --reverse. Takrat se zaganjajo v obratnem vrstnem redu."
+"Dateien werden in der lexikalisch sortierten Reihenfolge ihrer Namen "
+"ausgeführt, es sei denn, die Option »--reverse« ist angegeben, in diesem "
+"Fall werden sie in der umgekehrten Reihenfolge ausgeführt."
 
 #. type: SH
 #: ../run-parts.8:46 ../savelog.8:92 ../tempfile.1:46 ../which.1:14
 #, no-wrap
 msgid "OPTIONS"
-msgstr "MOŽNOSTI"
+msgstr "OPTIONEN"
 
 #. type: TP
 #: ../run-parts.8:47
@@ -306,7 +304,9 @@ msgstr "B<--test>"
 msgid ""
 "print the names of the scripts which would be run, but don't actually run "
 "them."
-msgstr "izpiše imena skript, ki bi se pognale, vendar jih ne zažene."
+msgstr ""
+"gibt die Namen der Skripte aus, die ausgeführt würden. Eine Ausführung "
+"findet aber nicht statt."
 
 #. type: TP
 #: ../run-parts.8:51
@@ -320,8 +320,9 @@ msgid ""
 "print the names of the all matching files (not limited to executables), but "
 "don't actually run them. This option cannot be used with --test."
 msgstr ""
-"izpiše imena vseh ustrezajočih datotek (ne samo izvredljivih datotek), "
-"vendar jih ne zaženi. Te možnosti ni mogoče uporabiti skupaj s --test."
+"gibt die Namen aller passenden Dateien (nicht begrenzt auf ausführbare "
+"Dateien) aus, führt diese aber nicht aus. Diese Option kann nicht zusammen "
+"mit »--test« verwandt werden."
 
 #. type: TP
 #: ../run-parts.8:55
@@ -332,7 +333,7 @@ msgstr "B<-v, --verbose>"
 #. type: Plain text
 #: ../run-parts.8:58
 msgid "print the name of each script to stderr before running."
-msgstr "izpiše ime vsake skripte na stderr pred zagonom"
+msgstr "gibt vor der Ausführung jedes Skriptes den Namen auf Stderr aus."
 
 #. type: TP
 #: ../run-parts.8:58
@@ -347,9 +348,10 @@ msgid ""
 "output.  The script's name is printed to whichever of stdout or stderr the "
 "script first produces output on."
 msgstr ""
-"podobno kot B<--verbose>, vendar izpiše le imena skript, ki imajo izhod.  "
-"Ime skripte se izpiše na stdout ali pa stderr glede na to kje se izpiše prvi "
-"izhod skripte."
+"ähnlich zu B<--verbose>, gibt aber nur die Namen der Skripte aus, die eine "
+"Ausgabe erstellen. Die Namen der Skripte werden entweder auf Stdout oder "
+"Stderr ausgegeben, abhängig davon, wo das erste Skript seine Ausgabe hin "
+"ausgibt."
 
 #. type: TP
 #: ../run-parts.8:63
@@ -360,7 +362,7 @@ msgstr "B<--reverse>"
 #. type: Plain text
 #: ../run-parts.8:66
 msgid "reverse the scripts' execution order."
-msgstr "obrni vrstni red izvajanja skript"
+msgstr "invertiert die Reihenfolge der Ausführung."
 
 #. type: TP
 #: ../run-parts.8:66
@@ -371,7 +373,9 @@ msgstr "B<--exit-on-error>"
 #. type: Plain text
 #: ../run-parts.8:69
 msgid "exit as soon as a script returns with a non-zero exit code."
-msgstr "končaj takoj, ko skript vrne ne ničelno izstopno kodo."
+msgstr ""
+"beenden, sobald ein Skript mit einem von Null verschiedenen Exit-Code "
+"zurückkehrt."
 
 #. type: TP
 #: ../run-parts.8:69
@@ -382,7 +386,7 @@ msgstr "B<--lsbsysinit>"
 #. type: Plain text
 #: ../run-parts.8:72
 msgid "use LSB namespaces instead of classical behavior."
-msgstr "uporabi imenski prostor LSB namesto običajnega obnašanja."
+msgstr "LSB-Namensräume statt des klassischen Verhaltens verwenden."
 
 #. type: TP
 #: ../run-parts.8:72
@@ -397,9 +401,9 @@ msgid ""
 "killing run-parts will not kill the currently running script, it will run "
 "until completion."
 msgstr ""
-"zažene vsako skripto v ločeni seji opravila. Če se ta možnost uporabi, "
-"ubitje programa run-parts ne bo ubilo trenutno delujočih skript. Te bodo "
-"tekle do zaključka."
+"jedes Skript in einer separaten Prozesssitzung ausführen. Falls Sie diese "
+"Option verwenden, wird das Töten (»killen«) von Run-parts nicht das aktuell "
+"laufende Skript töten, welches bis zum Ende durchlaufen wird."
 
 #. type: TP
 #: ../run-parts.8:77
@@ -413,14 +417,14 @@ msgid ""
 "validate filenames against custom extended regular expression I<RE>.  See "
 "the EXAMPLES section for an example."
 msgstr ""
-"potrdi veljavnost imen datotek glede na po meri izdelan razširjen logični "
-"izraz I<RE>. Glej odstavek PRIMERI za primere."
+"prüfen von Dateinamen gegen angepassten erweiterten regulären Ausdruck "
+"I<RE>. Sie finden im Abschnitt BEISPIELE ein Beispiel dazu."
 
 #. type: TP
 #: ../run-parts.8:82
 #, no-wrap
 msgid "B<-u, --umask=>I<umask>"
-msgstr "B<-u, --umask=>I<umask>"
+msgstr "B<-u, --umask=>I<Umask>"
 
 #. type: Plain text
 #: ../run-parts.8:89
@@ -428,14 +432,14 @@ msgid ""
 "sets the umask to I<umask> before running the scripts.  I<umask> should be "
 "specified in octal.  By default the umask is set to 022."
 msgstr ""
-"nastavi umask na I<umask> pred poganjanjem skript. I<umask> mora biti "
-"določen osmiško. Privzeto je umask nastavljen na 022."
+"setzt vor der Ausführung der Skripte die Umask auf I<Umask>. I<Umask> sollte "
+"oktal angegeben werden. Standardmäßig ist die Umask auf 022 gesetzt."
 
 #. type: TP
 #: ../run-parts.8:89
 #, no-wrap
 msgid "B<-a, --arg=>I<argument>"
-msgstr "B<-a, --arg=>I<argument>"
+msgstr "B<-a, --arg=>I<Optionen>"
 
 #. type: Plain text
 #: ../run-parts.8:96
@@ -443,8 +447,8 @@ msgid ""
 "pass I<argument> to the scripts.  Use B<--arg> once for each argument you "
 "want passed."
 msgstr ""
-"podajte I<argument> skripti. Uporabite I<--arg> za vsak argument, ki ga "
-"želite podati."
+"gibt I<Optionen> an die Skripte weiter. Verwenden Sie für jede "
+"weiterzugebende Option einmal B<--arg>."
 
 #. type: TP
 #: ../run-parts.8:96
@@ -458,8 +462,8 @@ msgid ""
 "specifies that this is the end of the options.  Any filename after B<--> "
 "will be not be interpreted as an option even if it starts with a hyphen."
 msgstr ""
-"poda, da je to konec možnosti. Katerokoli ime datoteke po B<--> ne bo "
-"tolmačeno kot možnost, tudi če se začne z vezajem."
+"gibt an, dass hier die Optionen enden. Jeder Dateiname nach B<--> wird nicht "
+"als Option interpretiert, selbst wenn er mit einem Minuszeichen beginnt."
 
 #. type: TP
 #: ../run-parts.8:102
@@ -470,7 +474,7 @@ msgstr "B<-h, --help>"
 #. type: Plain text
 #: ../run-parts.8:105
 msgid "display usage information and exit."
-msgstr "prikaže podatke o uporabi in konča."
+msgstr "zeigt die Benutzungsinformationen an und beendet das Programm."
 
 #. type: TP
 #: ../run-parts.8:105
@@ -481,20 +485,21 @@ msgstr "B<-V, --version>"
 #. type: Plain text
 #: ../run-parts.8:108
 msgid "display version and copyright and exit."
-msgstr "prikaže različico in avtorske pravice in konča."
+msgstr "zeigt die Version und das Copyright an und beendet das Programm."
 
 #. type: SH
 #: ../run-parts.8:109
 #, no-wrap
 msgid "EXAMPLES"
-msgstr "PRIMERI"
+msgstr "BEISPIELE"
 
 #. type: Plain text
 #: ../run-parts.8:112
 msgid ""
 "Print the names of all files in /etc that start with `p' and end with `d':"
 msgstr ""
-"Prikaže imena vseh datotek v /etc, ki se začnejo s `p' in končajo z `d':"
+"Die Namen aller Dateien in /etc ausgeben, die mit »p« beginnen und mit »d« "
+"enden:"
 
 #. type: Plain text
 #: ../run-parts.8:114
@@ -505,30 +510,29 @@ msgstr "run-parts --list --regex \\[aq]^p.*d$\\[aq] /etc"
 #: ../run-parts.8:115
 #, no-wrap
 msgid "COPYRIGHT"
-msgstr "AVTORSKE PRAVICE"
+msgstr "COPYRIGHT"
 
 #. type: Plain text
 #: ../run-parts.8:118
 msgid "Copyright (C) 1994 Ian Jackson."
-msgstr "Avtorske pravice (C) 1994 Ian Jackson."
+msgstr "Copyright (C) 1994 Ian Jackson."
 
 #. type: Plain text
 #: ../run-parts.8:120
 msgid "Copyright (C) 1996 Jeff Noxon."
-msgstr "Avtorske pravice (C) 1996 Jeff Noxon."
+msgstr "Copyright (C) 1996 Jeff Noxon."
 
 #. type: Plain text
 #: ../run-parts.8:122
 msgid "Copyright (C) 1996, 1997, 1998 Guy Maor"
-msgstr "Avtorske pravice (C) 1996, 1997, 1998 Guy Maor"
+msgstr "Copyright (C) 1996, 1997, 1998 Guy Maor"
 
 #. type: Plain text
 #: ../run-parts.8:124
 msgid ""
 "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 msgstr ""
-"Avtorske pravice (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint "
-"Adams"
+"Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Clint Adams"
 
 #. type: Plain text
 #: ../run-parts.8:129
@@ -536,8 +540,8 @@ msgid ""
 "B<run-parts> is free software; see the GNU General Public License version 2 "
 "or later for copying conditions.  There is I<no> warranty."
 msgstr ""
-"B<run-parts> je prosti program; oglejte si GNU General Public License "
-"različica 2 ali kasnejša za pogoje kopiranja. Garancije I<ni>."
+"B<run-parts> ist freie Software; lesen Sie die GNU General Public License "
+"Version 2 oder neuer für die Kopierbedingungen. Es gibt I<keine> Haftung."
 
 #. type: TH
 #: ../savelog.8:2
@@ -547,29 +551,25 @@ msgstr "SAVELOG"
 
 #. type: TH
 #: ../savelog.8:2
-#, fuzzy, no-wrap
-#| msgid "7 Jan 2001"
+#, no-wrap
 msgid "30 Jun 2010"
-msgstr "7 jan 2001"
+msgstr "30. Juni 2010"
 
 #. type: Plain text
 #: ../savelog.8:5
 msgid "savelog - save a log file"
-msgstr "savelog - shrani datoteko dnevnika"
+msgstr "savelog - eine Protokolldatei speichern"
 
 #. type: Plain text
 #: ../savelog.8:9
-#, fuzzy
-#| msgid ""
-#| "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] "
-#| "[-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] file ..."
 msgid ""
 "B<savelog> [-m mode] [-u user] [-g group] [-t] [-p] [-c cycle] [-l] [-j] [-"
 "J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D dateformat] "
 "file ..."
 msgstr ""
-"B<savelog> [-m način] [-u uporabnik] [-g skupina] [-t] [-p] [-c cikel] [-l] "
-"[-j] [-C] [-d] [-l] [-r rolldir] [-n] [-q] [-D oblikadatuma] datoteka ..."
+"B<savelog> [-m Modus] [-u Benutzer] [-g Gruppe] [-t] [-p] [-c Zyklus] [-l] [-"
+"j] [-J] [-1\\ .\\|.\\ -9] [-C] [-d] [-l] [-r WandVerz] [-n] [-q] [-D "
+"Datumsformat] Datei ..."
 
 #. type: Plain text
 #: ../savelog.8:16
@@ -577,13 +577,13 @@ msgid ""
 "The B<savelog> command saves and optionally compresses old copies of files.  "
 "Older versions of I<file> are named:"
 msgstr ""
-"Ukaz B<savelog> shrani in po želji stisne stare kopije datotek. Starejše "
-"različice I<file> se imenujejo:"
+"Der Befehl B<savelog> speichert alte Kopien von Dateien und komprimiert sie "
+"optional. Ältere Versionen von I<Datei> werden wie folgt benannt:"
 
 #. type: Plain text
 #: ../savelog.8:19
 msgid "I<file>.I<E<lt>numberE<gt>>I<E<lt>compress_suffixE<gt>>"
-msgstr "I<file>.I<E<lt>numberE<gt>>I<E<lt>compress_suffixE<gt>>"
+msgstr "I<Datei>.I<E<lt>NummerE<gt>>I<E<lt>Komprimier_EndungE<gt>>"
 
 #. type: Plain text
 #: ../savelog.8:32
@@ -593,15 +593,17 @@ msgid ""
 "number 0 is not compressed because a process might still have I<file> opened "
 "for I/O.  Only I<cycle> versions of the file are kept."
 msgstr ""
-"kjer je I<E<lt>numberE<gt>> številka različice, 0 predstavlja najnovejšo.  "
-"Različice številka E<gt> 0 so stisnjene, razen če to prepreči B<-l>.  "
-"Različica številka 0 ni stisnjena, saj ima lahko opravilo I<file> še vedno "
-"odprt za I/O.  Samo I<cycle> različic datoteke je ohranjenih."
+"Hierbei ist I<E<lt>NummerE<gt>> die Versionsnummer, 0 ist die neuste. "
+"Versionsnummern E<gt> 0 sind komprimiert, falls dies nicht durch B<-l> "
+"verhindert wird. Versionsnummer 0 ist nicht komprimiert, da ein Prozess "
+"immer noch I<Datei> für E/A offen haben könnte. Nur I<Zyklus> Versionen der "
+"Datei werden aufgehoben."
 
 #. type: Plain text
 #: ../savelog.8:36
 msgid "If the file does not exist and B<-t> was given, it will be created."
-msgstr "Če datoteka ne obstaja in je B<-t> podan, bo ustvarjena."
+msgstr ""
+"Falls die Datei nicht existiert und B<-t> übergeben wurde, wird sie erstellt."
 
 #. type: Plain text
 #: ../savelog.8:39
@@ -609,8 +611,8 @@ msgid ""
 "For files that do exist and have lengths greater than zero, the following "
 "actions are performed:"
 msgstr ""
-"Za datoteke, ki obstajajo in imajo dolžino večjo od nič, so opravljena "
-"naslednja dejanja:"
+"Für Dateien, die existieren und eine Länge größer null haben, werden die "
+"folgenden Aktionen durchgeführt:"
 
 #. type: IP
 #: ../savelog.8:40
@@ -627,12 +629,11 @@ msgid ""
 "version I<file> is deleted.  Both compressed names and uncompressed names "
 "are cycled, regardless of B<-l>.  Missing version files are ignored."
 msgstr ""
-"Datoteke s številkami različic krožijo.  Rezličica I<file>.I<2> je "
-"premaknjena v različico I<file>.I<3>, različica I<file>.I<1> je premaknjena "
-"v različico I<file>.I<2>, in tako naprej. Končno je različica I<file>.I<0> "
-"premaknjena v različico I<file>.I<1>, in je različica I<file> izbrisana.  "
-"Tako stisnjena in ne stisnjena imena krožijo, ne glede na B<-l>.  Manjkajoče "
-"datoteke različic so prezrte."
+"Versionsnummern werden zyklisch verschoben. Version I<Datei>.I<2> wird "
+"I<Datei>.I<3>, Version I<Datei>.I<1> wird I<Datei>.I<2> und so weiter. "
+"Schließlich wird Version I<Datei>.I<0> zu I<Datei>.I<1> und I<Datei> wird "
+"gelöscht. Sowohl komprimierte als auch unkomprimierte Namen werden zyklisch "
+"verschoben, unabhängig von B<-l>. Fehlende Versionen werden ignoriert."
 
 #. type: IP
 #: ../savelog.8:60
@@ -646,8 +647,9 @@ msgid ""
 "The new I<file>.I<1> is compressed unless the B<-l> flag was given.  It is "
 "changed subject to the B<-m>, B<-u>, and B<-g> flags."
 msgstr ""
-"Nova I<file>.I<1> je stisnjena, razen če je podana zastavica B<-l>.  "
-"Spremenjena je glede na zastavice B<-m>, B<-u>, in B<-g>."
+"Die neue I<Datei>.I<1> wird komprimiert, falls der Schalter B<-l> nicht "
+"übergeben wurde. Sie wird gemäß den Schaltern B<-m>, B<-u> und B<-g> "
+"geändert."
 
 #. type: IP
 #: ../savelog.8:69
@@ -658,7 +660,7 @@ msgstr "3)"
 #. type: Plain text
 #: ../savelog.8:74
 msgid "The main I<file> is moved to I<file>.I<0>."
-msgstr "Glavna I<file> je premaknjena v I<file>.I<0>."
+msgstr "Die Haupt-I<Datei> wird zu I<Datei>.I<0>."
 
 #. type: IP
 #: ../savelog.8:75
@@ -673,9 +675,10 @@ msgid ""
 "I<file> is created subject to the given flags.  With the B<-p> flag, the "
 "file is created with the same owner, group, and permissions as before."
 msgstr ""
-"Če so podane zastavice B<-m>, B<-u>, B<-g>, B<-t>, ali pa B<-p>, je "
-"ustvarjena prazna I<file> glede na podane zastavice.  Z zastavico B<-p> , je "
-"datoteka ustvarjena z enakim lastništvom, skupino in pravicami kot prej."
+"Falls die Schalter B<-m>, B<-u>, B<-g>, B<-t> oder B<-p> angegeben werden, "
+"dann wird eine leere I<Datei> gemäß den Schaltern angelegt. Mit dem Schalter "
+"B<-p> wird die Datei mit dem gleichen Eigentümer, Gruppe und Rechten wie "
+"vorher angelegt."
 
 #. type: IP
 #: ../savelog.8:85
@@ -688,46 +691,47 @@ msgstr "5)"
 msgid ""
 "The new I<file>.I<0> is changed subject to the B<-m>, B<-u>, and B<-g> flags."
 msgstr ""
-"Nova I<file>.I<0> je spremenjena glede na zastavice B<-m>, B<-u>, in B<-g>."
+"Die neue I<Datei>.I<0> wird entsprechend der Schalter B<-m>, B<-u> und B<-g> "
+"geändert."
 
 #. type: TP
 #: ../savelog.8:93
 #, no-wrap
 msgid "B<-m mode>"
-msgstr "B<-m način>"
+msgstr "B<-m Modus>"
 
 #. type: Plain text
 #: ../savelog.8:97
 msgid "chmod the log files to mode, implies B<-t>"
-msgstr "chmod datoteke dnevnikov k danim pravicam, predpostavi B<-t>"
+msgstr "chmod die Protokolldatei nach Modus, impliziert B<-t>"
 
 #. type: TP
 #: ../savelog.8:97
 #, no-wrap
 msgid "B<-u user>"
-msgstr "B<-u uporabnik>"
+msgstr "B<-u Benutzer>"
 
 #. type: Plain text
 #: ../savelog.8:101
 msgid "chown log files to user, implies B<-t>"
-msgstr "chown datoteke dnevnikov k uporabniku, predpostavi B<-t>"
+msgstr "chown die Protokolldatei zu Benutzer, impliziert B<-t>"
 
 #. type: TP
 #: ../savelog.8:101
 #, no-wrap
 msgid "B<-g group>"
-msgstr "B<-g skupina>"
+msgstr "B<-g Gruppe>"
 
 #. type: Plain text
 #: ../savelog.8:105
 msgid "chgrp log files to group, implies B<-t>"
-msgstr "chgrp datoteke dnevnikov k skupini, predpostavi B<-t>"
+msgstr "chgrp die Protokolldatei zu Gruppe, impliziert B<-t>"
 
 #. type: TP
 #: ../savelog.8:105
 #, no-wrap
 msgid "B<-c cycle>"
-msgstr "B<-c cycle>"
+msgstr "B<-c Zyklus>"
 
 #. type: Plain text
 #: ../savelog.8:110
@@ -735,8 +739,8 @@ msgid ""
 "Save cycle versions of the logfile (default: 7). The I<cycle> count must be "
 "at least 2."
 msgstr ""
-"Shrani krožne različice datoteke dnevnika (privzeto: 7). Število I<cycle> "
-"datotek kroženja mora biti vsaj 2."
+"speichert mindestens Zyklus Versionen der Protokolldatei (Vorgabe: 7). Der "
+"Zähler I<Zyklus> muss mindestens 2 sein."
 
 #. type: TP
 #: ../savelog.8:110
@@ -747,7 +751,7 @@ msgstr "B<-t>"
 #. type: Plain text
 #: ../savelog.8:113
 msgid "touch new logfile into existence"
-msgstr "ustvari \"touch\" novo datoteko dnevnika"
+msgstr "neue Protokolldatei mit »touch« erstellen"
 
 #. type: TP
 #: ../savelog.8:113
@@ -758,7 +762,7 @@ msgstr "B<-l>"
 #. type: Plain text
 #: ../savelog.8:116
 msgid "don't compress any log files (default: do compress)"
-msgstr "ne stiskaj datotek dnevnikov (privzeto: stiskaj)"
+msgstr "keine Protokolldateien komprimieren (Vorgabe: komprimieren)"
 
 #. type: TP
 #: ../savelog.8:116
@@ -769,7 +773,7 @@ msgstr "B<-p>"
 #. type: Plain text
 #: ../savelog.8:119
 msgid "preserve owner, group, and permissions of logfile"
-msgstr "ohrani lastništvo, skupino in dovojenja datoteke dnevnika"
+msgstr "Eigentümer, Gruppe und Rechte der Protokolldatei erhalten"
 
 #. type: TP
 #: ../savelog.8:119
@@ -780,20 +784,18 @@ msgstr "B<-j>"
 #. type: Plain text
 #: ../savelog.8:122
 msgid "compress with bzip2 instead of gzip"
-msgstr "stisni z bzip2 namesto z gzip"
+msgstr "mit Bzip2 statt mit Gzip komprimieren"
 
 #. type: TP
 #: ../savelog.8:122
 #, no-wrap
 msgid "B<-J>"
-msgstr ""
+msgstr "B<-J>"
 
 #. type: Plain text
 #: ../savelog.8:125
-#, fuzzy
-#| msgid "compress with bzip2 instead of gzip"
 msgid "compress with xz instead of gzip"
-msgstr "stisni z bzip2 namesto z gzip"
+msgstr "mit Xz statt mit Gzip komprimieren"
 
 #. type: Plain text
 #: ../savelog.8:127
@@ -802,17 +804,22 @@ msgid ""
 "total amount of physical RAM. Note that xz can use a very large amount of "
 "memory for the higher compression levels."
 msgstr ""
+"Für Xz wird keine Stärkeoption gesetzt und Xz entscheidet gemäß dem "
+"Standardwert basierend auf der Gesamtmenge an physischem RAM. Beachten Sie, "
+"dass Xz eine sehr großen Teil des Speichers für hohe Komprimierungsstufen "
+"verwenden kann."
 
 #. type: TP
 #: ../savelog.8:127
 #, no-wrap
 msgid "B<-1\\ .\\|.\\ -9>"
-msgstr ""
+msgstr "B<-1\\ .\\|.\\ -9>"
 
 #. type: Plain text
 #: ../savelog.8:130
 msgid "compression strength or memory usage (default: 9, except for xz)"
 msgstr ""
+"Komprimierungsstärke oder Speicherverwendung (Standard: 9, außer für Xz)"
 
 #. type: TP
 #: ../savelog.8:130
@@ -823,7 +830,7 @@ msgstr "B<-C>"
 #. type: Plain text
 #: ../savelog.8:133
 msgid "force cleanup of cycled logfiles"
-msgstr "prisili čiščenje krožnih datotek dnevnikov"
+msgstr "erzwinge Bereinigung von verschobenen Protokolldateien"
 
 #. type: TP
 #: ../savelog.8:133
@@ -834,18 +841,18 @@ msgstr "B<-d>"
 #. type: Plain text
 #: ../savelog.8:136
 msgid "use standard date for rolling"
-msgstr "za obračanje uporabi standardni datum"
+msgstr "Standarddatum zum Wandeln verwenden"
 
 #. type: TP
 #: ../savelog.8:136
 #, no-wrap
 msgid "B<-D dateformat>"
-msgstr "B<-D oblika datuma>"
+msgstr "B<-D Datumsformat>"
 
 #. type: Plain text
 #: ../savelog.8:140
 msgid "override date format, in the form of I<[MMDDhhmm[[CC]YY][.ss]]>"
-msgstr "prepiši obliko datuma z obliko zapisa I<[MMDDhhmm[[CC]YY][.ss]]>"
+msgstr "überschreibe Datumsformat, in der Form I<[MMTThhmm[[CC]JJ][.ss]]>"
 
 #. type: TP
 #: ../savelog.8:140
@@ -856,7 +863,7 @@ msgstr "B<-r>"
 #. type: Plain text
 #: ../savelog.8:145
 msgid "use I<rolldir> instead of . to roll files"
-msgstr "uporabi I<rolldir> namesto . za obračanje datotek"
+msgstr "verwende I<WandVerz> statt . um Dateien zu wandeln"
 
 #. type: TP
 #: ../savelog.8:145
@@ -867,7 +874,7 @@ msgstr "B<-n>"
 #. type: Plain text
 #: ../savelog.8:148
 msgid "do not rotate empty files"
-msgstr "ne vrti praznih datotek"
+msgstr "leere Dateien nicht rotieren"
 
 #. type: TP
 #: ../savelog.8:148
@@ -878,7 +885,7 @@ msgstr "B<-q>"
 #. type: Plain text
 #: ../savelog.8:151
 msgid "be quiet"
-msgstr "molči"
+msgstr "nichts ausgeben"
 
 #. type: Plain text
 #: ../savelog.8:157
@@ -886,13 +893,13 @@ msgid ""
 "If a process is still writing to I<file.0>, and savelog moves it to "
 "I<file.1> and compresses it, data could be lost."
 msgstr ""
-"Podatki se lahko izgubijo, če opravilo še vedno piše v I<file.0> in jo "
-"savelog premakne v I<file.1> ter stisne."
+"Falls ein Prozess noch in I<Datei.0> schreibt und Savelog diese Datei in "
+"I<Datei.1> verschiebt und dann komprimiert, könnten Daten verloren gehen."
 
 #. type: Plain text
 #: ../savelog.8:159
 msgid "B<logrotate>(8)"
-msgstr ""
+msgstr "B<logrotate>(8)"
 
 #. type: TH
 #: ../tempfile.1:2
@@ -904,12 +911,13 @@ msgstr "TEMPFILE"
 #: ../tempfile.1:2 ../which.1:2
 #, no-wrap
 msgid "1 May 2009"
-msgstr "1 maj 2009"
+msgstr "1. Mai 2009"
 
 #. type: Plain text
 #: ../tempfile.1:5
 msgid "tempfile - create a temporary file in a safe manner"
-msgstr "tempfile - ustvari začasno datoteko v varnem načinu"
+msgstr ""
+"tempfile - eine temporäre Datei in einer sicheren Art und Weise erstellen"
 
 #. type: Plain text
 #: ../tempfile.1:9
@@ -918,9 +926,9 @@ msgid ""
 "directory=DIR] [--prefix=STRING] [--suffix=STRING] [--mode=MODE] [--"
 "name=FILE] [--help] [--version]"
 msgstr ""
-"B<tempfile> [-d MAPA] [-p NIZ] [-s NIZ] [-m NAČIN] [-n DATOTAKA] [--"
-"directory=MAPA] [--prefix=NIZ] [--suffix=NIZ] [--mode=NAČIN] [--"
-"name=DATOTEKA] [--help] [--version]"
+"B<tempfile> [-d VERZ] [-p ZEICHENKETTE] [-s ZEICHENKETTE] [-m MODUS] [-n "
+"DATEI] [--directory=VERZ] [--prefix=ZEICHENKETTE] [--suffix=ZEICHENKETTE] [--"
+"mode=MODUS] [--name=DATEI] [--help] [--version]"
 
 #. type: Plain text
 #: ../tempfile.1:18
@@ -930,10 +938,11 @@ msgid ""
 "filename is printed on standard output. See B<tempnam>(3)  for the actual "
 "steps involved in directory selection."
 msgstr ""
-"B<tempfile> ustvari začasno datoteko na varnen način.  Uporabi B<tempnam>"
-"(3)  za izbor imena in ga odpre z O_RDWR | O_CREAT | O_EXCL.  Ime datoteke "
-"je izpisano na standardnem izhodu.Glej B<tempnam>(3)  za dejanske korake pri "
-"izboru mape."
+"B<tempfile> erstellt eine temporäre Datei auf eine sichere Art und Weise. Es "
+"verwendet B<tempnam>(3), um den Namen zu wählen und öffnet sie mit O_RDWR | "
+"O_CREAT | O_EXCL. Der Dateiname wird auf der Standardausgabe ausgegeben. "
+"Lesen Sie B<tempnam>(3) für die tatsächlichen Schritte, die in der "
+"Verzeichnisauswahl durchlaufen werden."
 
 #. type: Plain text
 #: ../tempfile.1:23
@@ -941,8 +950,9 @@ msgid ""
 "The directory in which to create the file might be searched for in this "
 "order (but refer to B<tempnam>(3)  for authoritative answers):"
 msgstr ""
-"Mapa, kjer naj bi se datoteka ustvarila, se poišče v tem vrstnem redu "
-"(vendar glejte B<tempnam>(3) za zanesljiv odgovor):"
+"Die Verzeichnisse, in der die Datei erstellt wird, könnten in dieser "
+"Reihenfolge durchsucht werden (lesen Sie aber B<tempnam>(3) für verbindliche "
+"Antworten):"
 
 #. type: TP
 #: ../tempfile.1:23
@@ -956,8 +966,8 @@ msgid ""
 "In case the environment variable B<TMPDIR> exists and contains the name of "
 "an appropriate directory, that is used."
 msgstr ""
-"V primeru, ko okoljska spremenljivka B<TMPDIR> obstaja in vsebuje ime "
-"primerne mape,  se le-ta uporabi."
+"Falls die Umgebungsvariable B<TMPDIR> existiert und den Namen eines "
+"geeigneten Verzeichnisses enthält, wird dieses verwandt."
 
 #. type: TP
 #: ../tempfile.1:29
@@ -970,7 +980,9 @@ msgstr "b)"
 msgid ""
 "Otherwise, if the I<--directory> argument is specified and appropriate, it "
 "is used."
-msgstr "Drugače se uporabi argument I<--directory>, če je določen in primeren."
+msgstr ""
+"Falls andernfalls die Option I<--directory> angegeben und geeignet ist, wird "
+"sie verwandt."
 
 #. type: TP
 #: ../tempfile.1:34
@@ -984,8 +996,8 @@ msgid ""
 "Otherwise, I<P_tmpdir> (as defined in I<E<lt>stdio.hE<gt>>)  is used when "
 "appropriate."
 msgstr ""
-"Drugače se, ko je primerno, uporabi I<P_tmpdir> (kot je naveden v "
-"I<E<lt>stdio.hE<gt>>)."
+"Andernfalls wird I<P_tmpdir> (wie in I<E<lt>stdio.hE<gt>> definiert) "
+"verwandt, wenn geeignet."
 
 #. type: TP
 #: ../tempfile.1:41
@@ -996,35 +1008,37 @@ msgstr "d)"
 #. type: Plain text
 #: ../tempfile.1:46
 msgid "Finally an implementation-defined directory I<(/tmp)> may be used."
-msgstr "Končno se lahko uporabi mapa I<(/tmp)> navedena z implementacijo."
+msgstr ""
+"Abschließend könnte ein implementierungsdefiniertes Verzeichnis I<(/tmp)> "
+"verwandt werden."
 
 #. type: TP
 #: ../tempfile.1:47
 #, no-wrap
 msgid "B<-d, --directory >I<DIR>"
-msgstr "B<-d, --directory >I<MAPA>"
+msgstr "B<-d, --directory >I<VERZ>"
 
 #. type: Plain text
 #: ../tempfile.1:50
 msgid "Place the file in DIR."
-msgstr "Vstavite datoteko v MAPO"
+msgstr "die Datei in VERZ erstellen"
 
 #. type: TP
 #: ../tempfile.1:50
 #, no-wrap
 msgid "B<-m, --mode >I<MODE>"
-msgstr "B<-m, --mode >I<NAČIN>"
+msgstr "B<-m, --mode >I<MODUS>"
 
 #. type: Plain text
 #: ../tempfile.1:53
 msgid "Open the file with MODE instead of 0600."
-msgstr "Odprite datoteko v NAČINU namesto 0600."
+msgstr "die Datei mit MODUS anstatt 0600 öffnen."
 
 #. type: TP
 #: ../tempfile.1:53
 #, no-wrap
 msgid "B<-n, --name >I<FILE>"
-msgstr "B<-n, --name >I<FILE>"
+msgstr "B<-n, --name >I<DATEI>"
 
 #. type: Plain text
 #: ../tempfile.1:58
@@ -1032,30 +1046,32 @@ msgid ""
 "Use FILE for the name instead of B<tempnam>(3)B<.> The options -d, -p, and -"
 "s are ignored if this option is given."
 msgstr ""
-"Uporabite DATOTEKA za ime namesto B<tempnam>(3)B<.> Možnosti -d, -p in -s so "
-"prezrte, ko je podana ta možnost."
+"DATEI als Namen statt B<tempnam>(3) verwendenB<.> Die Optionen -d, -p und -s "
+"werden bei Verwendung dieser Option ignoriert."
 
 #. type: TP
 #: ../tempfile.1:58
 #, no-wrap
 msgid "B<-p, --prefix >I<STRING>"
-msgstr "B<-p, --prefix >I<NIZ>"
+msgstr "B<-p, --prefix >I<ZEICHENKETTE>"
 
 #. type: Plain text
 #: ../tempfile.1:61
 msgid "Use up to five letters of STRING to generate the name."
-msgstr "Uporabite do pet črk iz NIZA za ustvarjanje imena."
+msgstr ""
+"bis zu fünf Buchstaben aus ZEICHENKETTE für die Erstellung des Namens "
+"verwenden."
 
 #. type: TP
 #: ../tempfile.1:61
 #, no-wrap
 msgid "B<-s, --suffix >I<STRING>"
-msgstr "B<-s, --suffix >I<NIZ>"
+msgstr "B<-s, --suffix >I<ZEICHENKETTE>"
 
 #. type: Plain text
 #: ../tempfile.1:64
 msgid "Generate the file with STRING as the suffix."
-msgstr "Ustvarite datoteko z NIZOM kot pripono."
+msgstr "Die Datei mit ZEICHENKETTE als Endung erstellen."
 
 #. type: TP
 #: ../tempfile.1:64
@@ -1066,7 +1082,9 @@ msgstr "B<--help>"
 #. type: Plain text
 #: ../tempfile.1:67
 msgid "Print a usage message on standard output and exit successfully."
-msgstr "Izpiše sporočilo uporabe na standarden izhod in uspešno konča."
+msgstr ""
+"auf der Standardausgabe einen Benutzungshinweis anzeigen und erfolgreich "
+"beenden."
 
 #. type: TP
 #: ../tempfile.1:67
@@ -1077,13 +1095,15 @@ msgstr "B<--version>"
 #. type: Plain text
 #: ../tempfile.1:70
 msgid "Print version information on standard output and exit successfully."
-msgstr "Izpiše podrobnosti o različici na standardni izhod in uspešno konča."
+msgstr ""
+"auf der Standardausgabe Versionsinformationen anzeigen und erfolgreich "
+"beenden."
 
 #. type: SH
 #: ../tempfile.1:70
 #, no-wrap
 msgid "RETURN VALUES"
-msgstr "VRNJENE VREDNOSTI"
+msgstr "RÜCKGABEWERTE"
 
 #. type: Plain text
 #: ../tempfile.1:73
@@ -1091,22 +1111,21 @@ msgid ""
 "An exit status of 0 means the temporary file was created successfully.  Any "
 "other exit status indicates an error."
 msgstr ""
-"Stanje končanja 0 pomeni, da je bila začasna datoteka uspešno ustvarjena. "
-"Katerokoli drugo izhodno stanje predstavlja napako."
+"Ein Rückgabewert von 0 bedeutet, dass die temporäre Datei erfolgreich "
+"erstellt wurde. Jeder andere Rückgabewert zeigt einen Fehler an."
 
 #. type: Plain text
 #: ../tempfile.1:76
 msgid ""
 "Exclusive creation is not guaranteed when creating files on NFS partitions."
 msgstr ""
-"Izključno ustvarjanje ni zagotovljeno, ko ustvarjate datoteke na razdelkih "
-"NFS."
+"Exklusive Erstellung wird bei Dateien auf NFS-Partitionen nicht garantiert."
 
 #. type: SH
 #: ../tempfile.1:76
 #, no-wrap
 msgid "EXAMPLE"
-msgstr "PRIMERI"
+msgstr "BEISPIEL"
 
 #. type: Plain text
 #: ../tempfile.1:88
@@ -1144,12 +1163,12 @@ msgstr "WHICH"
 #. type: Plain text
 #: ../which.1:5
 msgid "which - locate a command"
-msgstr "which - najdi ukaz"
+msgstr "which - finde einen Befehl"
 
 #. type: Plain text
 #: ../which.1:7
 msgid "which [-a] filename ..."
-msgstr "which [-a] imedatoteke ..."
+msgstr "which [-a] Dateiname ..."
 
 #. type: Plain text
 #: ../which.1:14
@@ -1160,10 +1179,11 @@ msgid ""
 "the PATH for executable files matching the names of the arguments. It does "
 "not follow symbolic links."
 msgstr ""
-"B<which> vrne imena poti datotek (ali povezav), ki bi se izvedla v trenutnem "
-"okolju, če bi bil njihov argument podan kot ukaz v strogo POSIX skladni "
-"lupini. To naredi tako, da poišče POTI izvedljivih datotek, ki ustrezajo "
-"imenom argumentov. Ne sledi simbolnim povezavam."
+"B<which> liefert die Pfadnamen der Dateien der Dateien (oder Links), die in "
+"der aktuellen Umgebung ausgeführt würden, wenn ihre Argumente als Befehle in "
+"einer streng-POSIX-konformen Shell übergeben worden wären. Dies erfolgt, "
+"indem der PATH nach ausführbaren Dateien, die auf die Argumente passen, "
+"durchsucht wird. Symbolischen Links wird nicht gefolgt."
 
 #. type: TP
 #: ../which.1:15
@@ -1174,13 +1194,13 @@ msgstr "B<-a>"
 #. type: Plain text
 #: ../which.1:18
 msgid "print all matching pathnames of each argument"
-msgstr "za vsak argument izpiše vsa ujemajoča imena poti"
+msgstr "alle passenden Pfadnamen für jede Option ausgeben"
 
 #. type: SH
 #: ../which.1:18
 #, no-wrap
 msgid "EXIT STATUS"
-msgstr "IZHODNO STANJE"
+msgstr "EXIT-STATUS"
 
 #. type: TP
 #: ../which.1:19
@@ -1191,7 +1211,7 @@ msgstr "B<0>"
 #. type: Plain text
 #: ../which.1:22
 msgid "if all specified commands are found and executable"
-msgstr "če so vsi navedeni ukazi najdeni in izvedljivi"
+msgstr "falls alle angegebenen Befehle gefunden wurden und ausführbar waren"
 
 #. type: TP
 #: ../which.1:22
@@ -1202,7 +1222,9 @@ msgstr "B<1>"
 #. type: Plain text
 #: ../which.1:25
 msgid "if one or more specified commands is nonexistent or not executable"
-msgstr "če je vsaj eden izmed navedenih ukazov neobstoječ ali neizvedljiv"
+msgstr ""
+"falls ein oder mehrere angegebene Befehle nicht existieren oder nicht "
+"ausführbar sind"
 
 #. type: TP
 #: ../which.1:25
@@ -1213,7 +1235,4 @@ msgstr "B<2>"
 #. type: Plain text
 #: ../which.1:27
 msgid "if an invalid option is specified"
-msgstr "Če je navedena neveljavna možnost"
-
-#~ msgid "9 Aug 2009"
-#~ msgstr "9 avg 2009"
+msgstr "falls eine ungültige Option angegeben wurde"
