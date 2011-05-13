@@ -1,4 +1,4 @@
-.TH ADD-SHELL 8 "7 Apr 2005"
+.TH ADD-SHELL 8 "12 May 2011"
 .SH NAME
 add-shell \- add shells to the list of valid login shells
 .SH SYNOPSIS
@@ -7,8 +7,8 @@ add-shell \- add shells to the list of valid login shells
 .RI [ shellname ...]
 .SH DESCRIPTION
 .B add-shell
-copy \fI/etc/shells\fR to \fI/etc/shells.tmp\fR, add the given shells to
-this file if they are not already present, and copy this temporary file
+copies \fI/etc/shells\fR to \fI/etc/shells.tmp\fR, adds the given shells to
+this file if they are not already present, and copies this temporary file
 back to \fI/etc/shells\fR.
 
 The shells must be provided by their full pathnames.
