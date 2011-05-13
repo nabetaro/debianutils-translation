@@ -1,3 +1,12 @@
+debianutils (3.4.5) unstable; urgency=low
+
+  * Vcs-Git update.
+  * add-shell(8): grammar fix from Helge Kreutzmann.  closes: #626409.
+  * German man page translations from Helge Kreutzmann.  closes: #626397.
+  * Bump to Standards-Version 3.9.2.
+
+ -- Clint Adams <clint@debian.org>  Thu, 12 May 2011 22:45:15 -0400
+
 debianutils (3.4.4) unstable; urgency=low
 
   * French man page translation update from David Prévot.
