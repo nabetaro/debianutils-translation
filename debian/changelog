@@ -1,3 +1,12 @@
+debianutils (3.4.6) unstable; urgency=low
+
+  * Add Spanish man page translations from Omar
+    Campagne.  closes: #619016.
+  * Updated German man page translations from Helge
+    Kreutzmann.  closes: #626891.
+
+ -- Clint Adams <clint@debian.org>  Tue, 17 May 2011 23:29:42 -0400
+
 debianutils (3.4.5) unstable; urgency=low
 
   * Vcs-Git update.
