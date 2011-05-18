@@ -211,7 +211,7 @@ msgid ""
 "I</etc/shells.tmp2> to remove the given shells from the list of valid login "
 "shells, and copy the result back to I</etc/shells>."
 msgstr ""
-"B <remove-shell> modifica los archivos temporales I</etc/shells.tmp> y "
+"B<remove-shell> modifica los archivos temporales I</etc/shells.tmp> y "
 "I</etc/shells.tmp2> para eliminar las consolas introducidas de la lista de "
 "consolas de sesión aceptadas, y copia el resultado a I</etc/shells>."
 
