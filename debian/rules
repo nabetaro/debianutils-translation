@@ -91,7 +91,7 @@ endif
 
 	cd debian/tmp && find * -type f ! -regex '^DEBIAN/.*' -print0 | xargs -r0 md5sum > DEBIAN/md5sums
 
-	dpkg-shlibdeps run-parts tempfile
+	dpkg-shlibdeps debian/tmp/bin/run-parts debian/tmp/bin/tempfile
 	dpkg-gencontrol -isp
 	dpkg --build debian/tmp ..
 
