@@ -1,3 +1,10 @@
+debianutils (4) unstable; urgency=low
+
+  * ischroot utility by Aurelien Jarno to detect chrootedness.
+    closes: #627205.
+
+ -- Clint Adams <clint@debian.org>  Wed, 18 May 2011 15:04:15 -0400
+
 debianutils (3.4.6) unstable; urgency=low
 
   * Add Spanish man page translations from Omar
