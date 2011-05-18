@@ -1,0 +1,37 @@
+.\" -*- nroff -*-
+.TH ISCHROOT 1 "17 May 2011" "Debian"
+.SH NAME
+ischroot \- detect if running in a chroot
+.SH SYNOPSIS
+.B ischroot
+[\-\-default\-false] [\-\-default\-true] [\-\-help] [\-\-version]
+.SH DESCRIPTION
+.PP
+.B ischroot
+detects if it is currently running in a chroot. The exit status is:
+.TP
+0
+if currently running in a chroot
+.TP
+1
+if currently not running in a chroot
+.TP
+2
+if the detection is not possible (On GNU/Linux in happens if the script
+is not run as root).
+.SH OPTIONS
+.TP
+.B "-f, --default-false "
+Exit with status 1 if the detection is not possible.
+.TP
+.B "-t, --default-true "
+Exit with status 0 if the detection is not possible.
+.TP
+.B "--help"
+Print a usage message on standard output and exit successfully.
+.TP
+.B "--version"
+Print version information on standard output and exit successfully.
+.SH BUGS
+On GNU/Linux, chroot detection is not possible as root. This works correctly
+on GNU/Hurd and GNU/kFreeBSD.
