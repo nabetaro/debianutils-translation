@@ -83,6 +83,7 @@ endif
 	     debian/tmp/usr/share/man/fr/man[18] \
 	     debian/tmp/usr/share/man/sl/man[18] \
 	     debian/tmp/usr/share/man/de/man[18] \
+	     debian/tmp/usr/share/man/es/man[18] \
              debian/tmp/usr/share/doc/$(package) -type f | xargs gzip -9
 	$(INSTALL_FILE) debian/copyright debian/tmp/usr/share/doc/$(package)
 	$(INSTALL_SCRIPT) debian/postinst debian/tmp/DEBIAN/
