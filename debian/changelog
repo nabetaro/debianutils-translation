@@ -1,3 +1,12 @@
+debianutils (4.0.1) unstable; urgency=low
+
+  * tempfile.1: state in the man page that tempfile is
+    deprecated.  closes: #627564.
+  * ischroot.1: correct root/non-root logic claims.
+    closes: #628465.
+
+ -- Clint Adams <clint@debian.org>  Mon, 30 May 2011 10:54:03 -0400
+
 debianutils (4) unstable; urgency=low
 
   * ischroot utility by Aurelien Jarno to detect chrootedness.
