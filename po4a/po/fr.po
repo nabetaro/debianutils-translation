@@ -1,7 +1,7 @@
 # French translation of the debianutils' man pages
 # Traduction des pages de manuel du paquet debianutils
 #
-# Copyright (C) 2004-2010 Software in the Public Interest
+# Copyright (C) 2004-2011 Software in the Public Interest
 # This file is distributed under the same license as the debianutils package.
 #
 # Reprise des traduction originelles de which.1 (Laëtitia Groslong)
@@ -9,19 +9,19 @@
 #
 # Nicolas FRANÇOIS <nicolas.francois@centaliens.net>, 2004.
 # et savelog.8 (Antoine Gémis, 13 janvier 2003).
-# Christian Perrier <bubulle@debian.org>, 2010.
+# Christian Perrier <bubulle@debian.org>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2011-05-12 22:27-0300\n"
-"PO-Revision-Date: 2010-09-19 18:44+0200\n"
+"POT-Creation-Date: 2011-05-30 10:57-0300\n"
+"PO-Revision-Date: 2011-06-08 19:13+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 # type: TH
@@ -40,8 +40,8 @@ msgstr "12 mai 2011"
 
 # type: SH
 #. type: SH
-#: ../add-shell.8:2 ../installkernel.8:2 ../remove-shell.8:2 ../run-parts.8:9
-#: ../savelog.8:3 ../tempfile.1:3 ../which.1:3
+#: ../add-shell.8:2 ../installkernel.8:2 ../ischroot.1:3 ../remove-shell.8:2
+#: ../run-parts.8:9 ../savelog.8:3 ../tempfile.1:3 ../which.1:3
 #, no-wrap
 msgid "NAME"
 msgstr "NOM"
@@ -56,8 +56,8 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../add-shell.8:4 ../installkernel.8:4 ../remove-shell.8:4 ../run-parts.8:11
-#: ../savelog.8:5 ../tempfile.1:5 ../which.1:5
+#: ../add-shell.8:4 ../installkernel.8:4 ../ischroot.1:5 ../remove-shell.8:4
+#: ../run-parts.8:11 ../savelog.8:5 ../tempfile.1:5 ../which.1:5
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "SYNOPSIS"
@@ -70,8 +70,8 @@ msgstr "B<add-shell> I<interpréteur> [I<interpréteur>...]"
 
 # type: SH
 #. type: SH
-#: ../add-shell.8:8 ../installkernel.8:6 ../remove-shell.8:8 ../run-parts.8:20
-#: ../savelog.8:9 ../tempfile.1:9 ../which.1:7
+#: ../add-shell.8:8 ../installkernel.8:6 ../ischroot.1:8 ../remove-shell.8:8
+#: ../run-parts.8:20 ../savelog.8:9 ../tempfile.1:9 ../which.1:7
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "DESCRIPTION"
@@ -96,7 +96,7 @@ msgstr "Le chemin complet des interpréteurs doit être fourni."
 
 # type: SH
 #. type: SH
-#: ../add-shell.8:15 ../remove-shell.8:13 ../savelog.8:158 ../tempfile.1:89
+#: ../add-shell.8:15 ../remove-shell.8:13 ../savelog.8:158 ../tempfile.1:90
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
@@ -168,7 +168,7 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../installkernel.8:22 ../savelog.8:151 ../tempfile.1:73
+#: ../installkernel.8:22 ../ischroot.1:35 ../savelog.8:151 ../tempfile.1:73
 #, no-wrap
 msgid "BUGS"
 msgstr "BOGUES"
@@ -185,6 +185,156 @@ msgstr ""
 "makefiles du noyau Linux l'appellent à cet emplacement -- même si, en "
 "principe, il devrait plutôt être placé dans /usr/sbin, puisqu'il n'est pas "
 "nécessaire pour l'amorçage du système."
+
+#. type: TH
+#: ../ischroot.1:2
+#, no-wrap
+msgid "ISCHROOT"
+msgstr "ISCHROOT"
+
+# type: TH
+#. type: TH
+#: ../ischroot.1:2 ../tempfile.1:2
+#, no-wrap
+#| msgid "12 May 2011"
+msgid "30 May 2011"
+msgstr "30 mai 2011"
+
+# type: TH
+#. type: TH
+#: ../ischroot.1:2 ../run-parts.8:8 ../savelog.8:2 ../tempfile.1:2
+#: ../which.1:2
+#, no-wrap
+msgid "Debian"
+msgstr "Debian GNU/Linux"
+
+#. type: Plain text
+#: ../ischroot.1:5
+msgid "ischroot - detect if running in a chroot"
+msgstr ""
+"ischroot - détection de l'utilisation d'un environnement fermé (« chroot »)"
+
+#. type: Plain text
+#: ../ischroot.1:8
+msgid "B<ischroot> [--default-false] [--default-true] [--help] [--version]"
+msgstr "B<ischroot> [B<--default-false>] [B<--default-true>] [B<--help>] [B<--version>]"
+
+#. type: Plain text
+#: ../ischroot.1:12
+msgid ""
+"B<ischroot> detects if it is currently running in a chroot. The exit status "
+"is:"
+msgstr ""
+"B<ischroot> détecte s'il est exécuté à l'intérieur d'un environnement fermé "
+"d'exécution (« chroot »). L'état de sortie est le suivant :"
+
+#. type: TP
+#: ../ischroot.1:12
+#, no-wrap
+msgid "0"
+msgstr "0"
+
+#. type: Plain text
+#: ../ischroot.1:15
+msgid "if currently running in a chroot"
+msgstr "si l'exécution a lieu dans un environnement fermé"
+
+# type: IP
+#. type: TP
+#: ../ischroot.1:15
+#, no-wrap
+#| msgid "1)"
+msgid "1"
+msgstr "1"
+
+#. type: Plain text
+#: ../ischroot.1:18
+msgid "if currently not running in a chroot"
+msgstr "si l'exécution n'a pas lieu dans un environnement fermé"
+
+# type: IP
+#. type: TP
+#: ../ischroot.1:18
+#, no-wrap
+#| msgid "2)"
+msgid "2"
+msgstr "2"
+
+#. type: Plain text
+#: ../ischroot.1:22
+msgid ""
+"if the detection is not possible (On GNU/Linux this happens if the script is "
+"not run as root)."
+msgstr ""
+"s'il est impossible de détecter l'état (sous GNU/Linux, cela se produit "
+"quand la commande est exécutée sans les privilèges du superutilisateur)."
+
+# type: SH
+#. type: SH
+#: ../ischroot.1:22 ../run-parts.8:46 ../savelog.8:92 ../tempfile.1:46
+#: ../which.1:14
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONS"
+
+#. type: TP
+#: ../ischroot.1:23
+#, no-wrap
+msgid "B<-f, --default-false >"
+msgstr "B<-f>, B<--default-false>"
+
+#. type: Plain text
+#: ../ischroot.1:26
+msgid "Exit with status 1 if the detection is not possible."
+msgstr "Sort avec l'état 1 si la détection est impossible."
+
+#. type: TP
+#: ../ischroot.1:26
+#, no-wrap
+msgid "B<-t, --default-true >"
+msgstr "B<-t>, B<--default-true>"
+
+#. type: Plain text
+#: ../ischroot.1:29
+msgid "Exit with status 0 if the detection is not possible."
+msgstr "Sort avec l'état 0 si la détection est impossible."
+
+# type: TP
+#. type: TP
+#: ../ischroot.1:29 ../tempfile.1:64
+#, no-wrap
+msgid "B<--help>"
+msgstr "B<--help>"
+
+# type: Plain text
+#. type: Plain text
+#: ../ischroot.1:32 ../tempfile.1:67
+msgid "Print a usage message on standard output and exit successfully."
+msgstr ""
+"affiche un message d'aide sur la sortie standard, puis quitte sans erreur."
+
+# type: TP
+#. type: TP
+#: ../ischroot.1:32 ../tempfile.1:67
+#, no-wrap
+msgid "B<--version>"
+msgstr "B<--version>"
+
+# type: Plain text
+#. type: Plain text
+#: ../ischroot.1:35 ../tempfile.1:70
+msgid "Print version information on standard output and exit successfully."
+msgstr "affiche les informations sur la version, puis quitte sans erreur."
+
+#. type: Plain text
+#: ../ischroot.1:37
+msgid ""
+"On GNU/Linux, chroot detection is not possible when not root. This works "
+"correctly on GNU/Hurd and GNU/kFreeBSD."
+msgstr ""
+"Sous GNU/Linux, la détection d'un environnement fermé n'est possible que "
+"pour le superutilisateur. Elle fonctionne correctement pour tout utilisateur "
+"avec GNU/Hurd et GNU/kFreeBSD."
 
 # type: TH
 #. type: TH
@@ -239,13 +389,6 @@ msgstr "RUN-PARTS"
 #, no-wrap
 msgid "14 Nov 2010"
 msgstr "14 novembre 2010"
-
-# type: TH
-#. type: TH
-#: ../run-parts.8:8 ../savelog.8:2 ../tempfile.1:2 ../which.1:2
-#, no-wrap
-msgid "Debian"
-msgstr "Debian GNU/Linux"
 
 # type: Plain text
 #. type: Plain text
@@ -335,13 +478,6 @@ msgstr ""
 "Les fichiers sont exécutés dans l'ordre lexicographique de leur nom à moins "
 "que l'option B<--reverse> ne soit utilisée, auquel cas ils sont exécutés "
 "dans l'ordre inverse."
-
-# type: SH
-#. type: SH
-#: ../run-parts.8:46 ../savelog.8:92 ../tempfile.1:46 ../which.1:14
-#, no-wrap
-msgid "OPTIONS"
-msgstr "OPTIONS"
 
 # type: TP
 #. type: TP
@@ -1059,13 +1195,6 @@ msgstr "B<logrotate>(8)"
 msgid "TEMPFILE"
 msgstr "TEMPFILE"
 
-# type: TH
-#. type: TH
-#: ../tempfile.1:2 ../which.1:2
-#, no-wrap
-msgid "1 May 2009"
-msgstr "1 mai 2009"
-
 # type: Plain text
 #. type: Plain text
 #: ../tempfile.1:5
@@ -1241,33 +1370,6 @@ msgstr "B<-s>, B<--suffix> I<CHAÎNE>"
 msgid "Generate the file with STRING as the suffix."
 msgstr "génère le fichier en utilisant I<CHAÎNE> comme suffixe."
 
-# type: TP
-#. type: TP
-#: ../tempfile.1:64
-#, no-wrap
-msgid "B<--help>"
-msgstr "B<--help>"
-
-# type: Plain text
-#. type: Plain text
-#: ../tempfile.1:67
-msgid "Print a usage message on standard output and exit successfully."
-msgstr ""
-"affiche un message d'aide sur la sortie standard, puis quitte sans erreur."
-
-# type: TP
-#. type: TP
-#: ../tempfile.1:67
-#, no-wrap
-msgid "B<--version>"
-msgstr "B<--version>"
-
-# type: Plain text
-#. type: Plain text
-#: ../tempfile.1:70
-msgid "Print version information on standard output and exit successfully."
-msgstr "affiche les informations sur la version, puis quitte sans erreur."
-
 # type: SH
 #. type: SH
 #: ../tempfile.1:70
@@ -1287,24 +1389,29 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../tempfile.1:76
+#: ../tempfile.1:77
+#| msgid ""
+#| "Exclusive creation is not guaranteed when creating files on NFS "
+#| "partitions."
 msgid ""
-"Exclusive creation is not guaranteed when creating files on NFS partitions."
+"Exclusive creation is not guaranteed when creating files on NFS partitions.  "
+"tempfile is deprecated; you should use mktemp(1)  instead."
 msgstr ""
 "Une création exclusive ([ NdT : pour éviter toute situation de compétition, "
 "ou « race condition » ]) n'est pas garantie lorsque le fichier est créé sur "
-"une partition NFS."
+"une partition NFS. Le programme tempfile est obsolète. Il est conseillé "
+"d'utiliser mktemp(1) à la place."
 
 # type: SH
 #. type: SH
-#: ../tempfile.1:76
+#: ../tempfile.1:77
 #, no-wrap
 msgid "EXAMPLE"
 msgstr "EXEMPLES"
 
 # type: Plain text
 #. type: Plain text
-#: ../tempfile.1:88
+#: ../tempfile.1:89
 #, no-wrap
 msgid ""
 "#!/bin/sh\n"
@@ -1327,7 +1434,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../tempfile.1:91
+#: ../tempfile.1:92
 msgid "B<tempnam>(3), B<mktemp>(1)"
 msgstr "B<tempnam>(3), B<mktemp>(1)"
 
@@ -1337,6 +1444,13 @@ msgstr "B<tempnam>(3), B<mktemp>(1)"
 #, no-wrap
 msgid "WHICH"
 msgstr "WHICH"
+
+# type: TH
+#. type: TH
+#: ../which.1:2
+#, no-wrap
+msgid "1 May 2009"
+msgstr "1 mai 2009"
 
 # type: Plain text
 #. type: Plain text
