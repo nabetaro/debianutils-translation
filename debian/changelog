@@ -1,3 +1,10 @@
+debianutils (4.0.2) unstable; urgency=low
+
+  * French man page translation update from Christian Perrier.
+    closes: #630170.
+
+ -- Clint Adams <clint@debian.org>  Sun, 12 Jun 2011 11:44:19 -0400
+
 debianutils (4.0.1) unstable; urgency=low
 
   * tempfile.1: state in the man page that tempfile is
