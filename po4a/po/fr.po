@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
-"POT-Creation-Date: 2011-05-30 10:57-0300\n"
+"POT-Creation-Date: 2011-05-30 10:55-0300\n"
 "PO-Revision-Date: 2011-06-08 19:13+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -196,7 +196,6 @@ msgstr "ISCHROOT"
 #. type: TH
 #: ../ischroot.1:2 ../tempfile.1:2
 #, no-wrap
-#| msgid "12 May 2011"
 msgid "30 May 2011"
 msgstr "30 mai 2011"
 
@@ -217,7 +216,9 @@ msgstr ""
 #. type: Plain text
 #: ../ischroot.1:8
 msgid "B<ischroot> [--default-false] [--default-true] [--help] [--version]"
-msgstr "B<ischroot> [B<--default-false>] [B<--default-true>] [B<--help>] [B<--version>]"
+msgstr ""
+"B<ischroot> [B<--default-false>] [B<--default-true>] [B<--help>] [B<--"
+"version>]"
 
 #. type: Plain text
 #: ../ischroot.1:12
@@ -243,7 +244,6 @@ msgstr "si l'exécution a lieu dans un environnement fermé"
 #. type: TP
 #: ../ischroot.1:15
 #, no-wrap
-#| msgid "1)"
 msgid "1"
 msgstr "1"
 
@@ -256,7 +256,6 @@ msgstr "si l'exécution n'a pas lieu dans un environnement fermé"
 #. type: TP
 #: ../ischroot.1:18
 #, no-wrap
-#| msgid "2)"
 msgid "2"
 msgstr "2"
 
@@ -1390,9 +1389,6 @@ msgstr ""
 # type: Plain text
 #. type: Plain text
 #: ../tempfile.1:77
-#| msgid ""
-#| "Exclusive creation is not guaranteed when creating files on NFS "
-#| "partitions."
 msgid ""
 "Exclusive creation is not guaranteed when creating files on NFS partitions.  "
 "tempfile is deprecated; you should use mktemp(1)  instead."
