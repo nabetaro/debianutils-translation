@@ -1,3 +1,14 @@
+debianutils (4.0.3) unstable; urgency=low
+
+  * Remove /usr/bin/esh from shells list (see #328802).
+  * Remove /usr/bin/es from shells list (see #503547).
+  * Remove /usr/bin/rc from shells list; handled by rc postinst/postrm.
+  * Remove /bin/tcsh and /usr/bin/tcsh from shells list; handled by tcsh
+    postinst/postrm.
+  * German man page translation update from Helge Kreutzmann.  closes: #628660.
+
+ -- Clint Adams <clint@debian.org>  Sun, 02 Oct 2011 18:14:14 -0400
+
 debianutils (4.0.2) unstable; urgency=low
 
   * French man page translation update from Christian Perrier.
