@@ -1,5 +1,4 @@
 # /etc/shells: valid login shells
-/bin/csh
 /bin/sh
 /usr/bin/ksh
 /bin/ksh
