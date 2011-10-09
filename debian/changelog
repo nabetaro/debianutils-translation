@@ -1,3 +1,10 @@
+debianutils (4.0.4) unstable; urgency=low
+
+  * Remove csh from shells list.  closes: #644778.
+  * Remove ksh from shells list.  closes: #644779.
+
+ -- Clint Adams <clint@debian.org>  Sat, 08 Oct 2011 20:50:31 -0400
+
 debianutils (4.0.3) unstable; urgency=low
 
   * Remove /usr/bin/esh from shells list (see #328802).
