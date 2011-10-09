@@ -16,22 +16,20 @@ ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 CONFARGS = --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-CFLAGS += -O0
-else
-CFLAGS += -O2
-endif
-#ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-#INSTALL_PROGRAM += -s
-#endif
+CFLAGS := $(shell dpkg-buildflags --get CFLAGS)
+CPPFLAGS := $(shell dpkg-buildflags --get CPPFLAGS)
+LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS)
 
 build: build-indep build-arch
 build-indep:
 
 build-arch:
 	$(checkdir)
-	CFLAGS="$(CFLAGS)" ./configure --prefix=/usr \
-		                       --mandir=/usr/share/man $(CONFARGS)
+	./configure CFLAGS="$(CFLAGS)" \
+			CPPFLAGS="$(CPPFLAGS)" \
+			LDFLAGS="$(LDFLAGS)" \
+			--prefix=/usr \
+			--mandir=/usr/share/man $(CONFARGS)
 	$(MAKE)
 	touch build-arch
 
