@@ -15,7 +15,7 @@ DEB_HOST_GNU_TYPE = $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 CONFARGS = --host=$(DEB_HOST_GNU_TYPE)
 endif
-          
+
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 CFLAGS += -O0
 else
@@ -25,19 +25,22 @@ endif
 #INSTALL_PROGRAM += -s
 #endif
 
-build:
+build: build-indep build-arch
+build-indep:
+
+build-arch:
 	$(checkdir)
 	CFLAGS="$(CFLAGS)" ./configure --prefix=/usr \
 		                       --mandir=/usr/share/man $(CONFARGS)
 	$(MAKE)
-	touch build
+	touch build-arch
 
 clean:
 	$(checkdir)
 	test ! -f Makefile || $(MAKE) distclean
 	$(RM) -rf autom4te.cache
 	$(RM) -r debian/tmp* debianutils*
-	$(RM) build debian/files* debian/substvars
+	$(RM) build-arch debian/files* debian/substvars
 	find . -name '*~' -print0 | xargs -0 rm -f
 
 binary-indep:	checkroot build
@@ -117,7 +120,7 @@ prebuild:
 	cd po4a && po4a --no-backups po4a.conf
 
 
-.PHONY: binary binary-arch binary-indep clean checkroot prebuild
+.PHONY: build build-indep binary binary-arch binary-indep clean checkroot prebuild
 
 # Local Variables:
 # mode:Makefile
