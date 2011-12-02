@@ -1,3 +1,14 @@
+debianutils (4.1) unstable; urgency=low
+
+  [ Clint Adams ]
+  * Add build-arch and build-indep targets.
+  * Use dpkg-buildflags.
+
+  [ Daniel Kahn Gillmor ]
+  * ischroot now "detects" a chroot under fakechroot (Closes: #650141)
+
+ -- Clint Adams <clint@debian.org>  Thu, 01 Dec 2011 20:52:56 -0500
+
 debianutils (4.0.4) unstable; urgency=low
 
   * Remove csh from shells list.  closes: #644778.
