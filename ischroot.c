@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -34,6 +35,18 @@ void usage()
           "  -V, --version       output version information and exit.\n"
           "  -h, --help          display this help and exit.\n");
   exit(0);
+}
+
+/* return 1 if we are operating within a fakechroot environment,
+   return 0 otherwise */
+int isfakechroot()
+{
+  const char *fakechroot, *ldpreload;
+  return ((fakechroot = getenv("FAKECHROOT")) &&
+	  (strcmp("true", fakechroot) == 0) &&
+	  (NULL != getenv("FAKECHROOT_BASE")) &&
+	  (ldpreload = getenv("LD_PRELOAD")) &&
+	  (NULL != strstr(ldpreload, "libfakechroot.so")));
 }
 
 #if defined (__linux__)
@@ -183,7 +196,10 @@ int main(int argc, char *argv[])
     exit(1);
   }
 
-  exit_status = ischroot();
+  if (isfakechroot())
+    exit_status = 0;
+  else
+    exit_status = ischroot();
 
   if (exit_status == 2) {
     if (default_true)
