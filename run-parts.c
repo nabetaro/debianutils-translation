@@ -163,9 +163,11 @@ int valid_name(const struct dirent *d)
 /* Execute a file */
 void run_part(char *progname)
 {
-  int result;
-  int pid;
+  int result, waited;
+  int pid, r;
   int pout[2], perr[2];
+
+  waited = 0;
 
   if (report_mode && (pipe(pout) || pipe(perr))) {
     error("pipe: %s", strerror(errno));
@@ -197,9 +199,19 @@ void run_part(char *progname)
 
   if (report_mode) {
     fd_set set;
-    int max, r, printflag;
+    sigset_t tempmask;
+    struct timespec zero_timeout;
+    struct timespec *the_timeout;
+    int max, printflag;
     ssize_t c;
     char buf[4096];
+
+    sigemptyset(&tempmask);
+    sigprocmask(0, NULL, &tempmask);
+    sigdelset(&tempmask, SIGCHLD);
+
+    memset(&zero_timeout, 0, sizeof(zero_timeout));
+    the_timeout = NULL;
 
     close(pout[1]);
     close(perr[1]);
@@ -207,20 +219,36 @@ void run_part(char *progname)
     printflag = 0;
 
     while (pout[0] >= 0 || perr[0] >= 0) {
+      if (!waited) {
+        r = waitpid(pid, &result, WNOHANG);
+        if (r == -1) {
+          error("waitpid: %s", strerror(errno));
+          exit(1);
+        }
+        if (r != 0 && (WIFEXITED(result) || WIFSIGNALED(result))) {
+          /* If the process dies, set a zero timeout. Rarely, some processes
+           * leak file descriptors (e.g., by starting a naughty daemon).
+           * select() would wait forever since the pipes wouldn't close.
+           * We loop, with a zero timeout, until there's no data left, then
+           * give up. This shouldn't affect non-leaky processes. */
+          waited = 1;
+          the_timeout = &zero_timeout;
+        }
+      }
 
-      do {
-	FD_ZERO(&set);
-	if (pout[0] >= 0)
-	  FD_SET(pout[0], &set);
-	if (perr[0] >= 0)
-	  FD_SET(perr[0], &set);
-	r = select(max, &set, 0, 0, 0);
-      } while (r < 0 && errno == EINTR);
+      FD_ZERO(&set);
+      if (pout[0] >= 0)
+        FD_SET(pout[0], &set);
+      if (perr[0] >= 0)
+        FD_SET(perr[0], &set);
+      r = pselect(max, &set, 0, 0, the_timeout, &tempmask);
 
       if (r < 0) {
-	/* assert(errno != EINTR) */
-	error("select: %s", strerror(errno));
-	exit(1);
+        if (errno == EINTR)
+            continue;
+
+        error("select: %s", strerror(errno));
+        exit(1);
       }
       else if (r > 0) {
 	if (pout[0] >= 0 && FD_ISSET(pout[0], &set)) {
@@ -264,6 +292,13 @@ void run_part(char *progname)
 	  }
 	}
       }
+      else if (r == 0 && waited) {
+        /* Zero timeout, no data left. */
+        close(perr[0]);
+        perr[0] = -1;
+        close(pout[0]);
+        pout[0] = -1;
+      }
       else {
 	/* assert(FALSE): select was called with infinite timeout, so
 	   it either returns successfully or is interrupted */
@@ -271,7 +306,14 @@ void run_part(char *progname)
     }				/*while */
   }
 
-  waitpid(pid, &result, 0);
+  if (!waited) {
+    r = waitpid(pid, &result, 0);
+
+    if (r == -1) {
+		  error("waitpid: %s", strerror(errno));
+			exit(1);
+    }
+  }
 
   if (WIFEXITED(result) && WEXITSTATUS(result)) {
     error("%s exited with return code %d", progname, WEXITSTATUS(result));
@@ -284,6 +326,26 @@ void run_part(char *progname)
   }
 }
 
+static void handle_signal(int s)
+{
+    /* Do nothing */
+}
+
+/* Catch SIGCHLD with an empty function to interrupt select() */
+static void catch_signals()
+{
+    struct sigaction act;
+    sigset_t set;
+
+    memset(&act, 0, sizeof(act));
+    act.sa_handler = handle_signal;
+    act.sa_flags = SA_NOCLDSTOP;
+    sigaction(SIGCHLD, &act, NULL);
+
+    sigemptyset(&set);
+    sigaddset(&set, SIGCHLD);
+    sigprocmask(SIG_BLOCK, &set, NULL);
+}
 
 /* Find the parts to run & call run_part() */
 void run_parts(char *dirname)
@@ -457,6 +519,7 @@ int main(int argc, char *argv[])
     fprintf(stderr, "Try `run-parts --help' for more information.\n");
     exit(1);
   } else {
+    catch_signals();
     regex_compile_pattern();
     run_parts(argv[optind]);
     regex_clean();
