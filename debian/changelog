@@ -1,3 +1,10 @@
+debianutils (4.2) unstable; urgency=low
+
+  * run-parts.c: Apply patch from Daniel Richman to better handle
+   dead child processes.  closes: #379645.
+
+ -- Clint Adams <clint@debian.org>  Sat, 28 Jan 2012 15:47:18 -0500
+
 debianutils (4.1) unstable; urgency=low
 
   [ Clint Adams ]
