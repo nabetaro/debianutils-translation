@@ -1,3 +1,10 @@
+debianutils (4.2.1) unstable; urgency=low
+
+  * Patch from Daniel Richman to unblock SIGCHLD before spawning.
+    closes: #657947.
+
+ -- Clint Adams <clint@debian.org>  Mon, 30 Jan 2012 23:29:02 -0500
+
 debianutils (4.2) unstable; urgency=low
 
   * run-parts.c: Apply patch from Daniel Richman to better handle
