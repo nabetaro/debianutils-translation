@@ -51,6 +51,9 @@ char **args = 0;
 char *custom_ere;
 regex_t hierre, tradre, excsre, classicalre, customre;
 
+static void catch_signals();
+static void restore_signals();
+
 static char* regex_get_error(int errcode, regex_t *compiled);
 static void  regex_compile_pattern(void);
 static void  regex_clean(void);
@@ -178,6 +181,7 @@ void run_part(char *progname)
     exit(1);
   }
   else if (!pid) {
+    restore_signals();
     if (new_session_mode)
       setsid();
     if (report_mode) {
@@ -345,6 +349,15 @@ static void catch_signals()
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, NULL);
+}
+
+/* Unblock signals before execing a child */
+static void restore_signals()
+{
+    sigset_t set;
+    sigemptyset(&set);
+    sigaddset(&set, SIGCHLD);
+    sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
 
 /* Find the parts to run & call run_part() */
