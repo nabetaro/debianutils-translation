@@ -51,19 +51,32 @@ int isfakechroot()
 
 #if defined (__linux__)
 
-/* On Linux we can detect chroots by checking if the 
- * devicenumber/inode pair of / are the same as that of 
+/* On Linux we can detect chroots by checking if the
+ * devicenumber/inode pair of / are the same as that of
  * /sbin/init's. This may fail if not running as root or if
  * /proc is not mounted, in which case 2 is returned.
+ *
+ * If /proc/1/root exists but can not be stated as root,
+ * we're running in some limited environment (eg. vserver),
+ * which we consider as chroot here.
  */
 
 static int ischroot()
 {
   struct stat st1, st2;
 
-  if (stat("/", &st1) || stat("/proc/1/root", &st2))
+  if (stat("/", &st1))
     return 2;
-  else if ((st1.st_dev == st2.st_dev) && (st1.st_ino == st2.st_ino))
+  if (stat("/proc/1/root", &st2)) {
+    /* Does /proc/1/root exist at all? */
+    if (lstat("/proc/1/root" , &st2))
+      return 2;
+    /* Are we root? */
+    if (geteuid() != 0)
+      return 2;
+    /* Root can not read /proc/1/root, assume vserver or similar */
+    return 0;
+  } else if ((st1.st_dev == st2.st_dev) && (st1.st_ino == st2.st_ino))
     return 1;
   else
     return 0;
