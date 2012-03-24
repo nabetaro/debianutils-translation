@@ -3,7 +3,7 @@ Section: utils
 Priority: required
 Maintainer: Clint Adams <clint@debian.org>
 Uploaders: Manoj Srivastava <srivasta@debian.org>
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/users/clint/debianutils.git
 Vcs-Browser: http://git.debian.org/?p=users/clint/debianutils.git
 
