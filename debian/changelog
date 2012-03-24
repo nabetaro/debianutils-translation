@@ -1,3 +1,13 @@
+debianutils (4.2.2) unstable; urgency=low
+
+  [ Michal Čihař ]
+  * Properly handle situation inside vserver.  closes: #665352.
+
+  [ Clint Adams ]
+  * Bump to Standards-Version 3.9.3.
+
+ -- Clint Adams <clint@debian.org>  Sat, 24 Mar 2012 10:51:35 -0400
+
 debianutils (4.2.1) unstable; urgency=low
 
   * Patch from Daniel Richman to unblock SIGCHLD before spawning.
