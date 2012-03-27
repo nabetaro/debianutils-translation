@@ -12,8 +12,12 @@ INSTALL_DIR     = $(INSTALL) -p -d -o root -g root  -m  755
 DEB_BUILD_ARCH_OS ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
 DEB_BUILD_GNU_TYPE = $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 DEB_HOST_GNU_TYPE = $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+STRIP=strip
+
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
-CONFARGS = --host=$(DEB_HOST_GNU_TYPE)
+CONFARGS = --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
+STRIP=$(DEB_HOST_GNU_TYPE)-strip
 endif
 
 CFLAGS := $(shell dpkg-buildflags --get CFLAGS)
@@ -63,7 +67,7 @@ binary-arch:	checkroot build
 	   debian/tmp/bin/
 
 ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	strip --remove-section=.comment --remove-section=.note \
+	$(STRIP) --remove-section=.comment --remove-section=.note \
 		debian/tmp/bin/run-parts \
 	   	debian/tmp/bin/tempfile \
 	   	debian/tmp/usr/bin/ischroot
