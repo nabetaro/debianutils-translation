@@ -1,3 +1,10 @@
+debianutils (4.3) unstable; urgency=low
+
+  * Patch from Wookey to set Multi-Arch: foreign.  closes: #665964.
+  * Patch from Wookey to fix stripping on cross-builds.  closes: #665988.
+
+ -- Clint Adams <clint@debian.org>  Tue, 27 Mar 2012 15:29:33 -0400
+
 debianutils (4.2.2) unstable; urgency=low
 
   [ Michal Čihař ]
