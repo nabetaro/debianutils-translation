@@ -13,6 +13,7 @@ Pre-Depends: ${shlibs:Depends}
 Depends: sensible-utils
 Section: utils
 Essential: yes
+Multi-Arch: foreign
 Description: Miscellaneous utilities specific to Debian
  This package provides a number of small utilities which are used
  primarily by the installation scripts of Debian packages, although
