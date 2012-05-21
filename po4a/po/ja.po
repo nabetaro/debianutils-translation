@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "POT-Creation-Date: 2012-05-16 17:10+0900\n"
-"PO-Revision-Date: 2012-05-17 07:13+0900\n"
-"Last-Translator: KURASAWA Nozomu <nabetaro@caldron.jp>\n"
+"PO-Revision-Date: 2012-05-21 17:43+0900\n"
+"Last-Translator: KURASAWA Nozomu <nabetaro@debian.or.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -362,6 +362,9 @@ msgid ""
 "described below, found in directory I<directory>.  Other files and "
 "directories are silently ignored."
 msgstr ""
+"B<run-parts> は、ディレクトリー I<directory> にある、以下に述べる制約による名"
+"前を持つ実行ファイルを、すべて実行します。その他のファイルやディレクトリー"
+"は、黙って無視します。"
 
 #. type: Plain text
 #: ../run-parts.8:31
@@ -370,6 +373,9 @@ msgid ""
 "names must consist entirely of ASCII upper- and lower-case letters, ASCII "
 "digits, ASCII underscores, and ASCII minus-hyphens."
 msgstr ""
+"--lsbsysinit オプションと --regex オプションのどちらも指定しない場合、この"
+"ファイル名全体が ASCII の大文字小文字と ASCII の数字、ASCII のアンダースコア"
+"と ASCII のマイナス・ハイフンでできていなければなりません。"
 
 #. type: Plain text
 #: ../run-parts.8:38
@@ -380,6 +386,11 @@ msgid ""
 "the LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$); "
 "and the Debian cron script namespace (^[a-zA-Z0-9_-]+$)."
 msgstr ""
+"--lsbsysinit オプションを指定した場合、ファイル名の末尾が .dpkg-old や .dpkg-"
+"dist や .dpkg-new や .dpkg-tmp で終わっていてはいけません。また以下の名前空間"
+"のいずれかに属していなければなりません。LANANA 指定名前空間 (^[a-z0-9]+$)、"
+"LSB 階層予約名前空間 (^_?([a-z0-9_.]+-)+[a-z0-9]+$)、Debian cron スクリプト名"
+"前空間 (^[a-zA-Z0-9_-]+$) です。"
 
 #. type: Plain text
 #: ../run-parts.8:41
@@ -387,6 +398,8 @@ msgid ""
 "If the --regex option is given, the names must match the custom extended "
 "regular expression specified as that option's argument."
 msgstr ""
+"--regex オプションを指定した場合、オプションの引数に与えた正規表現に一致する"
+"名前でなければなりません。"
 
 #. type: Plain text
 #: ../run-parts.8:45
@@ -394,6 +407,8 @@ msgid ""
 "Files are run in the lexical sort order of their names unless the --reverse "
 "option is given, in which case they are run in the opposite order."
 msgstr ""
+"ファイルは --reverse オプションを与えない限り、ファイル名の辞書順で実行されま"
+"す。与えた場合は逆順となります。"
 
 #. type: TP
 #: ../run-parts.8:47
@@ -406,7 +421,7 @@ msgstr "B<--test>"
 msgid ""
 "print the names of the scripts which would be run, but don't actually run "
 "them."
-msgstr ""
+msgstr "実行するべきスクリプト名を表示しますが、実際には実行しません。"
 
 #. type: TP
 #: ../run-parts.8:51
@@ -420,6 +435,8 @@ msgid ""
 "print the names of the all matching files (not limited to executables), but "
 "don't actually run them. This option cannot be used with --test."
 msgstr ""
+"マッチしたファイルすべて (実行ファイルに限らない) を表示しますが、実際には実"
+"行しません。湖のオプションは --test と同時に指定できません。"
 
 #. type: TP
 #: ../run-parts.8:55
@@ -430,7 +447,7 @@ msgstr "B<-v, --verbose>"
 #. type: Plain text
 #: ../run-parts.8:58
 msgid "print the name of each script to stderr before running."
-msgstr ""
+msgstr "各スクリプトの実行前に、ファイル名を標準エラー出力に出力します。"
 
 #. type: TP
 #: ../run-parts.8:58
@@ -455,7 +472,7 @@ msgstr "B<--reverse>"
 #. type: Plain text
 #: ../run-parts.8:66
 msgid "reverse the scripts' execution order."
-msgstr ""
+msgstr "スクリプトの実行順を逆にします。"
 
 #. type: TP
 #: ../run-parts.8:66
@@ -466,7 +483,7 @@ msgstr "B<--exit-on-error>"
 #. type: Plain text
 #: ../run-parts.8:69
 msgid "exit as soon as a script returns with a non-zero exit code."
-msgstr ""
+msgstr "スクリプトが終了コードに非 0 を返すと、すぐに終了します。"
 
 #. type: TP
 #: ../run-parts.8:69
@@ -477,7 +494,7 @@ msgstr "B<--lsbsysinit>"
 #. type: Plain text
 #: ../run-parts.8:72
 msgid "use LSB namespaces instead of classical behavior."
-msgstr ""
+msgstr "古典的な挙動に代えて、LSB 名前空間を使用します。"
 
 #. type: TP
 #: ../run-parts.8:72
@@ -518,6 +535,8 @@ msgid ""
 "sets the umask to I<umask> before running the scripts.  I<umask> should be "
 "specified in octal.  By default the umask is set to 022."
 msgstr ""
+"スクリプトの実行前に umask を I<umask> に設定します。I<umask> は8進数で指定し"
+"てください。デフォルトの umask は 022 です。"
 
 #. type: TP
 #: ../run-parts.8:89
@@ -661,6 +680,8 @@ msgid ""
 "The B<savelog> command saves and optionally compresses old copies of files.  "
 "Older versions of I<file> are named:"
 msgstr ""
+"B<savelog> コマンドは、古いファイルのコピーを保存し、オプションとして圧縮を行"
+"います。I<file> の古いバージョンとは以下のようになります。"
 
 #. type: Plain text
 #: ../savelog.8:19
@@ -675,11 +696,15 @@ msgid ""
 "number 0 is not compressed because a process might still have I<file> opened "
 "for I/O.  Only I<cycle> versions of the file are kept."
 msgstr ""
+"I<E<lt>numberE<gt>> は版番号です。0 が最も新しくなります。版番号が E<gt> 0 の"
+"場合、B<-l> を指定して抑制しない限り圧縮します。版番号 0 は、プロセスがまだ "
+"I/O のために開いている可能性があるため、圧縮しません。ファイルを I<cycle> 版"
+"までしか保存しません。"
 
 #. type: Plain text
 #: ../savelog.8:36
 msgid "If the file does not exist and B<-t> was given, it will be created."
-msgstr ""
+msgstr "ファイルがまだ存在せず、B<-t> を与えられると、ファイルを生成します。"
 
 #. type: Plain text
 #: ../savelog.8:39
@@ -703,6 +728,10 @@ msgid ""
 "version I<file> is deleted.  Both compressed names and uncompressed names "
 "are cycled, regardless of B<-l>.  Missing version files are ignored."
 msgstr ""
+"版番号ファイルを循環します。版  I<file>.I<2> を版 I<file>.I<3> に移動し、版  "
+"I<file>.I<1> を版 I<file>.I<2> に移動する、などのようにします。最後に版 "
+"I<file>.I<0> を版 I<file>.I<1> に移動し、I<file> を削除します。圧縮名・非圧縮"
+"名ともに B<-l> に関係なく循環します。見つからない版ファイルは無視します。"
 
 #. type: IP
 #: ../savelog.8:60
@@ -716,6 +745,8 @@ msgid ""
 "The new I<file>.I<1> is compressed unless the B<-l> flag was given.  It is "
 "changed subject to the B<-m>, B<-u>, and B<-g> flags."
 msgstr ""
+"B<-l> を与えられた場合、新しい I<file>.I<1> は圧縮されます。このとき B<-m>, "
+"B<-u>, B<-g> の各フラグにより、その対象が変更されます。"
 
 #. type: IP
 #: ../savelog.8:69
@@ -726,7 +757,7 @@ msgstr "3)"
 #. type: Plain text
 #: ../savelog.8:74
 msgid "The main I<file> is moved to I<file>.I<0>."
-msgstr ""
+msgstr "メインの I<file> を I<file>.I<0> に移動します。"
 
 #. type: IP
 #: ../savelog.8:75
@@ -867,12 +898,12 @@ msgstr ""
 #: ../savelog.8:127
 #, no-wrap
 msgid "B<-1\\ .\\|.\\ -9>"
-msgstr ""
+msgstr "B<-1\\ .\\|.\\ -9>"
 
 #. type: Plain text
 #: ../savelog.8:130
 msgid "compression strength or memory usage (default: 9, except for xz)"
-msgstr ""
+msgstr "圧縮強度やメモリー使用量 (デフォルト: 9、xz 除く)"
 
 #. type: TP
 #: ../savelog.8:130
@@ -883,7 +914,7 @@ msgstr "B<-C>"
 #. type: Plain text
 #: ../savelog.8:133
 msgid "force cleanup of cycled logfiles"
-msgstr ""
+msgstr "強制的な循環ログファイルの一掃"
 
 #. type: TP
 #: ../savelog.8:133
@@ -927,7 +958,7 @@ msgstr "B<-n>"
 #. type: Plain text
 #: ../savelog.8:148
 msgid "do not rotate empty files"
-msgstr ""
+msgstr "空ファイルを回転しない"
 
 #. type: TP
 #: ../savelog.8:148
@@ -938,7 +969,7 @@ msgstr "B<-q>"
 #. type: Plain text
 #: ../savelog.8:151
 msgid "be quiet"
-msgstr "静かにします。"
+msgstr "静かに"
 
 #. type: Plain text
 #: ../savelog.8:157
@@ -946,6 +977,8 @@ msgid ""
 "If a process is still writing to I<file.0>, and savelog moves it to "
 "I<file.1> and compresses it, data could be lost."
 msgstr ""
+"プロセスが I<file.0> にまだ書き込んでいる間に、savelog が I<file.1> に移動し"
+"て圧縮すると、データを失うことになります。"
 
 #. type: Plain text
 #: ../savelog.8:159
@@ -982,6 +1015,10 @@ msgid ""
 "filename is printed on standard output. See B<tempnam>(3)  for the actual "
 "steps involved in directory selection."
 msgstr ""
+"B<tempfile> は、一時ファイルを安全な方法で作成します。ファイル名の選択に "
+"B<tempnam>(3) を使用し、これを O_RDWR | O_CREAT | O_EXCL を用いてオープンしま"
+"す。ファイル名は標準出力に出力されます。ディレクトリーの選択に関する実際のス"
+"テップは、B<tempnam>(3) を参照してください。"
 
 #. type: Plain text
 #: ../tempfile.1:23
