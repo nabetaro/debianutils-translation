@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "POT-Creation-Date: 2012-05-16 17:10+0900\n"
-"PO-Revision-Date: 2012-05-21 17:43+0900\n"
+"PO-Revision-Date: 2012-05-23 06:47+0900\n"
 "Last-Translator: KURASAWA Nozomu <nabetaro@debian.or.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -462,6 +462,9 @@ msgid ""
 "output.  The script's name is printed to whichever of stdout or stderr the "
 "script first produces output on."
 msgstr ""
+"B<--verbose> と同様ですが、出力を提供するスクリプトの名前のみ出力します。その"
+"スクリプトの最初の出力先に合わせて、標準出力・標準エラー出力どちらにでも、ス"
+"クリプト名を出力します。"
 
 #. type: TP
 #: ../run-parts.8:63
@@ -509,6 +512,9 @@ msgid ""
 "killing run-parts will not kill the currently running script, it will run "
 "until completion."
 msgstr ""
+"各スクリプトを、独立したプロセスセッションで実行します。このオプションを使用"
+"する場合、run-parts を kill しても、現在実行中のスクリプトは kill しません。"
+"完了するまで動き続けます。"
 
 #. type: TP
 #: ../run-parts.8:77
@@ -522,6 +528,7 @@ msgid ""
 "validate filenames against custom extended regular expression I<RE>.  See "
 "the EXAMPLES section for an example."
 msgstr ""
+"ファイル名を拡張正規表現 I<RE> で検証します。例セクションを参照してください。"
 
 #. type: TP
 #: ../run-parts.8:82
@@ -794,7 +801,7 @@ msgstr "B<-m mode>"
 #. type: Plain text
 #: ../savelog.8:97
 msgid "chmod the log files to mode, implies B<-t>"
-msgstr ""
+msgstr "ログファイルを mode に chmod します。B<-t> を暗示します。"
 
 #. type: TP
 #: ../savelog.8:97
@@ -805,7 +812,7 @@ msgstr "B<-u user>"
 #. type: Plain text
 #: ../savelog.8:101
 msgid "chown log files to user, implies B<-t>"
-msgstr ""
+msgstr "ログファイルを user に chown します。B<-t> を暗示します。"
 
 #. type: TP
 #: ../savelog.8:101
@@ -816,7 +823,7 @@ msgstr "B<-g group>"
 #. type: Plain text
 #: ../savelog.8:105
 msgid "chgrp log files to group, implies B<-t>"
-msgstr ""
+msgstr "ログファイルを group に chgrp します。B<-t> を暗示します。"
 
 #. type: TP
 #: ../savelog.8:105
@@ -851,7 +858,7 @@ msgstr "B<-l>"
 #. type: Plain text
 #: ../savelog.8:116
 msgid "don't compress any log files (default: do compress)"
-msgstr ""
+msgstr "ログファイルを圧縮しません (デフォルト: 圧縮する)"
 
 #. type: TP
 #: ../savelog.8:116
@@ -873,7 +880,7 @@ msgstr "B<-j>"
 #. type: Plain text
 #: ../savelog.8:122
 msgid "compress with bzip2 instead of gzip"
-msgstr ""
+msgstr "gzip ではなく bzip2 で圧縮"
 
 #. type: TP
 #: ../savelog.8:122
@@ -884,7 +891,7 @@ msgstr "B<-J>"
 #. type: Plain text
 #: ../savelog.8:125
 msgid "compress with xz instead of gzip"
-msgstr ""
+msgstr "gzip ではなく xz で圧縮"
 
 #. type: Plain text
 #: ../savelog.8:127
@@ -936,7 +943,7 @@ msgstr "B<-D dateformat>"
 #. type: Plain text
 #: ../savelog.8:140
 msgid "override date format, in the form of I<[MMDDhhmm[[CC]YY][.ss]]>"
-msgstr ""
+msgstr "日付フォーマット (I<[MMDDhhmm[[CC]YY][.ss]]>) の上書き"
 
 #. type: TP
 #: ../savelog.8:140
