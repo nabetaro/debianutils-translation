@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debianutils\n"
 "POT-Creation-Date: 2012-05-16 17:10+0900\n"
-"PO-Revision-Date: 2012-05-23 06:47+0900\n"
+"PO-Revision-Date: 2012-05-31 11:02+0900\n"
 "Last-Translator: KURASAWA Nozomu <nabetaro@debian.or.jp>\n"
-"Language-Team: Japanese\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -719,6 +719,8 @@ msgid ""
 "For files that do exist and have lengths greater than zero, the following "
 "actions are performed:"
 msgstr ""
+"ファイルが存在し、ファイルの長さが 0 バイトより大きい場合、以下のアクションを"
+"実行します。"
 
 #. type: IP
 #: ../savelog.8:40
@@ -779,6 +781,9 @@ msgid ""
 "I<file> is created subject to the given flags.  With the B<-p> flag, the "
 "file is created with the same owner, group, and permissions as before."
 msgstr ""
+"B<-m>, B<-u>, B<-g>, B<-t>, B<-p> の各フラグが与えられた場合、そのフラグに該"
+"当する空の I<file> を生成します。B<-p> フラグの場合、以前と同じ所有者、グルー"
+"プ、パーミッションで生成します。"
 
 #. type: IP
 #: ../savelog.8:85
@@ -791,6 +796,7 @@ msgstr "5)"
 msgid ""
 "The new I<file>.I<0> is changed subject to the B<-m>, B<-u>, and B<-g> flags."
 msgstr ""
+"新しい I<file>.I<0> を B<-m>, B<-u>, B<-g> の各フラグに応じて変更します。"
 
 #. type: TP
 #: ../savelog.8:93
@@ -837,6 +843,8 @@ msgid ""
 "Save cycle versions of the logfile (default: 7). The I<cycle> count must be "
 "at least 2."
 msgstr ""
+"ログファイルの保存する版を cycle までとします (デフォルト: 7)。I<cycle> は 2 "
+"以上でなければなりません。"
 
 #. type: TP
 #: ../savelog.8:110
@@ -847,7 +855,7 @@ msgstr "B<-t>"
 #. type: Plain text
 #: ../savelog.8:113
 msgid "touch new logfile into existence"
-msgstr ""
+msgstr "新しいログファイルを生成するよう touch します。"
 
 #. type: TP
 #: ../savelog.8:113
@@ -869,7 +877,7 @@ msgstr "B<-p>"
 #. type: Plain text
 #: ../savelog.8:119
 msgid "preserve owner, group, and permissions of logfile"
-msgstr ""
+msgstr "ログファイルの所有者、グループ、パーミッションを保持します。"
 
 #. type: TP
 #: ../savelog.8:119
@@ -880,7 +888,7 @@ msgstr "B<-j>"
 #. type: Plain text
 #: ../savelog.8:122
 msgid "compress with bzip2 instead of gzip"
-msgstr "gzip ではなく bzip2 で圧縮"
+msgstr "gzip に代えて bzip2 で圧縮"
 
 #. type: TP
 #: ../savelog.8:122
@@ -891,7 +899,7 @@ msgstr "B<-J>"
 #. type: Plain text
 #: ../savelog.8:125
 msgid "compress with xz instead of gzip"
-msgstr "gzip ではなく xz で圧縮"
+msgstr "gzip に代えて xz で圧縮"
 
 #. type: Plain text
 #: ../savelog.8:127
@@ -900,6 +908,9 @@ msgid ""
 "total amount of physical RAM. Note that xz can use a very large amount of "
 "memory for the higher compression levels."
 msgstr ""
+"xz で 強度オプションを与えない場合、xz はデフォルトで物理メモリ量をベースに判"
+"断します。xz は、圧縮レベルを高めるために、非常に大きなメモリが必要なことに注"
+"意してください。"
 
 #. type: TP
 #: ../savelog.8:127
@@ -932,7 +943,7 @@ msgstr "B<-d>"
 #. type: Plain text
 #: ../savelog.8:136
 msgid "use standard date for rolling"
-msgstr ""
+msgstr "循環に標準日を使用します。"
 
 #. type: TP
 #: ../savelog.8:136
@@ -954,7 +965,7 @@ msgstr "B<-r>"
 #. type: Plain text
 #: ../savelog.8:145
 msgid "use I<rolldir> instead of . to roll files"
-msgstr ""
+msgstr "ファイルの循環をする際に . に代えて I<rolldir> を使用します。"
 
 #. type: TP
 #: ../savelog.8:145
@@ -1033,6 +1044,8 @@ msgid ""
 "The directory in which to create the file might be searched for in this "
 "order (but refer to B<tempnam>(3)  for authoritative answers):"
 msgstr ""
+"ファイルを作成するディレクトリを、以下の順番で探します (しかし確実なことは "
+"B<tempnam>(3) を参照してください)。"
 
 #. type: TP
 #: ../tempfile.1:23
@@ -1046,6 +1059,8 @@ msgid ""
 "In case the environment variable B<TMPDIR> exists and contains the name of "
 "an appropriate directory, that is used."
 msgstr ""
+"環境変数 B<TMPDIR> が存在し、適切なディレクトリ名が設定されていれば、これを使"
+"用します。"
 
 #. type: TP
 #: ../tempfile.1:29
@@ -1059,6 +1074,8 @@ msgid ""
 "Otherwise, if the I<--directory> argument is specified and appropriate, it "
 "is used."
 msgstr ""
+"そうでない場合、I<--directory> 引数が指定されていて適切であれば、これを使用し"
+"ます。"
 
 #. type: TP
 #: ../tempfile.1:34
@@ -1072,6 +1089,8 @@ msgid ""
 "Otherwise, I<P_tmpdir> (as defined in I<E<lt>stdio.hE<gt>>)  is used when "
 "appropriate."
 msgstr ""
+"そうでない場合、I<P_tmpdir> (I<E<lt>stdio.hE<gt>> で定義) が適切であれば、こ"
+"れを使用します。"
 
 #. type: TP
 #: ../tempfile.1:41
@@ -1082,7 +1101,7 @@ msgstr "d)"
 #. type: Plain text
 #: ../tempfile.1:46
 msgid "Finally an implementation-defined directory I<(/tmp)> may be used."
-msgstr ""
+msgstr "最後に、実装で定義したディレクトリ I<(/tmp)> を使用します。"
 
 #. type: TP
 #: ../tempfile.1:47
@@ -1093,7 +1112,7 @@ msgstr "B<-d, --directory >I<DIR>"
 #. type: Plain text
 #: ../tempfile.1:50
 msgid "Place the file in DIR."
-msgstr ""
+msgstr "ファイルを DIR に配置します。"
 
 #. type: TP
 #: ../tempfile.1:50
@@ -1104,7 +1123,7 @@ msgstr "B<-m, --mode >I<MODE>"
 #. type: Plain text
 #: ../tempfile.1:53
 msgid "Open the file with MODE instead of 0600."
-msgstr ""
+msgstr "ファイルのモードを 0600 に代えて MODE で開きます。"
 
 #. type: TP
 #: ../tempfile.1:53
@@ -1118,6 +1137,8 @@ msgid ""
 "Use FILE for the name instead of B<tempnam>(3)B<.> The options -d, -p, and -"
 "s are ignored if this option is given."
 msgstr ""
+"ファイル名として B<tempnam>(3) に代えて FILE を使用します。このオプションを与"
+"えると、-d, -p, -s の各オプションを無視します。"
 
 #. type: TP
 #: ../tempfile.1:58
@@ -1128,7 +1149,7 @@ msgstr "B<-p, --prefix >I<STRING>"
 #. type: Plain text
 #: ../tempfile.1:61
 msgid "Use up to five letters of STRING to generate the name."
-msgstr ""
+msgstr "STRING の 5 文字までを名前の生成に使用します。"
 
 #. type: TP
 #: ../tempfile.1:61
@@ -1139,7 +1160,7 @@ msgstr "B<-s, --suffix >I<STRING>"
 #. type: Plain text
 #: ../tempfile.1:64
 msgid "Generate the file with STRING as the suffix."
-msgstr ""
+msgstr "STRING を末尾にするファイルを生成します。"
 
 #. type: SH
 #: ../tempfile.1:70
@@ -1153,6 +1174,8 @@ msgid ""
 "An exit status of 0 means the temporary file was created successfully.  Any "
 "other exit status indicates an error."
 msgstr ""
+"終了ステータスが 0 は一時ファイルが正常に作成できたことを意味します。その他の"
+"終了ステータスはエラーです。"
 
 #. type: Plain text
 #: ../tempfile.1:77
@@ -1160,6 +1183,8 @@ msgid ""
 "Exclusive creation is not guaranteed when creating files on NFS partitions.  "
 "tempfile is deprecated; you should use mktemp(1)  instead."
 msgstr ""
+"NFS パーティションで作成する場合、排他作成は保証されません。tempfile は非推奨"
+"です。代わりに mktemp(1) を使用するようにしてください。"
 
 #. type: SH
 #: ../tempfile.1:77
@@ -1225,6 +1250,10 @@ msgid ""
 "the PATH for executable files matching the names of the arguments. It does "
 "not follow symbolic links."
 msgstr ""
+"B<which> は、その引数を、厳密な POSIX 準拠シェルでコマンドとして与えられた場"
+"合の、現在の環境で実行されるファイル (やリンク) のパス名を返します。引数の名"
+"前に一致する実行ファイルを PATH から検索して、これを行います。シンボリックリ"
+"ンクは追跡しません。"
 
 #. type: TP
 #: ../which.1:15
@@ -1235,7 +1264,7 @@ msgstr "B<-a>"
 #. type: Plain text
 #: ../which.1:18
 msgid "print all matching pathnames of each argument"
-msgstr ""
+msgstr "各引数に一致したすべてのパス名を表示します。"
 
 #. type: SH
 #: ../which.1:18
